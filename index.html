@@ -769,6 +769,140 @@
             line-height: 1.6;
         }
 
+        /* Seasonal Specials Section */
+        .seasonal-specials {
+            padding: 60px 0;
+            background: white;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .seasonal-specials h3 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .special-box {
+            background: #faf9f7;
+            border: 1px solid #e8e6e1;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .special-box h4 {
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .special-timing {
+            background: #f5e6a3;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .special-content ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .special-content li {
+            padding: 8px 0;
+            color: #666;
+            border-left: 3px solid #f5e6a3;
+            padding-left: 15px;
+            margin-bottom: 8px;
+        }
+
+        .special-note {
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* Referral Program */
+        .referral-program {
+            background: #f5e6a3;
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .referral-program h4 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .referral-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .referral-tier {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            border: 1px solid #e8e6e1;
+        }
+
+        .referral-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .referral-tier h5 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .referral-tier p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .referral-contact {
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        /* Newsletter Final Section */
+        .newsletter-final {
+            padding: 40px 0;
+            background: #faf9f7;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -1013,6 +1147,7 @@
                         <li><a href="#meet-family">Meet the Family</a></li>
                         <li><a href="#visit-farm">Visit the Farm</a></li>
                         <li><a href="#additional-provisions">Additional Provisions</a></li>
+                        <li><a href="#members-only" onclick="accessMembersPage()">Members Only</a></li>
                         <li><a href="#join">Join</a></li>
                     </ul>
                 </nav>
@@ -1024,6 +1159,83 @@
         <div class="container">
             <h2>Handcrafted Backyard Orchard Provisions</h2>
             <p>From our family farm to your home. Every harvest teaches our children about sustainable farming, caring for animals, and how our community and ecosystem are connected.</p>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup 3 - Before Footer -->
+    <section class="newsletter-final">
+        <div class="container">
+            <div class="newsletter-signup">
+                <h4>Join Our Farm Family</h4>
+                <p>Be the first to know about seasonal boxes, farm gatherings, and what the O-Boys are learning!</p>
+                <form class="signup-form" onsubmit="submitNewsletter(event, 'footer')">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit">Join</button>
+                    <div class="signup-success">Welcome to the farm family! We'll be in touch soon.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal-specials">
+        <div class="container">
+            <h3>Seasonal Specials</h3>
+            
+            <div class="specials-grid">
+                <div class="special-box">
+                    <h4>Back-to-School Family Box</h4>
+                    <div class="special-timing">Available Mid-August</div>
+                    <div class="special-content">
+                        <p><strong>Perfect for busy school mornings and curious minds!</strong></p>
+                        <ul>
+                            <li>Extra granola and lunch-friendly items</li>
+                            <li>Fun crafts and science projects</li>
+                            <li>Recommended library book list</li>
+                            <li>Seeds to start your own growing adventure</li>
+                            <li>All regular box contents plus learning extras</li>
+                        </ul>
+                        <p class="special-note">*Help your kids start the school year connected to where their food comes from*</p>
+                    </div>
+                </div>
+
+                <div class="special-box">
+                    <h4>Holiday Gift Collections</h4>
+                    <div class="special-timing">Thanksgiving • Christmas • Hanukkah • Valentine's Day</div>
+                    <div class="special-content">
+                        <p><strong>Share the sweetness with family and friends!</strong></p>
+                        <ul>
+                            <li>Holiday-themed baked goods</li>
+                            <li>Honey & Bee Balm gift sets</li>
+                            <li>Festive packaging and ribbons</li>
+                            <li>Personal gift messages included</li>
+                            <li>Perfect for teachers, neighbors, or long-distance family</li>
+                        </ul>
+                        <p class="special-note">*Nothing says "made with love" like farm-fresh provisions*</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="referral-program">
+                <h4>Share the Farm Love</h4>
+                <div class="referral-tiers">
+                    <div class="referral-tier">
+                        <div class="referral-icon">🍯</div>
+                        <h5>Refer a Friend</h5>
+                        <p>You both get an extra jar of honey and priority invites to farm gatherings</p>
+                    </div>
+                    <div class="referral-tier">
+                        <div class="referral-icon">🚜</div>
+                        <h5>Refer 3 Friends</h5>
+                        <p>Get a private farm tour for your family</p>
+                    </div>
+                    <div class="referral-tier">
+                        <div class="referral-icon">🎁</div>
+                        <h5>Loyalty Reward</h5>
+                        <p>Buy 10 boxes, get 1 free</p>
+                    </div>
+                </div>
+                <p class="referral-contact">Contact us at hello@chickabeeshoney.com to start sharing!</p>
+            </div>
         </div>
     </section>
 
@@ -1091,7 +1303,6 @@
                         <h4>Essential Box</h4>
                         <div class="price" id="essential-price">$45</div>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Perfect for getting started with farm-fresh provisions</p>
-                        <p style="font-style: italic; color: #999; font-size: 0.9rem; margin-bottom: 15px;">What you'd spend $60+ on at the store, delivered with love</p>
                         <ul>
                             <li>6 Fresh Eggs</li>
                             <li>10oz Raw Honey</li>
@@ -1104,7 +1315,6 @@
                         <h4>Deluxe Box</h4>
                         <div class="price" id="deluxe-price">$75</div>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Ideal for families wanting the full orchard experience</p>
-                        <p style="font-style: italic; color: #999; font-size: 0.9rem; margin-bottom: 15px;">Easily $90+ worth of goodies - consider it our family discount</p>
                         <ul>
                             <li>12 Fresh Eggs</li>
                             <li>22oz Raw Honey</li>
@@ -1208,7 +1418,7 @@
                 <p>Get first access to farm boxes and follow our family's learning journey!</p>
                 <form class="signup-form" onsubmit="submitNewsletter(event, 'family')">
                     <input type="email" placeholder="your@email.com" required>
-                    <button type="submit">Stay Connected</button>
+                    <button type="submit">Join</button>
                     <div class="signup-success">Thank you! We'll share our farm journey with you.</div>
                 </form>
             </div>
@@ -1246,7 +1456,7 @@
 
             <div class="story-grid">
                 <div class="story-image">
-                    Photo: Family feeding chickens together, Oreo playfully chasing around the yard
+                    <img src="images/Oreo-and-Coop.jpeg" alt="Oreo and the chicken coop - family feeding chickens together" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="story-text">
                     <h3>Our First Business Adventure</h3>
