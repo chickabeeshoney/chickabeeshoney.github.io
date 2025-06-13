@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chickabees Honey - Backyard Farm Provisions</title>
+    <title>Chickabees Honey - Fresh Farm Provisions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -620,6 +621,7 @@
         }
 
         /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 padding: 0 20px;
@@ -678,11 +680,11 @@
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-circle">
-    <img src="images/circle-logo.png" alt="Chickabees Logo" style="width: 100%; height: 100%; object-fit: contain;">
-</div>
+                        <div class="chicken-drawing"></div>
+                    </div>
                     <div class="logo-text">
                         <h1>CHICKABEES</h1>
-                        <p>raw honey from Oakland, CA</p>
+                        <p>Raw Honey and Provisions from Oakland, CA</p>
                     </div>
                 </div>
                 <nav>
@@ -699,7 +701,7 @@
 
     <section class="hero">
         <div class="container">
-            <h2> Backyard Orchard Provisions</h2>
+            <h2>Handcrafted Backyard Orchard Provisions</h2>
             <p>From our family farm to your table - where every harvest teaches our children about sustainable farming, caring for animals, and how the ecosystem is connected through diversity</p>
         </div>
     </section>
@@ -707,7 +709,7 @@
     <section id="order" class="order-section">
         <div class="container">
             <div class="order-form">
-                <h3>Choose Your Family's Farm Fresh Box</h3>
+                <h3>Fresh Box</h3>
                 
                 <div class="box-options">
                     <div class="box-option" onclick="selectBox('essential')">
@@ -716,9 +718,9 @@
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Perfect for getting started with farm-fresh provisions</p>
                         <ul>
                             <li>6 Fresh Eggs</li>
-                            <li>1 Jar Raw Honey</li>
+                            <li>10oz Raw Honey</li>
                             <li>Choose 1 baked good: muffins or sourdough bread</li>
-                            <li>Homemade Granola</li>
+                            <li>Large Homemade Granola</li>
                         </ul>
                     </div>
                     
@@ -728,10 +730,10 @@
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Ideal for families wanting the full orchard experience</p>
                         <ul>
                             <li>12 Fresh Eggs</li>
-                            <li>1 Jar Raw Honey</li>
+                            <li>22oz Raw Honey</li>
                             <li>Choose 2 baked goods: muffins, sourdough bread or chocolate babka</li>
-                            <li>Homemade Granola</li>
-                            <li>Rotating selection based on what is ripe</li>
+                            <li>Large Homemade Granola</li>
+                            <li>In Season Produce</li>
                         </ul>
                     </div>
                 </div>
@@ -786,6 +788,17 @@
 
                 <button class="order-btn" onclick="processOrder()">Order Now - Pay on Delivery</button>
             </div>
+
+            <!-- Newsletter Signup 2 - After Family Story -->
+            <div class="newsletter-signup">
+                <h4>Want Farm Updates?</h4>
+                <p>Get first access to farm boxes and follow our family's learning journey!</p>
+                <form class="signup-form" onsubmit="submitNewsletter(event, 'family')">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit">Stay Connected</button>
+                    <div class="signup-success">Thank you! We'll share our farm journey with you.</div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -797,18 +810,14 @@
                     <p>The O-Boys, Minnie, and Dan, along with their loyal dog Oreo, have created something special on their Oakland farm. With 10 happy chickens, 5 thriving beehives, and 50 diverse fruit trees including apricots, peaches, avocados, citrus and guava, every day is an adventure in sustainable living.</p>
                     <p>Our children are hands-on in every aspect - from gathering eggs and harvesting honey to helping bake fresh goods and tend to our fruit trees. This isn't just a business; it's our way of life and learning.</p>
                 </div>
-<div class="story-image">
-    <img src="images/boys-beesuits.JPG" alt="Meet the family - kids helping with honey harvest" style="width: 100%; height: 100%; object-fit: cover;">
-</div>
+                <div class="story-image">
                     Photo: Kids helping harvest honey from the beehives, golden sunlight filtering through the orchard
                 </div>
             </div>
 
             <div class="story-grid">
-<div class="story-image">
-    <img src="images/boys-planting.jpg" alt="Learning and Growwing - kids helping with honey harvest" style="width: 100%; height: 100%; object-fit: cover;">
-</div>
-                    Photo: Family planting with chickens hanging out behind
+                <div class="story-image">
+                    Photo: Family feeding chickens together, Oreo playfully chasing around the yard
                 </div>
                 <div class="story-text">
                     <h3>Learning & Growing Together</h3>
@@ -862,7 +871,7 @@
 
     <section id="products" class="products">
         <div class="container">
-            <h3>Additional Farm Products</h3>
+            <h3>Additional Provisions</h3>
             <div class="product-grid">
                 <div class="product">
                     <h4>Extra Raw Honey</h4>
@@ -952,9 +961,12 @@
             if (frequency === 'monthly') {
                 essentialPrice.textContent = '$40';
                 deluxePrice.textContent = '$70';
-            } else {
+            } else if (frequency === 'quarterly') {
                 essentialPrice.textContent = '$45';
                 deluxePrice.textContent = '$75';
+            } else {
+                essentialPrice.textContent = '$50';
+                deluxePrice.textContent = '$80';
             }
         }
 
@@ -973,7 +985,35 @@
         }
 
         function joinGathering() {
-            alert('Thank you for your interest in our Fall & Spring Solstice Gatherings! Please email us at hello@chickabeeshoney.com or call (555) 123-BEES to reserve your spot. We\'ll send you all the details including the date, time, and what to bring!');
+            alert('Thank you for your interest in visiting our farm! Please email us at hello@chickabeeshoney.com or call (555) 123-BEES to reserve your spot. We host seasonal gatherings throughout the year and would love to welcome your family!');
+        }
+
+        function submitNewsletter(event, location) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const email = form.querySelector('input[type="email"]').value;
+            const successMessage = form.querySelector('.signup-success');
+            const submitButton = form.querySelector('button');
+            
+            // Disable button and show loading
+            submitButton.textContent = 'Joining...';
+            submitButton.disabled = true;
+            
+            // Here you would typically send to your email service
+            // For now, we'll simulate success and suggest they email you
+            setTimeout(() => {
+                successMessage.style.display = 'block';
+                form.querySelector('input').style.display = 'none';
+                submitButton.style.display = 'none';
+                
+                // Optional: Send email to yourself with the signup
+                const emailBody = `New newsletter signup from ${location} section:%0D%0AEmail: ${email}%0D%0ALocation: ${location}`;
+                
+                // Automatically create an email for you to send (optional)
+                // window.open(`mailto:hello@chickabeeshoney.com?subject=New Newsletter Signup&body=${emailBody}`);
+                
+            }, 1000);
         }
 
         function processOrder() {
@@ -1000,10 +1040,15 @@
 
             // Determine pricing based on frequency
             let boxPrice;
+            let discountNote = '';
             if (frequency === 'monthly') {
                 boxPrice = selectedBox === 'essential' ? '$40' : '$70';
-            } else {
+                discountNote = ' (monthly discount applied)';
+            } else if (frequency === 'quarterly') {
                 boxPrice = selectedBox === 'essential' ? '$45' : '$75';
+                discountNote = ' ($5 quarterly discount applied)';
+            } else {
+                boxPrice = selectedBox === 'essential' ? '$50' : '$80';
             }
 
             const deliveryText = delivery === 'pickup' ? 'farm pickup (includes coffee & waffles!)' : 'delivery';
