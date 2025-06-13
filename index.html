@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.8;
             color: #1a1a1a;
             background-color: #faf9f7;
@@ -51,8 +51,8 @@
         }
 
         .logo-circle {
-            width: 60px;
-            height: 60px;
+            width: 90px;
+            height: 90px;
             background: #f5e6a3;
             border-radius: 50%;
             display: flex;
@@ -141,12 +141,12 @@
         }
 
         .hero h2 {
-            font-size: 4rem;
+            font-size: 3rem;
             color: #1a1a1a;
             margin-bottom: 30px;
             font-weight: 300;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            text-transform: capitalize;
         }
 
         .hero p {
@@ -343,6 +343,42 @@
             padding: 60px 0;
             background: #faf9f7;
             border-bottom: 1px solid #e8e6e1;
+        }
+
+        .origin-story {
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 50px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .origin-story h3 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .origin-story p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-box {
+            background: #f5e6a3;
+            padding: 30px;
+            margin: 30px auto;
+            border: 1px solid #e8e6e1;
+            max-width: 700px;
+            font-style: italic;
         }
 
         .story-grid {
@@ -584,6 +620,155 @@
             line-height: 1.8;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background: white;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .faq-section h3 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background: #faf9f7;
+            border: 1px solid #e8e6e1;
+            padding: 30px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            padding: 60px 0;
+            background: #f5e6a3;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .social-proof h3 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .testimonial {
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial .customer {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 30px 20px;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .stat-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .fun-fact {
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fun-fact h4 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .fun-fact p {
+            color: #666;
+            line-height: 1.6;
+        }
+
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -620,7 +805,119 @@
             color: #999;
         }
 
-        /* Responsive */
+        /* Newsletter Signup */
+        .newsletter-signup {
+            background: #f5e6a3;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid #e8e6e1;
+            text-align: center;
+        }
+
+        .newsletter-signup h4 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .newsletter-signup p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .signup-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e8e6e1;
+            background: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .signup-form button {
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .signup-form button:hover {
+            background: #333;
+        }
+
+        .signup-success {
+            display: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        /* Add-ons Section */
+        .add-ons-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border: 1px solid #e8e6e1;
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .add-on-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            border: 1px solid #e8e6e1;
+            background: #faf9f7;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-on-item:hover {
+            border-color: #1a1a1a;
+            background: white;
+        }
+
+        .add-on-item input[type="checkbox"] {
+            margin-top: 5px;
+            transform: scale(1.2);
+        }
+
+        .add-on-details strong {
+            color: #1a1a1a;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .add-on-details small {
+            color: #666;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
@@ -630,6 +927,11 @@
             .header-content {
                 flex-direction: column;
                 gap: 30px;
+            }
+
+            .logo-circle {
+                width: 70px;
+                height: 70px;
             }
 
             nav ul {
@@ -671,6 +973,24 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            .signup-form {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .signup-form input,
+            .signup-form button {
+                width: 100%;
+            }
+
+            .add-ons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -703,7 +1023,61 @@
     <section class="hero">
         <div class="container">
             <h2>Handcrafted Backyard Orchard Provisions</h2>
-            <p>From our family farm to your table - where every harvest teaches our children about sustainable farming, caring for animals, and how the ecosystem is connected through diversity</p>
+            <p>From our family farm to your home. Every harvest teaches our children about sustainable farming, caring for animals, and how our community and ecosystem are connected.</p>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="container">
+            <h3>What Our Community Says</h3>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"This is some of the best honey we've ever had"</p>
+                    <span class="customer">- Oakland Neighbor</span>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Fresh eggs taste amazing - the darker yolks and stronger shells really make them stand out!"</p>
+                    <span class="customer">- Local Family</span>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"The babka is better than some of the dry versions I've had in NYC."</p>
+                    <span class="customer">- Friend & Fellow Foodie</span>
+                </div>
+            </div>
+
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Families Served</div>
+                    <div class="stat-note">Friends, neighbors & new friends too!</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Gallons of Honey</div>
+                    <div class="stat-note">First year harvest success</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Eggs Daily</div>
+                    <div class="stat-note">From our happy hens</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">Colorful Eggs Coming</div>
+                    <div class="stat-note">Funky looking styles ahead!</div>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>Fun Egg Fact!</h4>
+                <p>All colored eggs have the same nutritional value - the darker yolks are more for aesthetics than health, but they sure do make your breakfast Instagram-worthy! 📸</p>
+            </div>
         </div>
     </section>
 
@@ -717,11 +1091,12 @@
                         <h4>Essential Box</h4>
                         <div class="price" id="essential-price">$45</div>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Perfect for getting started with farm-fresh provisions</p>
+                        <p style="font-style: italic; color: #999; font-size: 0.9rem; margin-bottom: 15px;">What you'd spend $60+ on at the store, delivered with love</p>
                         <ul>
                             <li>6 Fresh Eggs</li>
                             <li>10oz Raw Honey</li>
                             <li>Choose 1 baked good: muffins or sourdough bread</li>
-                            <li>Large Homemade Granola</li>
+                            <li>Homemade Granola</li>
                         </ul>
                     </div>
                     
@@ -729,6 +1104,7 @@
                         <h4>Deluxe Box</h4>
                         <div class="price" id="deluxe-price">$75</div>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Ideal for families wanting the full orchard experience</p>
+                        <p style="font-style: italic; color: #999; font-size: 0.9rem; margin-bottom: 15px;">Easily $90+ worth of goodies - consider it our family discount</p>
                         <ul>
                             <li>12 Fresh Eggs</li>
                             <li>22oz Raw Honey</li>
@@ -741,11 +1117,11 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="frequency">Delivery Frequency</label>
+                        <label for="frequency">How Frequent?</label>
                         <select id="frequency" onchange="updatePricing()">
                             <option value="onetime">One Time</option>
-                            <option value="monthly">Monthly (Save $5!)</option>
-                            <option value="quarterly">Quarterly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly" selected>Quarterly</option>
                         </select>
                     </div>
                     
@@ -760,14 +1136,13 @@
 
                 <div id="pickup-info" class="pickup-info">
                     <h4>Pickup Special</h4>
-                    <p>Pick up during our monthly window (First Sunday, 9-11am) and enjoy complimentary coffee and fresh waffles with the family!</p>
+                    <p>Pick up during our monthly window (First Sunday, 9-11am) and enjoy complimentary coffee and fresh waffles with the family! Please order at least 5 days prior to pickup.</p>
                 </div>
 
                 <div id="delivery-info" class="delivery-info" style="display: none;">
                     <h4>Delivery Options</h4>
                     <p>Free delivery within 15 minutes drive</p>
                     <p>$20 delivery within 30 minutes drive</p>
-                    <p>$20 shipping within California</p>
                 </div>
 
                 <div class="form-row">
@@ -782,9 +1157,46 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="address-group" style="display: none;">
                     <label for="address">Address (required for delivery)</label>
                     <input type="text" id="address" placeholder="123 Main St, Oakland, CA">
+                </div>
+
+                <div class="add-ons-section">
+                    <h4 style="font-size: 1.4rem; color: #1a1a1a; margin-bottom: 25px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; text-align: center;">Add-Ons</h4>
+                    <div class="add-ons-grid">
+                        <label class="add-on-item">
+                            <input type="checkbox" id="coffee-addon" value="10">
+                            <span class="add-on-details">
+                                <strong>Artisan Coffee</strong> - $10<br>
+                                <small>8oz bag, pairs perfectly with our honey</small>
+                            </span>
+                        </label>
+                        
+                        <label class="add-on-item">
+                            <input type="checkbox" id="waffles-addon" value="10">
+                            <span class="add-on-details">
+                                <strong>Homemade Frozen Waffles</strong> - $10<br>
+                                <small>Bag of 12, made with sourdough & honey</small>
+                            </span>
+                        </label>
+                        
+                        <label class="add-on-item">
+                            <input type="checkbox" id="honey-addon" value="12">
+                            <span class="add-on-details">
+                                <strong>Extra Raw Honey</strong> - $12<br>
+                                <small>Additional 10oz jar</small>
+                            </span>
+                        </label>
+                        
+                        <label class="add-on-item">
+                            <input type="checkbox" id="balm-addon" value="4.50">
+                            <span class="add-on-details">
+                                <strong>Lemon Bee Balm</strong> - $4.50<br>
+                                <small>Made with love by the kids</small>
+                            </span>
+                        </label>
+                    </div>
                 </div>
 
                 <button class="order-btn" onclick="processOrder()">Order Now - Pay on Delivery</button>
@@ -805,11 +1217,27 @@
 
     <section id="story" class="family-story">
         <div class="container">
+            <!-- Origin Story -->
+            <div class="origin-story">
+                <h3>How It All Started</h3>
+                <p>When our youngest was born, he had severe allergies, and we thought a little local honey could help. It really began with a love of fresh seasonal food and a book called "How to Grow a Little Fruit Tree" by Ann Ralph.</p>
+                
+                <p>After planting a few trees on a steep hill, we realized they would benefit from pollinators. Learning a little bit at a time, we grew from 1 hive and a few trees to adding early, mid and late-season varieties of most types of fruit trees.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>One fun fact:</strong> We got bees and chickens the same weekend! Dad always hoped to try having chickens, but after mom learned about a store that would let you buy chicks and sell them back after helping them grow to about 12 weeks old, the stakes were low. When she said she was potentially interested, Dad wanted to move on it immediately before any chance for a change of heart!</p>
+                    
+                    <p>Coincidentally, when Dad first learned about bees, the season to start was only 2 weeks away... and the nucleus happened to be ready that same weekend! Spring 2024 was a particularly busy time :)</p>
+                </div>
+                
+                <p>Now we have cherries, apricots, peaches, persimmons, avocados, blueberries, guava, pears, apples, berries, grapes, figs, citrus and some unusual fruits like jostaberries and Dad's childhood favorite Cherimoya. The goal of this project is to help the boys foster a love for working with their hands, putting roots into their community and developing appreciation for the world around them.</p>
+            </div>
+
             <div class="story-grid">
                 <div class="story-text">
                     <h3>Meet the Family</h3>
-                    <p>The O-Boys, Minnie, and Dan, along with their loyal dog Oreo, have created something special on their Oakland farm. With 10 happy chickens, 5 thriving beehives, and 50 diverse fruit trees including apricots, peaches, avocados, citrus and guava, every day is an adventure in sustainable living.</p>
-                    <p>Our children are hands-on in every aspect - from gathering eggs and harvesting honey to helping bake fresh goods and tend to our fruit trees. This isn't just a business; it's our way of life and learning.</p>
+                    <p>The O-Boys, Minnie, and Dan, along with their loyal dog Oreo, have created something special on their Oakland farm. With 10 happy chickens, 5 thriving beehives, and 50+ diverse fruit trees, every day is an adventure in sustainable living.</p>
+                    <p>Now the boys love their "Fluffies" - which are our two silkie chickens, and our bees are surprisingly sweet. Our children are hands-on in every aspect - from gathering eggs and harvesting honey to helping bake fresh goods and tend to our fruit trees.</p>
                 </div>
                 <div class="story-image">
                     <img src="images/boys-beesuits.JPG" alt="Meet the family - kids in bee suits" style="width: 100%; height: 100%; object-fit: cover;">
@@ -821,9 +1249,9 @@
                     Photo: Family feeding chickens together, Oreo playfully chasing around the yard
                 </div>
                 <div class="story-text">
-                    <h3>Learning & Growing Together</h3>
-                    <p>Every afternoon we collect eggs and help improve something on the farm - like feeding leftovers to the chickens, weeding, or taking care of the plants. One of the O-Boys discovered how bees communicate through their waggle dance while the other learned why biodiversity helps our orchard thrive. The kids have mastered measuring ingredients for sourdough and understand the timing of seasonal harvests.</p>
-                    <p>From learning responsibility through daily animal care to understanding soil health and pollination cycles, our farm is a living classroom where scientific discovery and practical life skills go hand in hand.</p>
+                    <h3>Our First Business Adventure</h3>
+                    <p>Our first year of beekeeping had a surprisingly good harvest. Outside of gifting to friends and family, our first entrepreneurial customer we hoped to partner with was our local gas station. When we approached them with a business proposal to display our jars and split the profits 50/50... their first question was "how much honey do you have?" - but they just wanted it for themselves!</p>
+                    <p>This is when we knew this would be a fun family adventure! Every afternoon we collect eggs and help improve something on the farm - feeding leftovers to the chickens, weeding, or taking care of the plants. The kids have learned everything from bee communication through waggle dances to understanding why biodiversity helps our orchard thrive.</p>
                 </div>
             </div>
 
@@ -835,19 +1263,20 @@
                 
                 <div class="feature">
                     <h4>10 Happy Chickens</h4>
-                    <p>Free-range hens providing fresh, nutritious eggs daily while teaching responsibility and animal care</p>
+                    <p>Including our beloved "Fluffy" silkies, providing fresh, nutritious eggs daily while teaching responsibility and animal care</p>
                 </div>
                 
                 <div class="feature">
-                    <h4>50 Fruit Trees</h4>
-                    <p>A diverse orchard of apricots, peaches, avocados, citrus, and guava providing seasonal abundance</p>
+                    <h4>50+ Fruit Trees</h4>
+                    <p>A diverse orchard including unusual varieties like jostaberries and Cherimoya, providing seasonal abundance year-round</p>
                 </div>
             </div>
 
             <div class="gathering-section">
                 <div class="gathering-content">
                     <h3>Fall Solstice Gathering</h3>
-                    <p>Join our family for a special day at the farm! Experience farm-to-table dining, tour our orchards and beehives, and let the kids play with our chickens while enjoying our trampoline and sandbox.</p>
+                    <p><strong>Saturday, September 20, 2025</strong></p>
+                    <p>Join our family for a special day at the farm! Experience farm-to-table dining, tour our orchards and beehives, and let the kids play with our chickens while enjoying our trampoline and sandbox. We'd love for attendees to bring something they've created or grown to share during our show-and-tell session!</p>
                     <div class="gathering-details">
                         <div class="gathering-info">
                             <h4>What's Included</h4>
@@ -883,8 +1312,20 @@
                 
                 <div class="product">
                     <h4>Farm Fresh Eggs</h4>
-                    <p>Additional eggs from our free-range, happy hens<br>
+                    <p>Additional eggs from our happy hens<br>
                     $1 per egg</p>
+                </div>
+
+                <div class="product">
+                    <h4>Artisan Coffee</h4>
+                    <p>Carefully sourced and roasted to pair perfectly with our honey<br>
+                    8oz bag - $10</p>
+                </div>
+
+                <div class="product">
+                    <h4>Homemade Frozen Waffles</h4>
+                    <p>Made with sourdough, yogurt, flax, oat milk, butter and a touch of our honey<br>
+                    Bag of 12 - $10</p>
                 </div>
                 
                 <div class="product">
@@ -910,6 +1351,48 @@
         </div>
     </section>
 
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h3>Questions from Friends & Family</h3>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How fresh are the eggs?</h4>
+                    <p>Fresh as it gets! We collect eggs daily from our 10 happy hens. Your eggs are gathered within 7 days of delivery. Keep them out at room temperature for up to 3 weeks. Best practice is to wash them right before using with non-fragrant soap.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What if I'm not home for delivery?</h4>
+                    <p>We'll leave your box in a safe spot or coordinate a good drop-off time via text. For farm pickup, we're flexible if you can't make the monthly window.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Can I pause or skip a delivery?</h4>
+                    <p>Absolutely! Just email us at least 5 days before your next delivery. Life happens, and we want this to work for your family's schedule.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What's included in 'seasonal produce'?</h4>
+                    <p>Whatever's ripe in our orchard! Could be apricots, peaches, avocados, citrus, or guava depending on the season. We love surprising you with what's at peak flavor.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What is the day in the life of your chickens?</h4>
+                    <p>Our chickens are as happy and safe as can be. We live in a pretty hawk-patrolled area - so keeping them safe inside an extended chicken run for most of the day, and they spend about an hour a day free-ranging in the backyard eating bugs and weeds, and an occasional fruit/blueberry. Sometimes they lounge in the sun, sometimes chilling under some trees. They have lots to explore, and lots to say.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Is the honey raw and unfiltered?</h4>
+                    <p>Completely raw with only minimal filtering to remove big chunks of wax - straight from our hives to your jar. We use organic and natural pest control methods, and the kids help with the whole process. We can't label it organic since bees have a 3-mile range and we can't guarantee all the flowers they visit follow our same natural approach, but we do everything we can on our end!</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>How do the kids help with the business?</h4>
+                    <p>They're our partners! The youngest O loves roasting coffee beans, helping with babka, and collecting eggs, while the eldest O loves crafting, hanging with the 'Fluffy' chickens, and gardening. They both advise us on the menu and keep an eye out for ripe fruits. Every sale helps fund their education accounts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -917,7 +1400,6 @@
                     <h4>Contact Us</h4>
                     <p>Oakland, CA</p>
                     <p>hello@chickabeeshoney.com</p>
-                    <p>(555) 123-BEES</p>
                 </div>
                 
                 <div class="footer-section">
@@ -931,7 +1413,6 @@
                     <h4>Delivery Hours</h4>
                     <p>Free within 15 min drive</p>
                     <p>$20 within 30 mins</p>
-                    <p>Shipping within California $20</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -944,12 +1425,10 @@
         let selectedBox = '';
 
         function selectBox(boxType) {
-            // Remove previous selection
             document.querySelectorAll('.box-option').forEach(box => {
                 box.classList.remove('selected');
             });
             
-            // Add selection to clicked box
             event.target.closest('.box-option').classList.add('selected');
             selectedBox = boxType;
         }
@@ -975,13 +1454,16 @@
             const deliverySelect = document.getElementById('delivery');
             const pickupInfo = document.getElementById('pickup-info');
             const deliveryInfo = document.getElementById('delivery-info');
+            const addressGroup = document.getElementById('address-group');
             
             if (deliverySelect.value === 'pickup') {
                 pickupInfo.style.display = 'block';
                 deliveryInfo.style.display = 'none';
+                addressGroup.style.display = 'none';
             } else {
                 pickupInfo.style.display = 'none';
                 deliveryInfo.style.display = 'block';
+                addressGroup.style.display = 'block';
             }
         }
 
@@ -997,23 +1479,13 @@
             const successMessage = form.querySelector('.signup-success');
             const submitButton = form.querySelector('button');
             
-            // Disable button and show loading
             submitButton.textContent = 'Joining...';
             submitButton.disabled = true;
             
-            // Here you would typically send to your email service
-            // For now, we'll simulate success and suggest they email you
             setTimeout(() => {
                 successMessage.style.display = 'block';
                 form.querySelector('input').style.display = 'none';
                 submitButton.style.display = 'none';
-                
-                // Optional: Send email to yourself with the signup
-                const emailBody = `New newsletter signup from ${location} section:%0D%0AEmail: ${email}%0D%0ALocation: ${location}`;
-                
-                // Automatically create an email for you to send (optional)
-                // window.open(`mailto:hello@chickabeeshoney.com?subject=New Newsletter Signup&body=${emailBody}`);
-                
             }, 1000);
         }
 
@@ -1039,34 +1511,54 @@
                 return;
             }
 
-            // Determine pricing based on frequency
             let boxPrice;
-            let discountNote = '';
             if (frequency === 'monthly') {
-                boxPrice = selectedBox === 'essential' ? '$40' : '$70';
-                discountNote = ' (monthly discount applied)';
+                boxPrice = selectedBox === 'essential' ? 40 : 70;
             } else if (frequency === 'quarterly') {
-                boxPrice = selectedBox === 'essential' ? '$45' : '$75';
-                discountNote = ' ($5 quarterly discount applied)';
+                boxPrice = selectedBox === 'essential' ? 45 : 75;
             } else {
-                boxPrice = selectedBox === 'essential' ? '$50' : '$80';
+                boxPrice = selectedBox === 'essential' ? 50 : 80;
             }
 
+            // Calculate add-ons
+            let addOnsTotal = 0;
+            let addOnsList = [];
+            
+            if (document.getElementById('coffee-addon').checked) {
+                addOnsTotal += 10;
+                addOnsList.push('Coffee ($10)');
+            }
+            if (document.getElementById('waffles-addon').checked) {
+                addOnsTotal += 10;
+                addOnsList.push('Waffles ($10)');
+            }
+            if (document.getElementById('honey-addon').checked) {
+                addOnsTotal += 12;
+                addOnsList.push('Extra Honey ($12)');
+            }
+            if (document.getElementById('balm-addon').checked) {
+                addOnsTotal += 4.50;
+                addOnsList.push('Bee Balm ($4.50)');
+            }
+
+            const totalPrice = boxPrice + addOnsTotal;
             const deliveryText = delivery === 'pickup' ? 'farm pickup (includes coffee & waffles!)' : 'delivery';
             const frequencyText = frequency === 'onetime' ? 'one-time' : frequency;
+            const addOnsText = addOnsList.length > 0 ? ` + ${addOnsList.join(', ')}` : '';
             
-            alert(`Thank you ${name}! Your ${selectedBox} box (${boxPrice}) for ${frequencyText} ${deliveryText} has been received. We'll contact you soon to arrange payment and delivery details.`);
+            alert(`Thank you ${name}! Your ${selectedBox} box (${boxPrice})${addOnsText} for ${frequencyText} ${deliveryText} has been received. Total: ${totalPrice.toFixed(2)}. We'll contact you soon to arrange payment and delivery details.`);
         }
 
-        // Smooth scrolling for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
