@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,25 +59,6 @@
             align-items: center;
             justify-content: center;
             border: 2px solid #1a1a1a;
-        }
-
-        .chicken-drawing {
-            width: 30px;
-            height: 30px;
-            border: 2px solid #1a1a1a;
-            border-radius: 50% 0 50% 50%;
-            position: relative;
-        }
-
-        .chicken-drawing::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            right: 10px;
-            width: 8px;
-            height: 8px;
-            border: 2px solid #1a1a1a;
-            border-radius: 0 50% 0 50%;
         }
 
         .logo-text h1 {
@@ -159,10 +140,42 @@
             line-height: 1.6;
         }
 
-        /* Order Section */
+        /* Order Section - Updated */
         .order-section {
             padding: 60px 0;
             background: #fff;
+            position: relative;
+        }
+
+        .annual-goal-banner {
+            background: #f5e6a3;
+            border: 1px solid #e8e6e1;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .annual-goal-banner h3 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .goal-progress {
+            background: #e8e6e1;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .goal-progress-fill {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+            height: 100%;
+            width: 10%; /* This would be updated dynamically */
+            transition: width 0.5s ease;
         }
 
         .order-form {
@@ -205,7 +218,8 @@
         }
 
         .form-group select,
-        .form-group input {
+        .form-group input,
+        .form-group textarea {
             padding: 15px;
             border: 1px solid #e8e6e1;
             background: white;
@@ -215,7 +229,8 @@
         }
 
         .form-group select:focus,
-        .form-group input:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: #1a1a1a;
         }
@@ -275,6 +290,100 @@
             border-bottom: none;
         }
 
+        /* Payment Methods Section */
+        .payment-methods-section {
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .payment-methods-section h4 {
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .payment-method {
+            background: #faf9f7;
+            border: 2px solid #e8e6e1;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .payment-method:hover,
+        .payment-method.selected {
+            background: #f5e6a3;
+            border-color: #1a1a1a;
+        }
+
+        .payment-method h5 {
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .payment-method .fee-info {
+            color: #00b894;
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .payment-method .description {
+            color: #666;
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+
+        /* Payment Details */
+        .payment-details {
+            display: none;
+            background: #f5e6a3;
+            border: 1px solid #e8e6e1;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .payment-details h5 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .payment-info {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e8e6e1;
+            margin-bottom: 15px;
+        }
+
+        .payment-info strong {
+            color: #1a1a1a;
+            font-size: 1rem;
+        }
+
         .delivery-info {
             background: #f5e6a3;
             padding: 30px;
@@ -318,6 +427,52 @@
             line-height: 1.6;
         }
 
+        .add-ons-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border: 1px solid #e8e6e1;
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .add-on-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            border: 1px solid #e8e6e1;
+            background: #faf9f7;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-on-item:hover {
+            border-color: #1a1a1a;
+            background: white;
+        }
+
+        .add-on-item input[type="checkbox"] {
+            margin-top: 5px;
+            transform: scale(1.2);
+        }
+
+        .add-on-details strong {
+            color: #1a1a1a;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .add-on-details small {
+            color: #666;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
         .order-btn {
             background: #1a1a1a;
             color: white;
@@ -338,6 +493,73 @@
             background: #333;
         }
 
+        .order-btn:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+
+        /* Order Summary */
+        .order-summary {
+            background: #f5e6a3;
+            border: 1px solid #e8e6e1;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .order-summary h4 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .order-details {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e8e6e1;
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #00b894;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h4 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Continue with original styles... */
+        
         /* Family Story Section */
         .family-story {
             padding: 60px 0;
@@ -447,104 +669,73 @@
             line-height: 1.8;
         }
 
-        /* Gathering Section */
-        .gathering-section {
-            margin-top: 60px;
-            background: white;
+        /* Newsletter Signup */
+        .newsletter-signup {
+            background: #f5e6a3;
+            padding: 40px;
+            margin: 40px 0;
             border: 1px solid #e8e6e1;
-            padding: 50px;
+            text-align: center;
         }
 
-        .gathering-content h3 {
-            font-size: 2.5rem;
+        .newsletter-signup h4 {
             color: #1a1a1a;
-            margin-bottom: 30px;
-            font-weight: 300;
-            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            text-align: center;
         }
 
-        .gathering-content > p {
-            font-size: 1.2rem;
+        .newsletter-signup p {
             color: #666;
-            text-align: center;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
-        .gathering-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+        .signup-form {
+            display: flex;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
             align-items: center;
         }
 
-        .gathering-info h4 {
-            font-size: 1.4rem;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .gathering-info ul {
-            list-style: none;
-        }
-
-        .gathering-info li {
-            padding: 8px 0;
-            color: #666;
-            font-size: 1rem;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .gathering-info li:last-child {
-            border-bottom: none;
-        }
-
-        .gathering-booking {
-            text-align: center;
-            background: #f5e6a3;
-            padding: 40px;
+        .signup-form input {
+            flex: 1;
+            padding: 12px 15px;
             border: 1px solid #e8e6e1;
+            background: white;
+            font-size: 1rem;
+            font-family: inherit;
         }
 
-        .gathering-price {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .gathering-limit {
-            color: #666;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        .gathering-btn {
+        .signup-form button {
             background: #1a1a1a;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 20px;
             border: none;
             font-size: 1rem;
-            font-weight: 400;
             cursor: pointer;
             transition: all 0.3s;
             letter-spacing: 1px;
             text-transform: uppercase;
             font-family: inherit;
+            white-space: nowrap;
         }
 
-        .gathering-btn:hover {
+        .signup-form button:hover {
             background: #333;
         }
+
+        .signup-success {
+            display: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        /* Products, Mission, FAQ, Footer sections - keeping original styles */
         .products {
             padding: 100px 0;
             background: white;
@@ -620,289 +811,6 @@
             line-height: 1.8;
         }
 
-        /* FAQ Section */
-        .faq-section {
-            padding: 60px 0;
-            background: white;
-            border-bottom: 1px solid #e8e6e1;
-        }
-
-        .faq-section h3 {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            text-align: center;
-            margin-bottom: 60px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-        }
-
-        .faq-item {
-            background: #faf9f7;
-            border: 1px solid #e8e6e1;
-            padding: 30px;
-        }
-
-        .faq-item h4 {
-            font-size: 1.2rem;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .faq-item p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* Social Proof Section */
-        .social-proof {
-            padding: 60px 0;
-            background: #f5e6a3;
-            border-bottom: 1px solid #e8e6e1;
-        }
-
-        .social-proof h3 {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .testimonial {
-            background: white;
-            border: 1px solid #e8e6e1;
-            padding: 30px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        .testimonial p {
-            font-size: 1.1rem;
-            color: #1a1a1a;
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .testimonial .customer {
-            color: #666;
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
-
-        .impact-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: white;
-            border: 1px solid #e8e6e1;
-            padding: 30px 20px;
-            border-radius: 8px;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            color: #1a1a1a;
-            font-weight: 400;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .stat-note {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-        }
-
-        .fun-fact {
-            background: white;
-            border: 1px solid #e8e6e1;
-            padding: 30px;
-            text-align: center;
-            border-radius: 8px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .fun-fact h4 {
-            font-size: 1.3rem;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .fun-fact p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Seasonal Specials Section */
-        .seasonal-specials {
-            padding: 60px 0;
-            background: white;
-            border-bottom: 1px solid #e8e6e1;
-        }
-
-        .seasonal-specials h3 {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            text-align: center;
-            margin-bottom: 60px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .specials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .special-box {
-            background: #faf9f7;
-            border: 1px solid #e8e6e1;
-            padding: 40px;
-            border-radius: 8px;
-        }
-
-        .special-box h4 {
-            font-size: 1.6rem;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .special-timing {
-            background: #f5e6a3;
-            padding: 8px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-        }
-
-        .special-content ul {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .special-content li {
-            padding: 8px 0;
-            color: #666;
-            border-left: 3px solid #f5e6a3;
-            padding-left: 15px;
-            margin-bottom: 8px;
-        }
-
-        .special-note {
-            font-style: italic;
-            color: #666;
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.95rem;
-        }
-
-        /* Referral Program */
-        .referral-program {
-            background: #f5e6a3;
-            padding: 50px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .referral-program h4 {
-            font-size: 2rem;
-            color: #1a1a1a;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .referral-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .referral-tier {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 8px;
-            border: 1px solid #e8e6e1;
-        }
-
-        .referral-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .referral-tier h5 {
-            font-size: 1.2rem;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .referral-tier p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .referral-contact {
-            color: #1a1a1a;
-            font-weight: 500;
-            margin-top: 20px;
-        }
-
-        /* Newsletter Final Section */
-        .newsletter-final {
-            padding: 40px 0;
-            background: #faf9f7;
-            border-bottom: 1px solid #e8e6e1;
-        }
-
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -937,119 +845,6 @@
             padding-top: 30px;
             border-top: 1px solid #333;
             color: #999;
-        }
-
-        /* Newsletter Signup */
-        .newsletter-signup {
-            background: #f5e6a3;
-            padding: 40px;
-            margin: 40px 0;
-            border: 1px solid #e8e6e1;
-            text-align: center;
-        }
-
-        .newsletter-signup h4 {
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .newsletter-signup p {
-            color: #666;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .signup-form {
-            display: flex;
-            gap: 15px;
-            max-width: 400px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .signup-form input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #e8e6e1;
-            background: white;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .signup-form button {
-            background: #1a1a1a;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-family: inherit;
-            white-space: nowrap;
-        }
-
-        .signup-form button:hover {
-            background: #333;
-        }
-
-        .signup-success {
-            display: none;
-            color: #1a1a1a;
-            font-weight: 500;
-            margin-top: 15px;
-        }
-
-        /* Add-ons Section */
-        .add-ons-section {
-            margin: 40px 0;
-            padding: 30px;
-            background: white;
-            border: 1px solid #e8e6e1;
-        }
-
-        .add-ons-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .add-on-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 20px;
-            border: 1px solid #e8e6e1;
-            background: #faf9f7;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .add-on-item:hover {
-            border-color: #1a1a1a;
-            background: white;
-        }
-
-        .add-on-item input[type="checkbox"] {
-            margin-top: 5px;
-            transform: scale(1.2);
-        }
-
-        .add-on-details strong {
-            color: #1a1a1a;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .add-on-details small {
-            color: #666;
-            font-style: italic;
-            line-height: 1.4;
         }
 
         /* Responsive Design */
@@ -1103,11 +898,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .gathering-details {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
             .signup-form {
                 flex-direction: column;
                 gap: 15px;
@@ -1122,7 +912,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .faq-grid {
+            .payment-methods {
                 grid-template-columns: 1fr;
             }
         }
@@ -1162,139 +952,31 @@
         </div>
     </section>
 
-    <!-- Newsletter Signup 3 - Before Footer -->
-    <section class="newsletter-final">
-        <div class="container">
-            <div class="newsletter-signup">
-                <h4>Join Our Farm Family</h4>
-                <p>Be the first to know about seasonal boxes, farm gatherings, and what the O-Boys are learning!</p>
-                <form class="signup-form" onsubmit="submitNewsletter(event, 'footer')">
-                    <input type="email" placeholder="your@email.com" required>
-                    <button type="submit">Join</button>
-                    <div class="signup-success">Welcome to the farm family! We'll be in touch soon.</div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="seasonal-specials">
-        <div class="container">
-            <h3>Seasonal Specials</h3>
-            
-            <div class="specials-grid">
-                <div class="special-box">
-                    <h4>Back-to-School Family Box</h4>
-                    <div class="special-timing">Available Mid-August</div>
-                    <div class="special-content">
-                        <p><strong>Perfect for busy school mornings and curious minds!</strong></p>
-                        <ul>
-                            <li>Extra granola and lunch-friendly items</li>
-                            <li>Fun crafts and science projects</li>
-                            <li>Recommended library book list</li>
-                            <li>Seeds to start your own growing adventure</li>
-                            <li>All regular box contents plus learning extras</li>
-                        </ul>
-                        <p class="special-note">*Help your kids start the school year connected to where their food comes from*</p>
-                    </div>
-                </div>
-
-                <div class="special-box">
-                    <h4>Holiday Gift Collections</h4>
-                    <div class="special-timing">Thanksgiving • Christmas • Hanukkah • Valentine's Day</div>
-                    <div class="special-content">
-                        <p><strong>Share the sweetness with family and friends!</strong></p>
-                        <ul>
-                            <li>Holiday-themed baked goods</li>
-                            <li>Honey & Bee Balm gift sets</li>
-                            <li>Festive packaging and ribbons</li>
-                            <li>Personal gift messages included</li>
-                            <li>Perfect for teachers, neighbors, or long-distance family</li>
-                        </ul>
-                        <p class="special-note">*Nothing says "made with love" like farm-fresh provisions*</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="referral-program">
-                <h4>Share the Farm Love</h4>
-                <div class="referral-tiers">
-                    <div class="referral-tier">
-                        <div class="referral-icon">🍯</div>
-                        <h5>Refer a Friend</h5>
-                        <p>You both get an extra jar of honey and priority invites to farm gatherings</p>
-                    </div>
-                    <div class="referral-tier">
-                        <div class="referral-icon">🚜</div>
-                        <h5>Refer 3 Friends</h5>
-                        <p>Get a private farm tour for your family</p>
-                    </div>
-                    <div class="referral-tier">
-                        <div class="referral-icon">🎁</div>
-                        <h5>Loyalty Reward</h5>
-                        <p>Buy 10 boxes, get 1 free</p>
-                    </div>
-                </div>
-                <p class="referral-contact">Contact us at hello@chickabeeshoney.com to start sharing!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="social-proof">
-        <div class="container">
-            <h3>What Our Community Says</h3>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p>"This is some of the best honey we've ever had"</p>
-                    <span class="customer">- Oakland Neighbor</span>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"Fresh eggs taste amazing - the darker yolks and stronger shells really make them stand out!"</p>
-                    <span class="customer">- Local Family</span>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"The babka is better than some of the dry versions I've had in NYC."</p>
-                    <span class="customer">- Friend & Fellow Foodie</span>
-                </div>
-            </div>
-
-            <div class="impact-stats">
-                <div class="stat-item">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Families Served</div>
-                    <div class="stat-note">Friends, neighbors & new friends too!</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Gallons of Honey</div>
-                    <div class="stat-note">First year harvest success</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">Eggs Daily</div>
-                    <div class="stat-note">From our happy hens</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-number">2026</div>
-                    <div class="stat-label">Colorful Eggs Coming</div>
-                    <div class="stat-note">Funky looking styles ahead!</div>
-                </div>
-            </div>
-
-            <div class="fun-fact">
-                <h4>Fun Egg Fact!</h4>
-                <p>All colored eggs have the same nutritional value - the darker yolks are more for aesthetics than health, but they sure do make your breakfast Instagram-worthy! 📸</p>
-            </div>
-        </div>
-    </section>
-
     <section id="order" class="order-section">
         <div class="container">
+            <!-- Annual Goal Banner -->
+            <div class="annual-goal-banner">
+                <h3>2025 Goal: $12,000 for the O-Boys' Roth IRAs</h3>
+                <div class="goal-progress">
+                    <div class="goal-progress-fill" id="goal-progress-fill"></div>
+                </div>
+                <p>Every purchase helps fund their financial future!</p>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="success-message">
+                <h4>Order Received Successfully!</h4>
+                <p>Thank you for supporting the O-Boys' future. We'll contact you within 24 hours to confirm your order and arrange payment/delivery details.</p>
+            </div>
+
+            <!-- Order Summary (Hidden initially) -->
+            <div class="order-summary" id="order-summary" style="display: none;">
+                <h4>Your Order Summary</h4>
+                <div class="order-details" id="order-details">
+                    <!-- Order items will be populated here -->
+                </div>
+            </div>
+            
             <div class="order-form">
                 <h3>Fresh Box</h3>
                 
@@ -1367,16 +1049,22 @@
                     </div>
                 </div>
 
-                <div class="form-group" id="address-group" style="display: none;">
-                    <label for="address">Address (required for delivery)</label>
-                    <input type="text" id="address" placeholder="123 Main St, Oakland, CA">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group" id="address-group" style="display: none;">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" placeholder="123 Main St, Oakland, CA"></textarea>
+                    </div>
                 </div>
 
                 <div class="add-ons-section">
                     <h4 style="font-size: 1.4rem; color: #1a1a1a; margin-bottom: 25px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; text-align: center;">Add-Ons</h4>
                     <div class="add-ons-grid">
                         <label class="add-on-item">
-                            <input type="checkbox" id="coffee-addon" value="10">
+                            <input type="checkbox" id="coffee-addon" value="10" onchange="updateOrderSummary()">
                             <span class="add-on-details">
                                 <strong>Artisan Coffee</strong> - $10<br>
                                 <small>8oz bag, pairs perfectly with our honey</small>
@@ -1384,7 +1072,7 @@
                         </label>
                         
                         <label class="add-on-item">
-                            <input type="checkbox" id="waffles-addon" value="10">
+                            <input type="checkbox" id="waffles-addon" value="10" onchange="updateOrderSummary()">
                             <span class="add-on-details">
                                 <strong>Homemade Frozen Waffles</strong> - $10<br>
                                 <small>Bag of 12, made with sourdough & honey</small>
@@ -1392,7 +1080,7 @@
                         </label>
                         
                         <label class="add-on-item">
-                            <input type="checkbox" id="honey-addon" value="12">
+                            <input type="checkbox" id="honey-addon" value="12" onchange="updateOrderSummary()">
                             <span class="add-on-details">
                                 <strong>Extra Raw Honey</strong> - $12<br>
                                 <small>Additional 10oz jar</small>
@@ -1400,7 +1088,7 @@
                         </label>
                         
                         <label class="add-on-item">
-                            <input type="checkbox" id="balm-addon" value="4.50">
+                            <input type="checkbox" id="balm-addon" value="4.50" onchange="updateOrderSummary()">
                             <span class="add-on-details">
                                 <strong>Lemon Bee Balm</strong> - $4.50<br>
                                 <small>Made with love by the kids</small>
@@ -1409,10 +1097,103 @@
                     </div>
                 </div>
 
-                <button class="order-btn" onclick="processOrder()">Order Now - Pay on Delivery</button>
+                <!-- Payment Methods Section -->
+                <div class="payment-methods-section">
+                    <h4>Choose Payment Method</h4>
+                    <p style="text-align: center; color: #666; margin-bottom: 25px;">We keep fees low to maximize the O-Boys' savings!</p>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method" onclick="selectPayment('cash')">
+                            <h5>Cash</h5>
+                            <div class="fee-info">NO FEES</div>
+                            <p class="description">Pay on delivery or pickup</p>
+                        </div>
+
+                        <div class="payment-method" onclick="selectPayment('check')">
+                            <h5>Check</h5>
+                            <div class="fee-info">NO FEES</div>
+                            <p class="description">Make payable to "Chickabees Honey"</p>
+                        </div>
+
+                        <div class="payment-method" onclick="selectPayment('zelle')">
+                            <h5>Zelle</h5>
+                            <div class="fee-info">NO FEES</div>
+                            <p class="description">Bank-to-bank transfer</p>
+                        </div>
+
+                        <div class="payment-method" onclick="selectPayment('venmo')">
+                            <h5>Venmo</h5>
+                            <div class="fee-info">FREE (Friends & Family)</div>
+                            <p class="description">@ChickabeesHoney</p>
+                        </div>
+
+                        <div class="payment-method" onclick="selectPayment('paypal')">
+                            <h5>PayPal</h5>
+                            <div class="fee-info">FREE (Friends & Family)</div>
+                            <p class="description">hello@chickabeeshoney.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Payment Details (Hidden by default) -->
+                    <div class="payment-details" id="cash-details">
+                        <h5>Cash Payment</h5>
+                        <div class="payment-info">
+                            <p><strong>Perfect!</strong> No fees means more money for the O-Boys' Roth IRAs.</p>
+                            <p>Have exact change ready: <span id="cash-amount">$0.00</span></p>
+                            <p>We'll provide a handwritten receipt for your records</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="check-details">
+                        <h5>Check Payment</h5>
+                        <div class="payment-info">
+                            <p><strong>Make check payable to:</strong> "Chickabees Honey"</p>
+                            <p>Amount: <span id="check-amount">$0.00</span></p>
+                            <p>Mail to: [Your Address Here]</p>
+                            <p>Easy for our bookkeeping and your tax records</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="zelle-details">
+                        <h5>Zelle Payment</h5>
+                        <div class="payment-info">
+                            <p><strong>Send to:</strong> hello@chickabeeshoney.com</p>
+                            <p>Amount: <span id="zelle-amount">$0.00</span></p>
+                            <p>Memo: "Chickabees Order - [Your Name]"</p>
+                            <p>Instant and completely free!</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="venmo-details">
+                        <h5>Venmo Payment</h5>
+                        <div class="payment-info">
+                            <p><strong>Send to:</strong> @ChickabeesHoney</p>
+                            <p>Amount: <span id="venmo-amount">$0.00</span></p>
+                            <p>Note: "Chickabees Order - [Your Name]"</p>
+                            <p>Please select "Friends & Family" to avoid fees</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="paypal-details">
+                        <h5>PayPal Payment</h5>
+                        <div class="payment-info">
+                            <p><strong>Send to:</strong> hello@chickabeeshoney.com</p>
+                            <p>Amount: <span id="paypal-amount">$0.00</span></p>
+                            <p>Note: "Chickabees Order - [Your Name]"</p>
+                            <p>Please select "Friends & Family" to avoid fees</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="special-requests">Special Requests or Notes</label>
+                    <textarea id="special-requests" placeholder="Any allergies, delivery instructions, or questions?"></textarea>
+                </div>
+
+                <button class="order-btn" id="order-btn" onclick="processOrder()" disabled>Select Box & Payment Method to Continue</button>
             </div>
 
-            <!-- Newsletter Signup 2 - After Family Story -->
+            <!-- Newsletter Signup -->
             <div class="newsletter-signup">
                 <h4>Want Farm Updates?</h4>
                 <p>Get first access to farm boxes and follow our family's learning journey!</p>
@@ -1481,31 +1262,6 @@
                     <p>A diverse orchard including unusual varieties like jostaberries and Cherimoya, providing seasonal abundance year-round</p>
                 </div>
             </div>
-
-            <div class="gathering-section">
-                <div class="gathering-content">
-                    <h3>Fall Solstice Gathering</h3>
-                    <p><strong>Saturday, September 20, 2025</strong></p>
-                    <p>Join our family for a special day at the farm! Experience farm-to-table dining, tour our orchards and beehives, and let the kids play with our chickens while enjoying our trampoline and sandbox. We'd love for attendees to bring something they've created or grown to share during our show-and-tell session!</p>
-                    <div class="gathering-details">
-                        <div class="gathering-info">
-                            <h4>What's Included</h4>
-                            <ul>
-                                <li>Farmers market fresh lunch</li>
-                                <li>Guided farm tour</li>
-                                <li>Interactive chicken experience</li>
-                                <li>Kids games and activities</li>
-                                <li>Access to trampoline and sandbox</li>
-                            </ul>
-                        </div>
-                        <div class="gathering-booking">
-                            <div class="gathering-price">$20 per person</div>
-                            <p class="gathering-limit">Limited to 25 guests</p>
-                            <button class="gathering-btn" onclick="joinGathering()">Reserve Your Spot</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1561,48 +1317,6 @@
         </div>
     </section>
 
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h3>Questions from Friends & Family</h3>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>How fresh are the eggs?</h4>
-                    <p>Fresh as it gets! We collect eggs daily from our 10 happy hens. Your eggs are gathered within 7 days of delivery. Keep them out at room temperature for up to 3 weeks. Best practice is to wash them right before using with non-fragrant soap.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>What if I'm not home for delivery?</h4>
-                    <p>We'll leave your box in a safe spot or coordinate a good drop-off time via text. For farm pickup, we're flexible if you can't make the monthly window.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Can I pause or skip a delivery?</h4>
-                    <p>Absolutely! Just email us at least 5 days before your next delivery. Life happens, and we want this to work for your family's schedule.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>What's included in 'seasonal produce'?</h4>
-                    <p>Whatever's ripe in our orchard! Could be apricots, peaches, avocados, citrus, or guava depending on the season. We love surprising you with what's at peak flavor.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>What is the day in the life of your chickens?</h4>
-                    <p>Our chickens are as happy and safe as can be. We live in a pretty hawk-patrolled area - so keeping them safe inside an extended chicken run for most of the day, and they spend about an hour a day free-ranging in the backyard eating bugs and weeds, and an occasional fruit/blueberry. Sometimes they lounge in the sun, sometimes chilling under some trees. They have lots to explore, and lots to say.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Is the honey raw and unfiltered?</h4>
-                    <p>Completely raw with only minimal filtering to remove big chunks of wax - straight from our hives to your jar. We use organic and natural pest control methods, and the kids help with the whole process. We can't label it organic since bees have a 3-mile range and we can't guarantee all the flowers they visit follow our same natural approach, but we do everything we can on our end!</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>How do the kids help with the business?</h4>
-                    <p>They're our partners! The youngest O loves roasting coffee beans, helping with babka, and collecting eggs, while the eldest O loves crafting, hanging with the 'Fluffy' chickens, and gardening. They both advise us on the menu and keep an eye out for ripe fruits. Every sale helps fund their education accounts.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1633,6 +1347,8 @@
 
     <script>
         let selectedBox = '';
+        let selectedPaymentMethod = '';
+        let orderTotal = 0;
 
         function selectBox(boxType) {
             document.querySelectorAll('.box-option').forEach(box => {
@@ -1641,6 +1357,33 @@
             
             event.target.closest('.box-option').classList.add('selected');
             selectedBox = boxType;
+            updateOrderSummary();
+            updateOrderButton();
+        }
+
+        function selectPayment(method) {
+            // Remove selected class from all methods
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // Hide all payment details
+            document.querySelectorAll('.payment-details').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Select current method
+            event.target.closest('.payment-method').classList.add('selected');
+            selectedPaymentMethod = method;
+            
+            // Show relevant payment details
+            const detailsElement = document.getElementById(method + '-details');
+            if (detailsElement) {
+                detailsElement.classList.add('active');
+            }
+            
+            updatePaymentAmounts();
+            updateOrderButton();
         }
 
         function updatePricing() {
@@ -1657,6 +1400,123 @@
             } else {
                 essentialPrice.textContent = '$50';
                 deluxePrice.textContent = '$80';
+            }
+            
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            if (!selectedBox) return;
+            
+            const frequency = document.getElementById('frequency').value;
+            const delivery = document.getElementById('delivery').value;
+            
+            // Calculate base box price
+            let boxPrice;
+            if (frequency === 'monthly') {
+                boxPrice = selectedBox === 'essential' ? 40 : 70;
+            } else if (frequency === 'quarterly') {
+                boxPrice = selectedBox === 'essential' ? 45 : 75;
+            } else {
+                boxPrice = selectedBox === 'essential' ? 50 : 80;
+            }
+            
+            // Calculate add-ons
+            let addOnsTotal = 0;
+            let addOnsList = [];
+            
+            if (document.getElementById('coffee-addon').checked) {
+                addOnsTotal += 10;
+                addOnsList.push({name: 'Artisan Coffee', price: 10});
+            }
+            if (document.getElementById('waffles-addon').checked) {
+                addOnsTotal += 10;
+                addOnsList.push({name: 'Homemade Waffles', price: 10});
+            }
+            if (document.getElementById('honey-addon').checked) {
+                addOnsTotal += 12;
+                addOnsList.push({name: 'Extra Honey', price: 12});
+            }
+            if (document.getElementById('balm-addon').checked) {
+                addOnsTotal += 4.50;
+                addOnsList.push({name: 'Lemon Bee Balm', price: 4.50});
+            }
+            
+            // Calculate delivery fee
+            let deliveryFee = 0;
+            if (delivery === 'delivery') {
+                deliveryFee = 20; // Simplified - normally would calculate based on distance
+            }
+            
+            orderTotal = boxPrice + addOnsTotal + deliveryFee;
+            
+            // Update order summary display
+            const orderSummary = document.getElementById('order-summary');
+            const orderDetails = document.getElementById('order-details');
+            
+            let orderHTML = `
+                <div class="order-item">
+                    <span class="item-name">${selectedBox.charAt(0).toUpperCase() + selectedBox.slice(1)} Box (${frequency.charAt(0).toUpperCase() + frequency.slice(1)})</span>
+                    <span class="item-price">${boxPrice.toFixed(2)}</span>
+                </div>
+            `;
+            
+            addOnsList.forEach(addon => {
+                orderHTML += `
+                    <div class="order-item">
+                        <span class="item-name">${addon.name}</span>
+                        <span class="item-price">${addon.price.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            orderHTML += `
+                <div class="order-item">
+                    <span class="item-name">${delivery === 'pickup' ? 'Farm Pickup' : 'Home Delivery'}</span>
+                    <span class="item-price">${deliveryFee === 0 ? 'FREE' : ' + deliveryFee.toFixed(2)}</span>
+                </div>
+                <div class="order-item">
+                    <span class="item-name">TOTAL</span>
+                    <span class="item-price">${orderTotal.toFixed(2)}</span>
+                </div>
+            `;
+            
+            orderDetails.innerHTML = orderHTML;
+            orderSummary.style.display = 'block';
+            
+            updatePaymentAmounts();
+        }
+
+        function updatePaymentAmounts() {
+            const amountText = ' + orderTotal.toFixed(2);
+            const amountElements = [
+                'cash-amount',
+                'check-amount',
+                'zelle-amount', 
+                'venmo-amount',
+                'paypal-amount'
+            ];
+            
+            amountElements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = amountText;
+                }
+            });
+        }
+
+        function updateOrderButton() {
+            const orderBtn = document.getElementById('order-btn');
+            
+            if (selectedBox && selectedPaymentMethod) {
+                orderBtn.disabled = false;
+                orderBtn.textContent = `Complete Order - ${orderTotal.toFixed(2)}`;
+            } else if (selectedBox && !selectedPaymentMethod) {
+                orderBtn.disabled = true;
+                orderBtn.textContent = 'Select Payment Method to Continue';
+            } else {
+                orderBtn.disabled = true;
+                orderBtn.textContent = 'Select Box & Payment Method to Continue';
             }
         }
 
@@ -1675,10 +1535,102 @@
                 deliveryInfo.style.display = 'block';
                 addressGroup.style.display = 'block';
             }
+            
+            updateOrderSummary();
         }
 
-        function joinGathering() {
-            alert('Thank you for your interest in visiting our farm! Please email us at hello@chickabeeshoney.com or call (555) 123-BEES to reserve your spot. We host seasonal gatherings throughout the year and would love to welcome your family!');
+        function processOrder() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const frequency = document.getElementById('frequency').value;
+            const delivery = document.getElementById('delivery').value;
+            const address = document.getElementById('address').value;
+            const specialRequests = document.getElementById('special-requests').value;
+
+            if (!name || !email || !phone) {
+                alert('Please fill in your name, email, and phone number');
+                return;
+            }
+
+            if (delivery === 'delivery' && !address) {
+                alert('Please provide a delivery address');
+                return;
+            }
+
+            // Get add-ons
+            let addOns = [];
+            if (document.getElementById('coffee-addon').checked) addOns.push('Coffee');
+            if (document.getElementById('waffles-addon').checked) addOns.push('Waffles');
+            if (document.getElementById('honey-addon').checked) addOns.push('Extra Honey');
+            if (document.getElementById('balm-addon').checked) addOns.push('Bee Balm');
+
+            const orderData = {
+                customerName: name,
+                customerEmail: email,
+                customerPhone: phone,
+                boxType: selectedBox,
+                frequency: frequency,
+                deliveryMethod: delivery,
+                deliveryAddress: address,
+                addOns: addOns,
+                paymentMethod: selectedPaymentMethod,
+                specialRequests: specialRequests,
+                orderTotal: orderTotal,
+                orderDate: new Date().toISOString().split('T')[0]
+            };
+
+            // In a real implementation, you would send this to your server
+            console.log('Order Data:', orderData);
+
+            // Show success message
+            document.getElementById('success-message').classList.add('show');
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+
+            // Update progress bar (this would be calculated from actual sales)
+            updateGoalProgress(1200); // Example: $1,200 in sales so far
+
+            // Generate email content for yourself
+            generateOrderEmail(orderData);
+        }
+
+        function generateOrderEmail(orderData) {
+            const emailContent = `
+NEW CHICKABEES ORDER!
+
+Customer: ${orderData.customerName}
+Email: ${orderData.customerEmail}
+Phone: ${orderData.customerPhone}
+
+Order Details:
+- ${orderData.boxType.charAt(0).toUpperCase() + orderData.boxType.slice(1)} Box (${orderData.frequency})
+- Add-ons: ${orderData.addOns.length > 0 ? orderData.addOns.join(', ') : 'None'}
+- Delivery: ${orderData.deliveryMethod}
+- Address: ${orderData.deliveryAddress || 'N/A (Pickup)'}
+- Payment Method: ${orderData.paymentMethod.charAt(0).toUpperCase() + orderData.paymentMethod.slice(1)}
+- Total: ${orderData.orderTotal.toFixed(2)}
+
+Special Requests:
+${orderData.specialRequests || 'None'}
+
+Next Steps:
+1. Text customer to confirm order
+2. Send payment details for ${orderData.paymentMethod}
+3. Schedule delivery/pickup
+4. Record sale in financial tracker
+            `.trim();
+
+            console.log('Email to send to yourself:', emailContent);
+        }
+
+        function updateGoalProgress(currentSales) {
+            const goalAmount = 12000;
+            const percentage = (currentSales / goalAmount) * 100;
+            const progressFill = document.getElementById('goal-progress-fill');
+            
+            setTimeout(() => {
+                progressFill.style.width = Math.min(percentage, 100) + '%';
+            }, 500);
         }
 
         function submitNewsletter(event, location) {
@@ -1699,66 +1651,10 @@
             }, 1000);
         }
 
-        function processOrder() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const frequency = document.getElementById('frequency').value;
-            const delivery = document.getElementById('delivery').value;
-            const address = document.getElementById('address').value;
+        // Initialize with some progress
+        updateGoalProgress(1200);
 
-            if (!selectedBox) {
-                alert('Please select a box option (Essential or Deluxe)');
-                return;
-            }
-
-            if (!name || !email) {
-                alert('Please fill in your name and email address');
-                return;
-            }
-
-            if (delivery === 'delivery' && !address) {
-                alert('Please provide a delivery address');
-                return;
-            }
-
-            let boxPrice;
-            if (frequency === 'monthly') {
-                boxPrice = selectedBox === 'essential' ? 40 : 70;
-            } else if (frequency === 'quarterly') {
-                boxPrice = selectedBox === 'essential' ? 45 : 75;
-            } else {
-                boxPrice = selectedBox === 'essential' ? 50 : 80;
-            }
-
-            // Calculate add-ons
-            let addOnsTotal = 0;
-            let addOnsList = [];
-            
-            if (document.getElementById('coffee-addon').checked) {
-                addOnsTotal += 10;
-                addOnsList.push('Coffee ($10)');
-            }
-            if (document.getElementById('waffles-addon').checked) {
-                addOnsTotal += 10;
-                addOnsList.push('Waffles ($10)');
-            }
-            if (document.getElementById('honey-addon').checked) {
-                addOnsTotal += 12;
-                addOnsList.push('Extra Honey ($12)');
-            }
-            if (document.getElementById('balm-addon').checked) {
-                addOnsTotal += 4.50;
-                addOnsList.push('Bee Balm ($4.50)');
-            }
-
-            const totalPrice = boxPrice + addOnsTotal;
-            const deliveryText = delivery === 'pickup' ? 'farm pickup (includes coffee & waffles!)' : 'delivery';
-            const frequencyText = frequency === 'onetime' ? 'one-time' : frequency;
-            const addOnsText = addOnsList.length > 0 ? ` + ${addOnsList.join(', ')}` : '';
-            
-            alert(`Thank you ${name}! Your ${selectedBox} box (${boxPrice})${addOnsText} for ${frequencyText} ${deliveryText} has been received. Total: ${totalPrice.toFixed(2)}. We'll contact you soon to arrange payment and delivery details.`);
-        }
-
+        // Add smooth scrolling for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
