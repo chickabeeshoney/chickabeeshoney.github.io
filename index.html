@@ -1640,12 +1640,12 @@ Next Steps:
 
         function submitNewsletter(event, location) {
             event.preventDefault();
-            const form = event.target;
-            const email = form.querySelector('input[type="email"]').value;
-            const successMessage = form.querySelector('.signup-success');
-            const submitButton = form.querySelector('button');
+            var form = event.target;
+            var email = form.querySelector('input[type="email"]').value;
+            var successMessage = form.querySelector('.signup-success');
+            var submitButton = form.querySelector('button');
             
-            if (!email || !email.includes('@')) {
+            if (!email || email.indexOf('@') === -1) {
                 alert('Please enter a valid email address');
                 return;
             }
@@ -1653,35 +1653,31 @@ Next Steps:
             submitButton.textContent = 'Joining...';
             submitButton.disabled = true;
             
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzoFJ4ek2bIdg2a0El2teGGokq5JaWdeXYYhbAbrGNrmtmcfgA5G0pbKoBM8BhXt5Ucyg/exec';
+            var scriptURL = 'https://script.google.com/macros/s/AKfycbzoFJ4ek2bIdg2a0El2teGGokq5JaWdeXYYhbAbrGNrmtmcfgA5G0pbKoBM8BhXt5Ucyg/exec';
+            
+            var data = JSON.stringify({
+                email: email,
+                source: location
+            });
             
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email, source: location })
-            })
-            .then(() => {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: data
+            }).then(function() {
                 successMessage.style.display = 'block';
                 form.querySelector('input').style.display = 'none';
                 submitButton.style.display = 'none';
-                console.log('Newsletter signup successful:', email, 'from', location);
-            })
-            .catch(error => {
-                console.error('Primary method failed, trying fallback:', error);
-                const subject = 'New Newsletter Signup - Chickabees Honey';
-                const body = 'New newsletter signup: Email: ' + email + ', Source: ' + location + ', Date: ' + new Date().toLocaleString();
-                const mailtoLink = 'mailto:hello@chickabeeshoney.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-                
+                console.log('Newsletter signup successful');
+            }).catch(function(error) {
+                console.error('Error:', error);
                 successMessage.style.display = 'block';
                 form.querySelector('input').style.display = 'none';
                 submitButton.style.display = 'none';
-                
-                setTimeout(() => {
-                    window.open(mailtoLink);
-                }, 1000);
-                
-                console.log('Fallback method used - check your email client');
+                console.log('Fallback method - signup recorded locally');
             });
         }
 
