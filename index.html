@@ -1199,7 +1199,17 @@
                 <p>Get first access to farm boxes and follow our family's learning journey!</p>
                 <div class="signup-form">
                     <input type="email" placeholder="your@email.com" required id="newsletter-email-input">
-                    <button type="button" onclick="openNewsletterForm()">Join</button>
+                    <button type="button" onclick="(function(){
+                        var email = document.getElementById('newsletter-email-input').value;
+                        if (!email || email.indexOf('@') === -1) {
+                            alert('Please enter a valid email address');
+                            return;
+                        }
+                        var url = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform?usp=pp_url&entry.1270002073=' + encodeURIComponent(email);
+                        window.open(url, '_blank');
+                        document.getElementById('newsletter-success').style.display = 'block';
+                        setTimeout(function(){ document.getElementById('newsletter-success').style.display = 'none'; }, 5000);
+                    })()">Join</button>
                     <div class="signup-success" id="newsletter-success" style="display: none;">Opening signup form with your email pre-filled!</div>
                 </div>
                 <p style="font-size: 0.9rem; color: #666; margin-top: 15px; text-align: center;">
