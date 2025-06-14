@@ -1197,11 +1197,11 @@
             <div class="newsletter-signup">
                 <h4>Want Farm Updates?</h4>
                 <p>Get first access to farm boxes and follow our family's learning journey!</p>
-                <form class="signup-form" onsubmit="return submitNewsletter(event, 'family')">
-                    <input type="email" placeholder="your@email.com" required>
-                    <button type="submit">Join</button>
+                <div class="signup-form">
+                    <input type="email" placeholder="your@email.com" required id="newsletter-email">
+                    <button type="button" onclick="submitNewsletterClick('family')">Join</button>
                     <div class="signup-success">Thank you! We'll share our farm journey with you.</div>
-                </form>
+                </div>
                 <p style="font-size: 0.9rem; color: #666; margin-top: 15px; text-align: center;">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform" target="_blank" style="color: #1a1a1a; text-decoration: underline;">
                         Or fill out our detailed signup form here
