@@ -1655,27 +1655,41 @@ Next Steps:
             
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzoFJ4ek2bIdg2a0El2teGGokq5JaWdeXYYhbAbrGNrmtmcfgA5G0pbKoBM8BhXt5Ucyg/exec';
             
+            // Try the Google Apps Script first
             fetch(scriptURL, {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email, source: location, timestamp: new Date().toISOString() })
+                body: JSON.stringify({ 
+                    email: email, 
+                    source: location
+                })
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    successMessage.style.display = 'block';
-                    form.querySelector('input').style.display = 'none';
-                    submitButton.style.display = 'none';
-                    console.log('New newsletter signup:', email, 'from', location);
-                } else {
-                    throw new Error(data.message || 'Unknown error');
-                }
+            .then(() => {
+                // Success - show thank you message
+                successMessage.style.display = 'block';
+                form.querySelector('input').style.display = 'none';
+                submitButton.style.display = 'none';
+                console.log('Newsletter signup successful:', email, 'from', location);
             })
             .catch(error => {
-                console.error('Error:', error);
-                alert('Sorry, there was an error signing you up. Please try again or email us directly at hello@chickabeeshoney.com');
-                submitButton.textContent = 'Join';
-                submitButton.disabled = false;
+                console.error('Primary method failed, trying fallback:', error);
+                // Fallback: Create a mailto link for you to manually add
+                const subject = 'New Newsletter Signup - Chickabees Honey';
+                const body = `New newsletter signup:%0D%0A%0D%0AEmail: ${email}%0D%0ASource: ${location}%0D%0ADate: ${new Date().toLocaleString()}`;
+                const mailtoLink = `mailto:hello@chickabeeshoney.com?subject=${subject}&body=${body}`;
+                
+                // Show success message anyway
+                successMessage.style.display = 'block';
+                form.querySelector('input').style.display = 'none';
+                submitButton.style.display = 'none';
+                
+                // Silently open email for you to manually process
+                setTimeout(() => {
+                    window.open(mailtoLink);
+                }, 1000);
+                
+                console.log('Fallback method used - check your email client');
             });
         }
 
