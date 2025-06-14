@@ -1,224 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Chickabees Order Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .box-option, .payment-method { cursor: pointer; padding: 10px; border: 1px solid #ccc; margin-bottom: 5px; }
-        .selected { background-color: #f0f8ff; border-color: #007BFF; }
-        .payment-details { display: none; margin-left: 20px; }
-        .payment-details.active { display: block; }
-        .order-item { display: flex; justify-content: space-between; margin-bottom: 5px; }
-        .order-btn { padding: 10px 20px; background: #28a745; color: white; border: none; cursor: pointer; }
-        .order-btn:disabled { background: #ccc; cursor: not-allowed; }
-    </style>
-</head>
-<body>
-
-<h1>Chickabees Order Form</h1>
-
-<h2>Select Box</h2>
-<div class="box-option" onclick="selectBox('essential', event)">Essential Box - <span id="essential-price">$40</span></div>
-<div class="box-option" onclick="selectBox('deluxe', event)">Deluxe Box - <span id="deluxe-price">$70</span></div>
-
-<h2>Choose Frequency</h2>
-<select id="frequency" onchange="updatePricing()">
-    <option value="monthly">Monthly</option>
-    <option value="quarterly">Quarterly</option>
-    <option value="onetime">One Time</option>
-</select>
-
-<h2>Add-ons</h2>
-<label><input type="checkbox" id="coffee-addon"> Artisan Coffee ($10)</label><br>
-<label><input type="checkbox" id="waffles-addon"> Homemade Waffles ($10)</label><br>
-<label><input type="checkbox" id="honey-addon"> Extra Honey ($12)</label><br>
-<label><input type="checkbox" id="balm-addon"> Lemon Bee Balm ($4.50)</label><br>
-
-<h2>Delivery</h2>
-<select id="delivery" onchange="updateOrderSummary()">
-    <option value="pickup">Farm Pickup (Free)</option>
-    <option value="delivery">Home Delivery ($20)</option>
-</select>
-
-<h2>Payment Method</h2>
-<div class="payment-method" onclick="selectPayment('cash', event)">Cash</div>
-<div class="payment-method" onclick="selectPayment('check', event)">Check</div>
-<div class="payment-method" onclick="selectPayment('zelle', event)">Zelle</div>
-<div class="payment-method" onclick="selectPayment('venmo', event)">Venmo</div>
-<div class="payment-method" onclick="selectPayment('paypal', event)">PayPal</div>
-
-<div class="payment-details" id="cash-details">Pay with cash on delivery. Amount: <span id="cash-amount"></span></div>
-<div class="payment-details" id="check-details">Make checks payable to Chickabees. Amount: <span id="check-amount"></span></div>
-<div class="payment-details" id="zelle-details">Zelle info: info@chickabees.com. Amount: <span id="zelle-amount"></span></div>
-<div class="payment-details" id="venmo-details">Venmo: @chickabees. Amount: <span id="venmo-amount"></span></div>
-<div class="payment-details" id="paypal-details">PayPal: paypal.me/chickabees. Amount: <span id="paypal-amount"></span></div>
-
-<h2>Order Summary</h2>
-<div id="order-summary" style="display:none;">
-    <div id="order-details"></div>
+<!-- Replace your newsletter signup section with this embedded Google Form -->
+<div class="newsletter-signup">
+    <h4>Join Our Farm Family Newsletter</h4>
+    <p>Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
+    
+    <!-- Embedded Google Form -->
+    <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform?embedded=true" 
+        width="100%" 
+        height="400" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+        style="border: 1px solid #e8e6e1; background: white;">
+        Loading…
+    </iframe>
 </div>
 
-<button class="order-btn" id="order-btn" disabled>Complete Order</button>
-
-<!-- Embedded Updated Script -->
-<script>
-    let selectedBox = '';
-    let selectedPaymentMethod = '';
-    let orderTotal = 0;
-
-    function selectBox(boxType, event) {
-        document.querySelectorAll('.box-option').forEach(function(box) {
-            box.classList.remove('selected');
-        });
-
-        event.currentTarget.classList.add('selected');
-        selectedBox = boxType;
-        updateOrderSummary();
-        updateOrderButton();
-    }
-
-    function selectPayment(method, event) {
-        document.querySelectorAll('.payment-method').forEach(function(el) {
-            el.classList.remove('selected');
-        });
-
-        document.querySelectorAll('.payment-details').forEach(function(el) {
-            el.classList.remove('active');
-        });
-
-        event.currentTarget.classList.add('selected');
-        selectedPaymentMethod = method;
-
-        const detailsElement = document.getElementById(`${method}-details`);
-        if (detailsElement) {
-            detailsElement.classList.add('active');
-        }
-
-        updatePaymentAmounts();
-        updateOrderButton();
-    }
-
-    function updatePricing() {
-        const frequency = document.getElementById('frequency').value;
-        const essentialPrice = document.getElementById('essential-price');
-        const deluxePrice = document.getElementById('deluxe-price');
-
-        if (frequency === 'monthly') {
-            essentialPrice.textContent = '$40';
-            deluxePrice.textContent = '$70';
-        } else if (frequency === 'quarterly') {
-            essentialPrice.textContent = '$45';
-            deluxePrice.textContent = '$75';
-        } else {
-            essentialPrice.textContent = '$50';
-            deluxePrice.textContent = '$80';
-        }
-
-        updateOrderSummary();
-    }
-
-    function updateOrderSummary() {
-        if (!selectedBox) return;
-
-        const frequency = document.getElementById('frequency').value;
-        const delivery = document.getElementById('delivery').value;
-
-        let boxPrice = 0;
-        if (frequency === 'monthly') {
-            boxPrice = selectedBox === 'essential' ? 40 : 70;
-        } else if (frequency === 'quarterly') {
-            boxPrice = selectedBox === 'essential' ? 45 : 75;
-        } else {
-            boxPrice = selectedBox === 'essential' ? 50 : 80;
-        }
-
-        const addOns = [];
-        let addOnsTotal = 0;
-
-        const addOnElements = [
-            { id: 'coffee-addon', name: 'Artisan Coffee', price: 10 },
-            { id: 'waffles-addon', name: 'Homemade Waffles', price: 10 },
-            { id: 'honey-addon', name: 'Extra Honey', price: 12 },
-            { id: 'balm-addon', name: 'Lemon Bee Balm', price: 4.5 }
-        ];
-
-        addOnElements.forEach(addOn => {
-            const checkbox = document.getElementById(addOn.id);
-            if (checkbox.checked) {
-                addOnsTotal += addOn.price;
-                addOns.push(addOn);
-            }
-        });
-
-        const deliveryFee = delivery === 'delivery' ? 20 : 0;
-        orderTotal = boxPrice + addOnsTotal + deliveryFee;
-
-        const orderDetails = document.getElementById('order-details');
-        let orderHTML = `
-            <div class="order-item">
-                <span class="item-name">${capitalize(selectedBox)} Box (${capitalize(frequency)})</span>
-                <span class="item-price">$${boxPrice.toFixed(2)}</span>
-            </div>
-        `;
-
-        addOns.forEach(addOn => {
-            orderHTML += `
-                <div class="order-item">
-                    <span class="item-name">${addOn.name}</span>
-                    <span class="item-price">$${addOn.price.toFixed(2)}</span>
-                </div>
-            `;
-        });
-
-        orderHTML += `
-            <div class="order-item">
-                <span class="item-name">${delivery === 'pickup' ? 'Farm Pickup' : 'Home Delivery'}</span>
-                <span class="item-price">${deliveryFee === 0 ? 'FREE' : `$${deliveryFee.toFixed(2)}`}</span>
-            </div>
-            <div class="order-item">
-                <span class="item-name">TOTAL</span>
-                <span class="item-price">$${orderTotal.toFixed(2)}</span>
-            </div>
-        `;
-
-        orderDetails.innerHTML = orderHTML;
-        document.getElementById('order-summary').style.display = 'block';
-
-        updatePaymentAmounts();
-    }
-
-    function updatePaymentAmounts() {
-        const amountText = `$${orderTotal.toFixed(2)}`;
-        const ids = ['cash-amount', 'check-amount', 'zelle-amount', 'venmo-amount', 'paypal-amount'];
-
-        ids.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.textContent = amountText;
-        });
-    }
-
-    function updateOrderButton() {
-        const orderBtn = document.getElementById('order-btn');
-
-        if (selectedBox && selectedPaymentMethod) {
-            orderBtn.disabled = false;
-            orderBtn.textContent = `Complete Order - $${orderTotal.toFixed(2)}`;
-        } else if (selectedBox) {
-            orderBtn.disabled = true;
-            orderBtn.textContent = 'Select Payment Method to Continue';
-        } else {
-            orderBtn.disabled = true;
-            orderBtn.textContent = 'Select Box & Payment Method to Continue';
-        }
-    }
-
-    function capitalize(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-</script>
-
-</body>
-</html>
-
+<!-- OR: Simple redirect approach -->
+<div class="newsletter-signup">
+    <h4>Join Our Farm Family Newsletter</h4>
+    <p>Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
+    
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform" 
+       class="btn-primary" 
+       target="_blank"
+       style="display: inline-block; text-decoration: none; text-align: center; padding: 15px 30px; background: #1a1a1a; color: white; letter-spacing: 1px; text-transform: uppercase; margin-top: 20px;">
+        Sign Up for Updates
+    </a>
+</div>
