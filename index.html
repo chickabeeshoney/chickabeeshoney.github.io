@@ -1649,11 +1649,25 @@ Next Steps:
             submitButton.textContent = 'Joining...';
             submitButton.disabled = true;
             
-            setTimeout(() => {
+            // Submit to Google Form
+            const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/formResponse';
+            const formData = new FormData();
+            formData.append('entry.YPqjbf', email);
+            
+            fetch(googleFormUrl, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).then(() => {
                 successMessage.style.display = 'block';
                 form.querySelector('input').style.display = 'none';
                 submitButton.style.display = 'none';
-            }, 1000);
+            }).catch(() => {
+                // Fallback - show success anyway since we can't detect form submission success
+                successMessage.style.display = 'block';
+                form.querySelector('input').style.display = 'none';
+                submitButton.style.display = 'none';
+            });
         }
 
         // Initialize with some progress
