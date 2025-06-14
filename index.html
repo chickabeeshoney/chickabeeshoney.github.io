@@ -921,6 +921,17 @@
 <body>
     <header>
         <div class="container">
+            
+            <!-- Newsletter Signup at Top -->
+            <div class="newsletter-signup" style="margin-bottom: 60px; background: #f5e6a3; padding: 30px; border-radius: 15px; text-align: center;">
+                <h3 style="margin-bottom: 10px; color: #1a1a1a;">Join Our Farm Family Newsletter</h3>
+                <p style="margin-bottom: 20px; color: #666;">Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
+                <div class="signup-form">
+                    <input type="email" placeholder="your@email.com" required id="newsletter-email-top" style="padding: 15px; margin-right: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; width: 250px; max-width: 70%;">
+                    <button type="button" onclick="var email = document.getElementById('newsletter-email-top').value; if (!email || email.indexOf('@') === -1) { alert('Please enter a valid email address'); return; } var url = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform?usp=pp_url&entry.1270002073=' + encodeURIComponent(email); window.open(url, '_blank'); document.getElementById('newsletter-success-top').style.display = 'block'; setTimeout(function(){ document.getElementById('newsletter-success-top').style.display = 'none'; }, 5000);" style="padding: 15px 30px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; letter-spacing: 1px;">JOIN</button>
+                    <div class="signup-success" id="newsletter-success-top" style="display: none; margin-top: 15px; color: #2d5a2d; font-weight: bold;">Opening signup form with your email pre-filled!</div>
+                </div>
+            </div>
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-circle">
