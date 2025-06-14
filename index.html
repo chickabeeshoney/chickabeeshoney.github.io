@@ -1640,13 +1640,11 @@ Next Steps:
 
         function submitNewsletter(event, location) {
             event.preventDefault();
-            
             const form = event.target;
             const email = form.querySelector('input[type="email"]').value;
             const successMessage = form.querySelector('.signup-success');
             const submitButton = form.querySelector('button');
             
-            // Validate email
             if (!email || !email.includes('@')) {
                 alert('Please enter a valid email address');
                 return;
@@ -1655,19 +1653,12 @@ Next Steps:
             submitButton.textContent = 'Joining...';
             submitButton.disabled = true;
             
-            // Send to Google Sheet
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzoFJ4ek2bIdg2a0El2teGGokq5JaWdeXYYhbAbrGNrmtmcfgA5G0pbKoBM8BhXt5Ucyg/exec';
             
             fetch(scriptURL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email,
-                    source: location,
-                    timestamp: new Date().toISOString()
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, source: location, timestamp: new Date().toISOString() })
             })
             .then(response => response.json())
             .then(data => {
@@ -1675,8 +1666,6 @@ Next Steps:
                     successMessage.style.display = 'block';
                     form.querySelector('input').style.display = 'none';
                     submitButton.style.display = 'none';
-                    
-                    // Optional: Send confirmation email to yourself
                     console.log('New newsletter signup:', email, 'from', location);
                 } else {
                     throw new Error(data.message || 'Unknown error');
@@ -1685,8 +1674,6 @@ Next Steps:
             .catch(error => {
                 console.error('Error:', error);
                 alert('Sorry, there was an error signing you up. Please try again or email us directly at hello@chickabeeshoney.com');
-                
-                // Reset button
                 submitButton.textContent = 'Join';
                 submitButton.disabled = false;
             });
