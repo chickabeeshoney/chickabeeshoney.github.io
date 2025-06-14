@@ -1655,18 +1655,13 @@ Next Steps:
             
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzoFJ4ek2bIdg2a0El2teGGokq5JaWdeXYYhbAbrGNrmtmcfgA5G0pbKoBM8BhXt5Ucyg/exec';
             
-            // Try the Google Apps Script first
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    email: email, 
-                    source: location
-                })
+                body: JSON.stringify({ email: email, source: location })
             })
             .then(() => {
-                // Success - show thank you message
                 successMessage.style.display = 'block';
                 form.querySelector('input').style.display = 'none';
                 submitButton.style.display = 'none';
@@ -1674,17 +1669,14 @@ Next Steps:
             })
             .catch(error => {
                 console.error('Primary method failed, trying fallback:', error);
-                // Fallback: Create a mailto link for you to manually add
                 const subject = 'New Newsletter Signup - Chickabees Honey';
-                const body = `New newsletter signup:%0D%0A%0D%0AEmail: ${email}%0D%0ASource: ${location}%0D%0ADate: ${new Date().toLocaleString()}`;
-                const mailtoLink = `mailto:hello@chickabeeshoney.com?subject=${subject}&body=${body}`;
+                const body = 'New newsletter signup: Email: ' + email + ', Source: ' + location + ', Date: ' + new Date().toLocaleString();
+                const mailtoLink = 'mailto:hello@chickabeeshoney.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
                 
-                // Show success message anyway
                 successMessage.style.display = 'block';
                 form.querySelector('input').style.display = 'none';
                 submitButton.style.display = 'none';
                 
-                // Silently open email for you to manually process
                 setTimeout(() => {
                     window.open(mailtoLink);
                 }, 1000);
