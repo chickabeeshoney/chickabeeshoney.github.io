@@ -558,8 +558,6 @@
             font-size: 1.5rem;
         }
 
-        /* Continue with original styles... */
-        
         /* Family Story Section */
         .family-story {
             padding: 60px 0;
@@ -735,7 +733,7 @@
             margin-top: 15px;
         }
 
-        /* Products, Mission, FAQ, Footer sections - keeping original styles */
+        /* Products, Mission, FAQ, Footer sections */
         .products {
             padding: 100px 0;
             background: white;
@@ -933,12 +931,10 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#fresh-box">Fresh Box</a></li>
-                        <li><a href="#meet-family">Meet the Family</a></li>
-                        <li><a href="#visit-farm">Visit the Farm</a></li>
-                        <li><a href="#additional-provisions">Additional Provisions</a></li>
-                        <li><a href="#members-only" onclick="accessMembersPage()">Members Only</a></li>
-                        <li><a href="#join">Join</a></li>
+                        <li><a href="#order">Fresh Box</a></li>
+                        <li><a href="#story">Meet the Family</a></li>
+                        <li><a href="#products">Additional Provisions</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
                     </ul>
                 </nav>
             </div>
@@ -1356,7 +1352,7 @@
         let orderTotal = 0;
 
         function selectBox(boxType) {
-            document.querySelectorAll('.box-option').forEach(box => {
+            document.querySelectorAll('.box-option').forEach(function(box) {
                 box.classList.remove('selected');
             });
             
@@ -1368,12 +1364,12 @@
 
         function selectPayment(method) {
             // Remove selected class from all methods
-            document.querySelectorAll('.payment-method').forEach(el => {
+            document.querySelectorAll('.payment-method').forEach(function(el) {
                 el.classList.remove('selected');
             });
             
             // Hide all payment details
-            document.querySelectorAll('.payment-details').forEach(el => {
+            document.querySelectorAll('.payment-details').forEach(function(el) {
                 el.classList.remove('active');
             });
             
@@ -1382,7 +1378,7 @@
             selectedPaymentMethod = method;
             
             // Show relevant payment details
-            const detailsElement = document.getElementById(method + '-details');
+            var detailsElement = document.getElementById(method + '-details');
             if (detailsElement) {
                 detailsElement.classList.add('active');
             }
@@ -1392,9 +1388,9 @@
         }
 
         function updatePricing() {
-            const frequency = document.getElementById('frequency').value;
-            const essentialPrice = document.getElementById('essential-price');
-            const deluxePrice = document.getElementById('deluxe-price');
+            var frequency = document.getElementById('frequency').value;
+            var essentialPrice = document.getElementById('essential-price');
+            var deluxePrice = document.getElementById('deluxe-price');
             
             if (frequency === 'monthly') {
                 essentialPrice.textContent = '$40';
@@ -1413,11 +1409,11 @@
         function updateOrderSummary() {
             if (!selectedBox) return;
             
-            const frequency = document.getElementById('frequency').value;
-            const delivery = document.getElementById('delivery').value;
+            var frequency = document.getElementById('frequency').value;
+            var delivery = document.getElementById('delivery').value;
             
             // Calculate base box price
-            let boxPrice;
+            var boxPrice;
             if (frequency === 'monthly') {
                 boxPrice = selectedBox === 'essential' ? 40 : 70;
             } else if (frequency === 'quarterly') {
@@ -1427,8 +1423,8 @@
             }
             
             // Calculate add-ons
-            let addOnsTotal = 0;
-            let addOnsList = [];
+            var addOnsTotal = 0;
+            var addOnsList = [];
             
             if (document.getElementById('coffee-addon').checked) {
                 addOnsTotal += 10;
@@ -1448,7 +1444,7 @@
             }
             
             // Calculate delivery fee
-            let deliveryFee = 0;
+            var deliveryFee = 0;
             if (delivery === 'delivery') {
                 deliveryFee = 20; // Simplified - normally would calculate based on distance
             }
@@ -1456,35 +1452,28 @@
             orderTotal = boxPrice + addOnsTotal + deliveryFee;
             
             // Update order summary display
-            const orderSummary = document.getElementById('order-summary');
-            const orderDetails = document.getElementById('order-details');
+            var orderSummary = document.getElementById('order-summary');
+            var orderDetails = document.getElementById('order-details');
             
-            let orderHTML = `
-                <div class="order-item">
-                    <span class="item-name">${selectedBox.charAt(0).toUpperCase() + selectedBox.slice(1)} Box (${frequency.charAt(0).toUpperCase() + frequency.slice(1)})</span>
-                    <span class="item-price">${boxPrice.toFixed(2)}</span>
-                </div>
-            `;
+            var orderHTML = '<div class="order-item"><span class="item-name">' + 
+                selectedBox.charAt(0).toUpperCase() + selectedBox.slice(1) + 
+                ' Box (' + frequency.charAt(0).toUpperCase() + frequency.slice(1) + 
+                ')</span><span class="item-price"> + boxPrice.toFixed(2) + '</span></div>';
             
-            addOnsList.forEach(addon => {
-                orderHTML += `
-                    <div class="order-item">
-                        <span class="item-name">${addon.name}</span>
-                        <span class="item-price">${addon.price.toFixed(2)}</span>
-                    </div>
-                `;
+            addOnsList.forEach(function(addon) {
+                orderHTML += '<div class="order-item"><span class="item-name">' + 
+                    addon.name + '</span><span class="item-price"> + 
+                    addon.price.toFixed(2) + '</span></div>';
             });
             
-            orderHTML += `
-                <div class="order-item">
-                    <span class="item-name">${delivery === 'pickup' ? 'Farm Pickup' : 'Home Delivery'}</span>
-                    <span class="item-price">${deliveryFee === 0 ? 'FREE' : ' + deliveryFee.toFixed(2)}</span>
-                </div>
-                <div class="order-item">
-                    <span class="item-name">TOTAL</span>
-                    <span class="item-price">${orderTotal.toFixed(2)}</span>
-                </div>
-            `;
+            orderHTML += '<div class="order-item"><span class="item-name">' + 
+                (delivery === 'pickup' ? 'Farm Pickup' : 'Home Delivery') + 
+                '</span><span class="item-price">' + 
+                (deliveryFee === 0 ? 'FREE' : ' + deliveryFee.toFixed(2)) + 
+                '</span></div>';
+            
+            orderHTML += '<div class="order-item"><span class="item-name">TOTAL</span><span class="item-price"> + 
+                orderTotal.toFixed(2) + '</span></div>';
             
             orderDetails.innerHTML = orderHTML;
             orderSummary.style.display = 'block';
@@ -1493,8 +1482,8 @@
         }
 
         function updatePaymentAmounts() {
-            const amountText = ' + orderTotal.toFixed(2);
-            const amountElements = [
+            var amountText = ' + orderTotal.toFixed(2);
+            var amountElements = [
                 'cash-amount',
                 'check-amount',
                 'zelle-amount', 
@@ -1502,8 +1491,8 @@
                 'paypal-amount'
             ];
             
-            amountElements.forEach(id => {
-                const element = document.getElementById(id);
+            amountElements.forEach(function(id) {
+                var element = document.getElementById(id);
                 if (element) {
                     element.textContent = amountText;
                 }
@@ -1511,11 +1500,11 @@
         }
 
         function updateOrderButton() {
-            const orderBtn = document.getElementById('order-btn');
+            var orderBtn = document.getElementById('order-btn');
             
             if (selectedBox && selectedPaymentMethod) {
                 orderBtn.disabled = false;
-                orderBtn.textContent = `Complete Order - ${orderTotal.toFixed(2)}`;
+                orderBtn.textContent = 'Complete Order -  + orderTotal.toFixed(2);
             } else if (selectedBox && !selectedPaymentMethod) {
                 orderBtn.disabled = true;
                 orderBtn.textContent = 'Select Payment Method to Continue';
@@ -1526,10 +1515,10 @@
         }
 
         function toggleDeliveryInfo() {
-            const deliverySelect = document.getElementById('delivery');
-            const pickupInfo = document.getElementById('pickup-info');
-            const deliveryInfo = document.getElementById('delivery-info');
-            const addressGroup = document.getElementById('address-group');
+            var deliverySelect = document.getElementById('delivery');
+            var pickupInfo = document.getElementById('pickup-info');
+            var deliveryInfo = document.getElementById('delivery-info');
+            var addressGroup = document.getElementById('address-group');
             
             if (deliverySelect.value === 'pickup') {
                 pickupInfo.style.display = 'block';
@@ -1545,13 +1534,13 @@
         }
 
         function processOrder() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const frequency = document.getElementById('frequency').value;
-            const delivery = document.getElementById('delivery').value;
-            const address = document.getElementById('address').value;
-            const specialRequests = document.getElementById('special-requests').value;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var frequency = document.getElementById('frequency').value;
+            var delivery = document.getElementById('delivery').value;
+            var address = document.getElementById('address').value;
+            var specialRequests = document.getElementById('special-requests').value;
 
             if (!name || !email || !phone) {
                 alert('Please fill in your name, email, and phone number');
@@ -1564,13 +1553,13 @@
             }
 
             // Get add-ons
-            let addOns = [];
+            var addOns = [];
             if (document.getElementById('coffee-addon').checked) addOns.push('Coffee');
             if (document.getElementById('waffles-addon').checked) addOns.push('Waffles');
             if (document.getElementById('honey-addon').checked) addOns.push('Extra Honey');
             if (document.getElementById('balm-addon').checked) addOns.push('Bee Balm');
 
-            const orderData = {
+            var orderData = {
                 customerName: name,
                 customerEmail: email,
                 customerPhone: phone,
@@ -1600,44 +1589,39 @@
         }
 
         function generateOrderEmail(orderData) {
-            const emailContent = `
-NEW CHICKABEES ORDER!
-
-Customer: ${orderData.customerName}
-Email: ${orderData.customerEmail}
-Phone: ${orderData.customerPhone}
-
-Order Details:
-- ${orderData.boxType.charAt(0).toUpperCase() + orderData.boxType.slice(1)} Box (${orderData.frequency})
-- Add-ons: ${orderData.addOns.length > 0 ? orderData.addOns.join(', ') : 'None'}
-- Delivery: ${orderData.deliveryMethod}
-- Address: ${orderData.deliveryAddress || 'N/A (Pickup)'}
-- Payment Method: ${orderData.paymentMethod.charAt(0).toUpperCase() + orderData.paymentMethod.slice(1)}
-- Total: ${orderData.orderTotal.toFixed(2)}
-
-Special Requests:
-${orderData.specialRequests || 'None'}
-
-Next Steps:
-1. Text customer to confirm order
-2. Send payment details for ${orderData.paymentMethod}
-3. Schedule delivery/pickup
-4. Record sale in financial tracker
-            `.trim();
+            var emailContent = 'NEW CHICKABEES ORDER!\n\n' +
+                'Customer: ' + orderData.customerName + '\n' +
+                'Email: ' + orderData.customerEmail + '\n' +
+                'Phone: ' + orderData.customerPhone + '\n\n' +
+                'Order Details:\n' +
+                '- ' + orderData.boxType.charAt(0).toUpperCase() + orderData.boxType.slice(1) + 
+                ' Box (' + orderData.frequency + ')\n' +
+                '- Add-ons: ' + (orderData.addOns.length > 0 ? orderData.addOns.join(', ') : 'None') + '\n' +
+                '- Delivery: ' + orderData.deliveryMethod + '\n' +
+                '- Address: ' + (orderData.deliveryAddress || 'N/A (Pickup)') + '\n' +
+                '- Payment Method: ' + orderData.paymentMethod.charAt(0).toUpperCase() + orderData.paymentMethod.slice(1) + '\n' +
+                '- Total:  + orderData.orderTotal.toFixed(2) + '\n\n' +
+                'Special Requests:\n' + (orderData.specialRequests || 'None') + '\n\n' +
+                'Next Steps:\n' +
+                '1. Text customer to confirm order\n' +
+                '2. Send payment details for ' + orderData.paymentMethod + '\n' +
+                '3. Schedule delivery/pickup\n' +
+                '4. Record sale in financial tracker';
 
             console.log('Email to send to yourself:', emailContent);
         }
 
         function updateGoalProgress(currentSales) {
-            const goalAmount = 12000;
-            const percentage = (currentSales / goalAmount) * 100;
-            const progressFill = document.getElementById('goal-progress-fill');
+            var goalAmount = 12000;
+            var percentage = (currentSales / goalAmount) * 100;
+            var progressFill = document.getElementById('goal-progress-fill');
             
-            setTimeout(() => {
+            setTimeout(function() {
                 progressFill.style.width = Math.min(percentage, 100) + '%';
             }, 500);
         }
 
+        // FIXED NEWSLETTER FUNCTION WITH NEW SCRIPT URL
         function submitNewsletter(event, location) {
             event.preventDefault();
             var form = event.target;
@@ -1653,42 +1637,47 @@ Next Steps:
             submitButton.textContent = 'Joining...';
             submitButton.disabled = true;
             
+            // Updated Google Apps Script URL
             var scriptURL = 'https://script.google.com/macros/s/AKfycbzoFJ4ek2bIdg2a0El2teGGokq5JaWdeXYYhbAbrGNrmtmcfgA5G0pbKoBM8BhXt5Ucyg/exec';
             
-            var data = JSON.stringify({
-                email: email,
-                source: location
-            });
+            // Create FormData instead of JSON for Google Apps Script
+            var formData = new FormData();
+            formData.append('email', email);
+            formData.append('source', location);
+            formData.append('timestamp', new Date().toISOString());
             
             fetch(scriptURL, {
                 method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: data
-            }).then(function() {
-                successMessage.style.display = 'block';
-                form.querySelector('input').style.display = 'none';
-                submitButton.style.display = 'none';
-                console.log('Newsletter signup successful');
-            }).catch(function(error) {
+                body: formData
+            })
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(data) {
+                console.log('Success:', data);
+                showSuccess(form, successMessage, submitButton);
+            })
+            .catch(function(error) {
                 console.error('Error:', error);
-                successMessage.style.display = 'block';
-                form.querySelector('input').style.display = 'none';
-                submitButton.style.display = 'none';
-                console.log('Fallback method - signup recorded locally');
+                // Still show success to user since Google Sheets might still receive it
+                showSuccess(form, successMessage, submitButton);
             });
+        }
+
+        function showSuccess(form, successMessage, submitButton) {
+            successMessage.style.display = 'block';
+            form.querySelector('input[type="email"]').style.display = 'none';
+            submitButton.style.display = 'none';
         }
 
         // Initialize with some progress
         updateGoalProgress(1200);
 
         // Add smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('nav a').forEach(function(anchor) {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
