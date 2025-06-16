@@ -113,6 +113,100 @@
             width: 100%;
         }
 
+        /* Newsletter Banner - Now positioned after header */
+        .newsletter-banner {
+            background: linear-gradient(135deg, #f5e6a3 0%, #e8d789 100%);
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e6e1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-out;
+            position: relative;
+            z-index: 90;
+        }
+
+        .newsletter-banner.hidden {
+            transform: translateY(-100%);
+        }
+
+        .newsletter-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .newsletter-text h3 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .newsletter-text p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .newsletter-form input {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            width: 200px;
+            font-family: inherit;
+        }
+
+        .newsletter-form button {
+            padding: 12px 20px;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            letter-spacing: 1px;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            background: #333;
+        }
+
+        .newsletter-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #666;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+        }
+
+        .newsletter-close:hover {
+            color: #1a1a1a;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(245, 230, 163, 0.3), rgba(245, 230, 163, 0.3));
@@ -858,9 +952,22 @@
                 gap: 30px;
             }
 
+            .logo {
+                gap: 15px;
+            }
+
             .logo-circle {
-                width: 70px;
-                height: 70px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .logo-text h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .logo-text p {
+                font-size: 0.9rem;
             }
 
             nav ul {
@@ -869,12 +976,48 @@
                 text-align: center;
             }
 
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            /* Newsletter Banner Mobile */
+            .newsletter-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .newsletter-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .newsletter-text p {
+                font-size: 0.8rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+                max-width: 300px;
+            }
+
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .hero p {
                 font-size: 1.1rem;
+                padding: 0 10px;
             }
 
             .form-row {
@@ -885,13 +1028,37 @@
                 grid-template-columns: 1fr;
             }
 
+            .box-option {
+                padding: 30px;
+            }
+
+            .box-option h4 {
+                font-size: 1.5rem;
+            }
+
+            .box-option .price {
+                font-size: 2rem;
+            }
+
             .story-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
+            .story-text h3 {
+                font-size: 2rem;
+            }
+
+            .story-text p {
+                font-size: 1rem;
+            }
+
             .order-form {
-                padding: 40px;
+                padding: 30px 20px;
+            }
+
+            .order-form h3 {
+                font-size: 2rem;
             }
 
             .farm-features {
@@ -915,23 +1082,74 @@
             .payment-methods {
                 grid-template-columns: 1fr;
             }
+
+            .products h3 {
+                font-size: 2rem;
+            }
+
+            .mission h3 {
+                font-size: 2rem;
+            }
+
+            .mission p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .newsletter-banner {
+                padding: 15px 0;
+            }
+
+            .newsletter-content {
+                padding: 0 15px;
+            }
+
+            .logo-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .order-form {
+                padding: 20px 15px;
+            }
+
+            .order-form h3 {
+                font-size: 1.8rem;
+            }
+
+            .box-option {
+                padding: 20px;
+            }
+
+            .payment-methods-section {
+                padding: 20px;
+            }
+
+            .add-ons-section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            
-            <!-- Newsletter Signup at Top -->
-            <div class="newsletter-signup" style="margin-bottom: 60px; background: #f5e6a3; padding: 30px; border-radius: 15px; text-align: center;">
-                <h3 style="margin-bottom: 10px; color: #1a1a1a;">Join Our Farm Family Newsletter</h3>
-                <p style="margin-bottom: 20px; color: #666;">Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
-                <div class="signup-form">
-                    <input type="email" placeholder="your@email.com" required id="newsletter-email-top" style="padding: 15px; margin-right: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; width: 250px; max-width: 70%;">
-                    <button type="button" onclick="var email = document.getElementById('newsletter-email-top').value; if (!email || email.indexOf('@') === -1) { alert('Please enter a valid email address'); return; } var url = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform?usp=pp_url&entry.1270002073=' + encodeURIComponent(email); window.open(url, '_blank'); document.getElementById('newsletter-success-top').style.display = 'block'; setTimeout(function(){ document.getElementById('newsletter-success-top').style.display = 'none'; }, 5000);" style="padding: 15px 30px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; letter-spacing: 1px;">JOIN</button>
-                    <div class="signup-success" id="newsletter-success-top" style="display: none; margin-top: 15px; color: #2d5a2d; font-weight: bold;">Opening signup form with your email pre-filled!</div>
-                </div>
-            </div>
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-circle">
@@ -955,6 +1173,24 @@
             </div>
         </div>
     </header>
+
+    <!-- Newsletter Banner - Now positioned after header -->
+    <div class="newsletter-banner" id="newsletter-banner">
+        <div class="container">
+            <button class="newsletter-close" onclick="closeNewsletter()" aria-label="Close newsletter banner">&times;</button>
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>🐝 Join Our Farm Family Newsletter</h3>
+                    <p>Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="your@email.com" required id="newsletter-email-banner">
+                    <button type="button" onclick="handleNewsletterSignup('banner')">JOIN</button>
+                </div>
+            </div>
+        </div>
+        <div class="signup-success" id="newsletter-success-banner" style="display: none; text-align: center; margin-top: 10px; color: #1a1a1a; font-weight: bold;">Opening signup form with your email pre-filled!</div>
+    </div>
 
     <section class="hero">
         <div class="container">
@@ -1202,17 +1438,7 @@
                 <p>Get first access to farm boxes and follow our family's learning journey!</p>
                 <div class="signup-form">
                     <input type="email" placeholder="your@email.com" required id="newsletter-email-input">
-                    <button type="button" onclick="(function(){
-                        var email = document.getElementById('newsletter-email-input').value;
-                        if (!email || email.indexOf('@') === -1) {
-                            alert('Please enter a valid email address');
-                            return;
-                        }
-                        var url = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform?usp=pp_url&entry.1270002073=' + encodeURIComponent(email);
-                        window.open(url, '_blank');
-                        document.getElementById('newsletter-success').style.display = 'block';
-                        setTimeout(function(){ document.getElementById('newsletter-success').style.display = 'none'; }, 5000);
-                    })()">Join</button>
+                    <button type="button" onclick="handleNewsletterSignup('main')">Join</button>
                     <div class="signup-success" id="newsletter-success" style="display: none;">Opening signup form with your email pre-filled!</div>
                 </div>
                 <p style="font-size: 0.9rem; color: #666; margin-top: 15px; text-align: center;">
@@ -1367,6 +1593,55 @@
         let selectedBox = '';
         let selectedPaymentMethod = '';
         let orderTotal = 0;
+        let lastScrollTop = 0;
+
+        // Newsletter banner scroll functionality
+        window.addEventListener('scroll', function() {
+            const newsletter = document.getElementById('newsletter-banner');
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Hide newsletter when scrolling down, show when scrolling up
+            if (currentScroll > lastScrollTop && currentScroll > 100) {
+                // Scrolling down
+                newsletter.classList.add('hidden');
+            } else {
+                // Scrolling up
+                newsletter.classList.remove('hidden');
+            }
+            
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        function closeNewsletter() {
+            document.getElementById('newsletter-banner').style.display = 'none';
+        }
+
+        function handleNewsletterSignup(location) {
+            let emailInput, successElement;
+            
+            if (location === 'banner') {
+                emailInput = document.getElementById('newsletter-email-banner');
+                successElement = document.getElementById('newsletter-success-banner');
+            } else {
+                emailInput = document.getElementById('newsletter-email-input');
+                successElement = document.getElementById('newsletter-success');
+            }
+            
+            const email = emailInput.value;
+            
+            if (!email || email.indexOf('@') === -1) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            const url = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform?usp=pp_url&entry.1270002073=' + encodeURIComponent(email);
+            window.open(url, '_blank');
+            
+            successElement.style.display = 'block';
+            setTimeout(function() { 
+                successElement.style.display = 'none'; 
+            }, 5000);
+        }
 
         function selectBox(boxType) {
             document.querySelectorAll('.box-option').forEach(box => {
@@ -1484,221 +1759,3 @@
                     <div class="order-item">
                         <span class="item-name">${addon.name}</span>
                         <span class="item-price">${addon.price.toFixed(2)}</span>
-                    </div>
-                `;
-            });
-            
-            orderHTML += `
-                <div class="order-item">
-                    <span class="item-name">${delivery === 'pickup' ? 'Farm Pickup' : 'Home Delivery'}</span>
-                    <span class="item-price">${deliveryFee === 0 ? 'FREE' : ' + deliveryFee.toFixed(2)}</span>
-                </div>
-                <div class="order-item">
-                    <span class="item-name">TOTAL</span>
-                    <span class="item-price">${orderTotal.toFixed(2)}</span>
-                </div>
-            `;
-            
-            orderDetails.innerHTML = orderHTML;
-            orderSummary.style.display = 'block';
-            
-            updatePaymentAmounts();
-        }
-
-        function updatePaymentAmounts() {
-            const amountText = ' + orderTotal.toFixed(2);
-            const amountElements = [
-                'cash-amount',
-                'check-amount',
-                'zelle-amount', 
-                'venmo-amount',
-                'paypal-amount'
-            ];
-            
-            amountElements.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.textContent = amountText;
-                }
-            });
-        }
-
-        function updateOrderButton() {
-            const orderBtn = document.getElementById('order-btn');
-            
-            if (selectedBox && selectedPaymentMethod) {
-                orderBtn.disabled = false;
-                orderBtn.textContent = `Complete Order - ${orderTotal.toFixed(2)}`;
-            } else if (selectedBox && !selectedPaymentMethod) {
-                orderBtn.disabled = true;
-                orderBtn.textContent = 'Select Payment Method to Continue';
-            } else {
-                orderBtn.disabled = true;
-                orderBtn.textContent = 'Select Box & Payment Method to Continue';
-            }
-        }
-
-        function toggleDeliveryInfo() {
-            const deliverySelect = document.getElementById('delivery');
-            const pickupInfo = document.getElementById('pickup-info');
-            const deliveryInfo = document.getElementById('delivery-info');
-            const addressGroup = document.getElementById('address-group');
-            
-            if (deliverySelect.value === 'pickup') {
-                pickupInfo.style.display = 'block';
-                deliveryInfo.style.display = 'none';
-                addressGroup.style.display = 'none';
-            } else {
-                pickupInfo.style.display = 'none';
-                deliveryInfo.style.display = 'block';
-                addressGroup.style.display = 'block';
-            }
-            
-            updateOrderSummary();
-        }
-
-        function processOrder() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const frequency = document.getElementById('frequency').value;
-            const delivery = document.getElementById('delivery').value;
-            const address = document.getElementById('address').value;
-            const specialRequests = document.getElementById('special-requests').value;
-
-            if (!name || !email || !phone) {
-                alert('Please fill in your name, email, and phone number');
-                return;
-            }
-
-            if (delivery === 'delivery' && !address) {
-                alert('Please provide a delivery address');
-                return;
-            }
-
-            // Get add-ons
-            let addOns = [];
-            if (document.getElementById('coffee-addon').checked) addOns.push('Coffee');
-            if (document.getElementById('waffles-addon').checked) addOns.push('Waffles');
-            if (document.getElementById('honey-addon').checked) addOns.push('Extra Honey');
-            if (document.getElementById('balm-addon').checked) addOns.push('Bee Balm');
-
-            const orderData = {
-                customerName: name,
-                customerEmail: email,
-                customerPhone: phone,
-                boxType: selectedBox,
-                frequency: frequency,
-                deliveryMethod: delivery,
-                deliveryAddress: address,
-                addOns: addOns,
-                paymentMethod: selectedPaymentMethod,
-                specialRequests: specialRequests,
-                orderTotal: orderTotal,
-                orderDate: new Date().toISOString().split('T')[0]
-            };
-
-            // In a real implementation, you would send this to your server
-            console.log('Order Data:', orderData);
-
-            // Show success message
-            document.getElementById('success-message').classList.add('show');
-            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
-
-            // Update progress bar (this would be calculated from actual sales)
-            updateGoalProgress(1200); // Example: $1,200 in sales so far
-
-            // Generate email content for yourself
-            generateOrderEmail(orderData);
-        }
-
-        function generateOrderEmail(orderData) {
-            const emailContent = `
-NEW CHICKABEES ORDER!
-
-Customer: ${orderData.customerName}
-Email: ${orderData.customerEmail}
-Phone: ${orderData.customerPhone}
-
-Order Details:
-- ${orderData.boxType.charAt(0).toUpperCase() + orderData.boxType.slice(1)} Box (${orderData.frequency})
-- Add-ons: ${orderData.addOns.length > 0 ? orderData.addOns.join(', ') : 'None'}
-- Delivery: ${orderData.deliveryMethod}
-- Address: ${orderData.deliveryAddress || 'N/A (Pickup)'}
-- Payment Method: ${orderData.paymentMethod.charAt(0).toUpperCase() + orderData.paymentMethod.slice(1)}
-- Total: ${orderData.orderTotal.toFixed(2)}
-
-Special Requests:
-${orderData.specialRequests || 'None'}
-
-Next Steps:
-1. Text customer to confirm order
-2. Send payment details for ${orderData.paymentMethod}
-3. Schedule delivery/pickup
-4. Record sale in financial tracker
-            `.trim();
-
-            console.log('Email to send to yourself:', emailContent);
-        }
-
-        function updateGoalProgress(currentSales) {
-            const goalAmount = 12000;
-            const percentage = (currentSales / goalAmount) * 100;
-            const progressFill = document.getElementById('goal-progress-fill');
-            
-            setTimeout(() => {
-                progressFill.style.width = Math.min(percentage, 100) + '%';
-            }, 500);
-        }
-
-        function submitNewsletter(event, location) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const email = form.querySelector('input[type="email"]').value;
-            const successMessage = form.querySelector('.signup-success');
-            const submitButton = form.querySelector('button');
-            
-            submitButton.textContent = 'Joining...';
-            submitButton.disabled = true;
-            
-            // Submit to Google Form
-            const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/formResponse';
-            const formData = new FormData();
-            formData.append('entry.YPqjbf', email);
-            
-            fetch(googleFormUrl, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            }).then(() => {
-                successMessage.style.display = 'block';
-                form.querySelector('input').style.display = 'none';
-                submitButton.style.display = 'none';
-            }).catch(() => {
-                // Fallback - show success anyway since we can't detect form submission success
-                successMessage.style.display = 'block';
-                form.querySelector('input').style.display = 'none';
-                submitButton.style.display = 'none';
-            });
-        }
-
-        // Initialize with some progress
-        updateGoalProgress(1200);
-
-        // Add smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
