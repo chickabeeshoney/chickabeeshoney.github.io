@@ -478,6 +478,45 @@
             font-size: 1rem;
         }
 
+        /* QR Code specific styles */
+        .qr-code-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .qr-code-image {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #e8e6e1;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+            margin-bottom: 15px;
+        }
+
+        .qr-instructions {
+            background: white;
+            padding: 15px;
+            border: 1px solid #e8e6e1;
+            border-radius: 5px;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .qr-instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .qr-instructions li {
+            margin: 5px 0;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
         .delivery-info {
             background: #f5e6a3;
             padding: 30px;
@@ -1094,6 +1133,11 @@
             .mission p {
                 font-size: 1.1rem;
             }
+
+            .qr-code-image {
+                width: 150px;
+                height: 150px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1143,6 +1187,11 @@
 
             .add-ons-section {
                 padding: 20px;
+            }
+
+            .qr-code-image {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -1361,9 +1410,9 @@
                         </div>
 
                         <div class="payment-method" onclick="selectPayment('venmo')">
-                            <h5>Venmo</h5>
-                            <div class="fee-info">FREE (Friends & Family)</div>
-                            <p class="description">@ChickabeesHoney</p>
+                            <h5>Venmo QR Code</h5>
+                            <div class="fee-info">NO FEES</div>
+                            <p class="description">Scan to pay @chickabeesoakland</p>
                         </div>
 
                         <div class="payment-method" onclick="selectPayment('paypal')">
@@ -1404,12 +1453,25 @@
                     </div>
 
                     <div class="payment-details" id="venmo-details">
-                        <h5>Venmo Payment</h5>
+                        <h5>Venmo QR Code Payment</h5>
+                        <div class="qr-code-container">
+                            <img src="QRcode_chickabees.jpg" alt="Venmo QR Code for @chickabeesoakland" class="qr-code-image">
+                            <div class="qr-instructions">
+                                <p><strong>How to pay with Venmo:</strong></p>
+                                <ol>
+                                    <li>Open your Venmo app</li>
+                                    <li>Tap the scan icon (camera)</li>
+                                    <li>Scan this QR code</li>
+                                    <li>Enter amount: <strong>$<span id="venmo-amount">0.00</span></strong></li>
+                                    <li>Add note: "Chickabees Order - [Your Name]"</li>
+                                    <li>Send payment</li>
+                                </ol>
+                                <p style="margin-top: 10px; font-weight: bold; color: #1a1a1a;">Or search: @chickabeesoakland</p>
+                            </div>
+                        </div>
                         <div class="payment-info">
-                            <p><strong>Send to:</strong> @ChickabeesHoney</p>
-                            <p>Amount: <span id="venmo-amount">$0.00</span></p>
-                            <p>Note: "Chickabees Order - [Your Name]"</p>
-                            <p>Please select "Friends & Family" to avoid fees</p>
+                            <p>Completely free with no processing fees!</p>
+                            <p>Every dollar goes directly to support the O-Boys' future</p>
                         </div>
                     </div>
 
@@ -1759,3 +1821,123 @@
                     <div class="order-item">
                         <span class="item-name">${addon.name}</span>
                         <span class="item-price">${addon.price.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            if (deliveryFee > 0) {
+                orderHTML += `
+                    <div class="order-item">
+                        <span class="item-name">Delivery Fee</span>
+                        <span class="item-price">${deliveryFee.toFixed(2)}</span>
+                    </div>
+                `;
+            }
+            
+            orderHTML += `
+                <div class="order-item">
+                    <span class="item-name"><strong>Total</strong></span>
+                    <span class="item-price"><strong>${orderTotal.toFixed(2)}</strong></span>
+                </div>
+            `;
+            
+            orderDetails.innerHTML = orderHTML;
+            orderSummary.style.display = 'block';
+            
+            updatePaymentAmounts();
+        }
+
+        function updatePaymentAmounts() {
+            const amounts = document.querySelectorAll('#cash-amount, #check-amount, #zelle-amount, #venmo-amount, #paypal-amount');
+            amounts.forEach(amount => {
+                amount.textContent = ' + orderTotal.toFixed(2);
+            });
+        }
+
+        function toggleDeliveryInfo() {
+            const delivery = document.getElementById('delivery').value;
+            const pickupInfo = document.getElementById('pickup-info');
+            const deliveryInfo = document.getElementById('delivery-info');
+            const addressGroup = document.getElementById('address-group');
+            
+            if (delivery === 'delivery') {
+                pickupInfo.style.display = 'none';
+                deliveryInfo.style.display = 'block';
+                addressGroup.style.display = 'block';
+            } else {
+                pickupInfo.style.display = 'block';
+                deliveryInfo.style.display = 'none';
+                addressGroup.style.display = 'none';
+            }
+            
+            updateOrderSummary();
+        }
+
+        function updateOrderButton() {
+            const orderBtn = document.getElementById('order-btn');
+            
+            if (selectedBox && selectedPaymentMethod) {
+                orderBtn.disabled = false;
+                orderBtn.textContent = `Place Order - ${orderTotal.toFixed(2)}`;
+            } else {
+                orderBtn.disabled = true;
+                orderBtn.textContent = 'Select Box & Payment Method to Continue';
+            }
+        }
+
+        function processOrder() {
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const specialRequests = document.getElementById('special-requests').value;
+            const frequency = document.getElementById('frequency').value;
+            const delivery = document.getElementById('delivery').value;
+            
+            // Basic validation
+            if (!name || !email || !phone) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if (delivery === 'delivery' && !address) {
+                alert('Please provide a delivery address');
+                return;
+            }
+            
+            // Here you would typically send the order to your server
+            // For now, we'll just show the success message
+            
+            document.getElementById('success-message').classList.add('show');
+            document.getElementById('order-form').style.display = 'none';
+            
+            // Scroll to success message
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+            
+            console.log('Order processed:', {
+                name,
+                email,
+                phone,
+                address,
+                specialRequests,
+                selectedBox,
+                frequency,
+                delivery,
+                selectedPaymentMethod,
+                orderTotal
+            });
+        }
+
+        function accessMembersPage() {
+            // Placeholder for members-only access
+            alert('Members area coming soon! Sign up for our newsletter to be notified when it launches.');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePricing();
+        });
+    </script>
+</body>
+</html>
