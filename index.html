@@ -1269,9 +1269,9 @@
                 <h3>Fresh Box</h3>
                 
                 <div class="box-options">
-                    <div class="box-option" onclick="selectBox('essential')">
-                        <h4>Essential Box</h4>
-                        <div class="price" id="essential-price">$45</div>
+                    <div class="box-option" onclick="selectBox('birds')">
+                        <h4>The Birds</h4>
+                        <div class="price" id="birds-price">$45</div>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Perfect for getting started with farm-fresh provisions</p>
                         <ul>
                             <li>6 Fresh Eggs</li>
@@ -1281,9 +1281,9 @@
                         </ul>
                     </div>
                     
-                    <div class="box-option" onclick="selectBox('deluxe')">
-                        <h4>Deluxe Box</h4>
-                        <div class="price" id="deluxe-price">$75</div>
+                    <div class="box-option" onclick="selectBox('bees')">
+                        <h4>The Bees</h4>
+                        <div class="price" id="bees-price">$75</div>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Ideal for families wanting the full orchard experience</p>
                         <ul>
                             <li>12 Fresh Eggs</li>
@@ -1387,73 +1387,11 @@
 
                 <!-- Payment Methods Section -->
                 <div class="payment-methods-section">
-                    <h4>Choose Payment Method</h4>
-                    <p style="text-align: center; color: #666; margin-bottom: 25px;">We keep fees low to maximize the O-Boys' savings!</p>
+                    <h4>Payment via Venmo</h4>
+                    <p style="text-align: center; color: #666; margin-bottom: 25px;">Pay easily with Venmo - no fees means more money for the O-Boys' savings!</p>
                     
-                    <div class="payment-methods">
-                        <div class="payment-method" onclick="selectPayment('cash')">
-                            <h5>Cash</h5>
-                            <div class="fee-info">NO FEES</div>
-                            <p class="description">Pay on delivery or pickup</p>
-                        </div>
-
-                        <div class="payment-method" onclick="selectPayment('check')">
-                            <h5>Check</h5>
-                            <div class="fee-info">NO FEES</div>
-                            <p class="description">Make payable to "Chickabees Honey"</p>
-                        </div>
-
-                        <div class="payment-method" onclick="selectPayment('zelle')">
-                            <h5>Zelle</h5>
-                            <div class="fee-info">NO FEES</div>
-                            <p class="description">Bank-to-bank transfer</p>
-                        </div>
-
-                        <div class="payment-method" onclick="selectPayment('venmo')">
-                            <h5>Venmo QR Code</h5>
-                            <div class="fee-info">NO FEES</div>
-                            <p class="description">Scan to pay @chickabeesoakland</p>
-                        </div>
-
-                        <div class="payment-method" onclick="selectPayment('paypal')">
-                            <h5>PayPal</h5>
-                            <div class="fee-info">FREE (Friends & Family)</div>
-                            <p class="description">hello@chickabeeshoney.com</p>
-                        </div>
-                    </div>
-
-                    <!-- Payment Details (Hidden by default) -->
-                    <div class="payment-details" id="cash-details">
-                        <h5>Cash Payment</h5>
-                        <div class="payment-info">
-                            <p><strong>Perfect!</strong> No fees means more money for the O-Boys' Roth IRAs.</p>
-                            <p>Have exact change ready: <span id="cash-amount">$0.00</span></p>
-                            <p>We'll provide a handwritten receipt for your records</p>
-                        </div>
-                    </div>
-
-                    <div class="payment-details" id="check-details">
-                        <h5>Check Payment</h5>
-                        <div class="payment-info">
-                            <p><strong>Make check payable to:</strong> "Chickabees Honey"</p>
-                            <p>Amount: <span id="check-amount">$0.00</span></p>
-                            <p>Mail to: [Your Address Here]</p>
-                            <p>Easy for our bookkeeping and your tax records</p>
-                        </div>
-                    </div>
-
-                    <div class="payment-details" id="zelle-details">
-                        <h5>Zelle Payment</h5>
-                        <div class="payment-info">
-                            <p><strong>Send to:</strong> hello@chickabeeshoney.com</p>
-                            <p>Amount: <span id="zelle-amount">$0.00</span></p>
-                            <p>Memo: "Chickabees Order - [Your Name]"</p>
-                            <p>Instant and completely free!</p>
-                        </div>
-                    </div>
-
-                    <div class="payment-details" id="venmo-details">
-                        <h5>Venmo QR Code Payment</h5>
+                    <div class="payment-details active" id="venmo-details">
+                        <h5>Pay with Venmo QR Code</h5>
                         <div class="qr-code-container">
                             <img src="QRcode_chickabees.jpg" alt="Venmo QR Code for @chickabeesoakland" class="qr-code-image">
                             <div class="qr-instructions">
@@ -1470,18 +1408,9 @@
                             </div>
                         </div>
                         <div class="payment-info">
-                            <p>Completely free with no processing fees!</p>
+                            <p style="color: #00b894; font-weight: bold; font-size: 1.1rem;">✓ Completely free with no processing fees!</p>
                             <p>Every dollar goes directly to support the O-Boys' future</p>
-                        </div>
-                    </div>
-
-                    <div class="payment-details" id="paypal-details">
-                        <h5>PayPal Payment</h5>
-                        <div class="payment-info">
-                            <p><strong>Send to:</strong> hello@chickabeeshoney.com</p>
-                            <p>Amount: <span id="paypal-amount">$0.00</span></p>
-                            <p>Note: "Chickabees Order - [Your Name]"</p>
-                            <p>Please select "Friends & Family" to avoid fees</p>
+                            <p style="margin-top: 15px; font-style: italic;">After payment, we'll contact you within 24 hours to confirm your order and arrange delivery/pickup details.</p>
                         </div>
                     </div>
                 </div>
@@ -1712,6 +1641,7 @@
             
             event.target.closest('.box-option').classList.add('selected');
             selectedBox = boxType;
+            selectedPaymentMethod = 'venmo'; // Auto-select Venmo since it's the only option
             updateOrderSummary();
             updateOrderButton();
         }
@@ -1743,18 +1673,18 @@
 
         function updatePricing() {
             const frequency = document.getElementById('frequency').value;
-            const essentialPrice = document.getElementById('essential-price');
-            const deluxePrice = document.getElementById('deluxe-price');
+            const birdsPrice = document.getElementById('birds-price');
+            const beesPrice = document.getElementById('bees-price');
             
             if (frequency === 'monthly') {
-                essentialPrice.textContent = '$40';
-                deluxePrice.textContent = '$70';
+                birdsPrice.textContent = '$40';
+                beesPrice.textContent = '$70';
             } else if (frequency === 'quarterly') {
-                essentialPrice.textContent = '$45';
-                deluxePrice.textContent = '$75';
+                birdsPrice.textContent = '$45';
+                beesPrice.textContent = '$75';
             } else {
-                essentialPrice.textContent = '$50';
-                deluxePrice.textContent = '$80';
+                birdsPrice.textContent = '$50';
+                beesPrice.textContent = '$80';
             }
             
             updateOrderSummary();
@@ -1769,11 +1699,11 @@
             // Calculate base box price
             let boxPrice;
             if (frequency === 'monthly') {
-                boxPrice = selectedBox === 'essential' ? 40 : 70;
+                boxPrice = selectedBox === 'birds' ? 40 : 70;
             } else if (frequency === 'quarterly') {
-                boxPrice = selectedBox === 'essential' ? 45 : 75;
+                boxPrice = selectedBox === 'birds' ? 45 : 75;
             } else {
-                boxPrice = selectedBox === 'essential' ? 50 : 80;
+                boxPrice = selectedBox === 'birds' ? 50 : 80;
             }
             
             // Calculate add-ons
@@ -1936,6 +1866,7 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
+            selectedPaymentMethod = 'venmo'; // Auto-select Venmo since it's the only option
             updatePricing();
         });
     </script>
