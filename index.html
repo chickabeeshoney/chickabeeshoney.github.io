@@ -1699,7 +1699,7 @@
 
     <!-- Live Chat Widget -->
     <div class="chat-widget" onclick="openChat()" title="Chat with us!" aria-label="Open chat support">
-        💬
+        Chat
     </div>
 
     <header role="banner">
@@ -1742,7 +1742,7 @@
             <button class="newsletter-close" onclick="closeNewsletter()" aria-label="Close newsletter banner">&times;</button>
             <div class="newsletter-content">
                 <div class="newsletter-text">
-                    <h3>🐝 Join Our Farm Family Newsletter</h3>
+                    <h3>Join Our Farm Family Newsletter</h3>
                     <p>Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
                 </div>
                 <div class="newsletter-form">
@@ -1766,9 +1766,8 @@
         <!-- Social Proof Section -->
         <section class="social-proof" aria-label="Customer activity">
             <div class="container">
-                <div class="social-proof-item">🌟 127 happy customers this month</div>
-                <div class="social-proof-item">🚚 Free pickup with coffee & waffles</div>
-                <div class="social-proof-item">🐝 5 beehives producing fresh honey</div>
+                <div class="social-proof-item">Free pickup with coffee & waffles</div>
+                <div class="social-proof-item">5 beehives producing fresh honey</div>
             </div>
         </section>
 
@@ -2571,7 +2570,7 @@
             let orderHTML = `
                 <div class="order-item">
                     <span class="item-name">${selectedBox.charAt(0).toUpperCase() + selectedBox.slice(1)} Box (${frequency.charAt(0).toUpperCase() + frequency.slice(1)})</span>
-                    <span class="item-price">$${boxPrice.toFixed(2)}</span>
+                    <span class="item-price">${boxPrice.toFixed(2)}</span>
                 </div>
             `;
             
@@ -2579,7 +2578,7 @@
                 orderHTML += `
                     <div class="order-item">
                         <span class="item-name">${addon.name}</span>
-                        <span class="item-price">$${addon.price.toFixed(2)}</span>
+                        <span class="item-price">${addon.price.toFixed(2)}</span>
                     </div>
                 `;
             });
@@ -2588,7 +2587,7 @@
                 orderHTML += `
                     <div class="order-item">
                         <span class="item-name">Delivery Fee</span>
-                        <span class="item-price">$${deliveryFee.toFixed(2)}</span>
+                        <span class="item-price">${deliveryFee.toFixed(2)}</span>
                     </div>
                 `;
             }
@@ -2596,7 +2595,7 @@
             orderHTML += `
                 <div class="order-item" style="font-weight: 500; font-size: 1rem; color: #1a1a1a;">
                     <span class="item-name"><strong>Total</strong></span>
-                    <span class="item-price"><strong>$${orderTotal.toFixed(2)}</strong></span>
+                    <span class="item-price"><strong>${orderTotal.toFixed(2)}</strong></span>
                 </div>
             `;
             
@@ -2643,7 +2642,7 @@
             
             if (selectedBox && selectedPaymentMethod) {
                 orderBtn.disabled = false;
-                orderBtn.textContent = `Place Order - $${orderTotal.toFixed(2)}`;
+                orderBtn.textContent = `Place Order - ${orderTotal.toFixed(2)}`;
             } else {
                 orderBtn.disabled = true;
                 orderBtn.textContent = 'Select Box & Payment Method to Continue';
