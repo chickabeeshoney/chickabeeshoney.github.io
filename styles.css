@@ -52,6 +52,12 @@ nav .container {
     position: relative;
 }
 
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
