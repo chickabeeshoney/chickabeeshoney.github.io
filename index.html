@@ -708,12 +708,14 @@
 
         .qr-code-image {
             width: 150px;
-            height: 150px;
+            height: auto;
+            max-width: 200px;
             border: 2px solid #e8e6e1;
             border-radius: 10px;
             padding: 10px;
             background: white;
             margin-bottom: 15px;
+            object-fit: contain;
         }
 
         .qr-instructions {
@@ -1632,7 +1634,8 @@
 
             .qr-code-image {
                 width: 200px;
-                height: 200px;
+                height: auto;
+                max-width: 250px;
             }
         }
 
