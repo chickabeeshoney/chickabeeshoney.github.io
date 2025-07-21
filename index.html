@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chickabees Oakland - Fresh Honey, Eggs & Baked Goods | Monthly Boxes</title>
+    <meta name="description" content="Fresh honey, eggs, and homemade baked goods delivered monthly in Oakland. Family-run farm with chickens and bees teaching kids about sustainable living.">
+    <meta name="keywords" content="fresh honey, farm eggs, baked goods, Oakland, monthly box, local farm, chickens, bees, sustainable living">
+    <meta name="author" content="Chickabees Oakland">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Chickabees Oakland",
+        "description": "Fresh honey, eggs, and homemade baked goods from our backyard farm",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Oakland",
+            "addressRegion": "CA",
+            "streetAddress": "Montclair"
+        },
+        "telephone": "@chickabeesoakland",
+        "url": "https://chickabees.com",
+        "priceRange": "$$",
+        "openingHours": "Su 09:00-11:00",
+        "paymentAccepted": "Venmo"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Chickabees</h1>
+                <ul class="nav-links">
+                    <li><a href="#boxes">Boxes</a></li>
+                    <li><a href="#build-box">Build Your Box</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#pickup">Pickup Info</a></li>
+                </ul>
+                <div class="header-cart">
+                    <div class="cart-icon" id="cart-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"/>
+                            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"/>
+                            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"/>
+                        </svg>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                    <div class="mini-cart" id="mini-cart">
+                        <div class="mini-cart-header">
+                            <h4>Your Cart</h4>
+                            <button class="close-mini-cart">&times;</button>
+                        </div>
+                        <div class="mini-cart-items" id="mini-cart-items">
+                            <p class="empty-cart">Your cart is empty</p>
+                        </div>
+                        <div class="mini-cart-footer">
+                            <div class="mini-cart-total">
+                                <strong>Total: $<span id="mini-cart-total">0.00</span></strong>
+                            </div>
+                            <button class="checkout-btn" id="checkout-btn">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <h2>Fresh from our backyard to your table</h2>
+            <p>Monthly boxes of honey, eggs, and homemade baked goods delivered fresh in Oakland</p>
+            <div class="newsletter-signup">
+                <h3>Join our newsletter for updates</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p class="newsletter-note">Get notified about seasonal items, pickup reminders, and farm updates</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="boxes" class="boxes">
+        <div class="container">
+            <h2>Choose Your Monthly Box</h2>
+            <div class="box-grid">
+                <div class="box-card">
+                    <div class="box-image">
+                        <img src="https://via.placeholder.com/300x200/D4A574/fff?text=The+Birds+Box" alt="The Birds Box Contents" loading="lazy">
+                    </div>
+                    <h3>The Birds</h3>
+                    <div class="box-contents">
+                        <ul>
+                            <li><span class="icon">•</span>Small jar of honey</li>
+                            <li><span class="icon">•</span>6 fresh eggs</li>
+                            <li><span class="icon">•</span>Sourdough bread</li>
+                            <li><span class="icon">•</span>Homemade granola</li>
+                            <li><span class="icon">•</span>Small jar of cold brew coffee</li>
+                        </ul>
+                    </div>
+                    <div class="box-actions">
+                        <button class="order-btn" data-box="The Birds">Order This Box</button>
+                        <button class="preorder-btn" data-box="The Birds">Pre-Order</button>
+                    </div>
+                </div>
+                <div class="box-card featured">
+                    <div class="box-image">
+                        <img src="https://via.placeholder.com/300x200/87A96B/fff?text=The+Bees+Box" alt="The Bees Box Contents" loading="lazy">
+                    </div>
+                    <h3>The Bees</h3>
+                    <div class="availability-badge">Most Popular</div>
+                    <div class="box-contents">
+                        <ul>
+                            <li><span class="icon">•</span>Large jar of honey</li>
+                            <li><span class="icon">•</span>12 fresh eggs</li>
+                            <li><span class="icon">•</span>Sourdough bread (large)</li>
+                            <li><span class="icon">•</span>Homemade granola (large)</li>
+                            <li><span class="icon">•</span>Large jar of cold brew coffee</li>
+                            <li><span class="icon">•</span>Specialty item (e.g., chocolate babka)</li>
+                        </ul>
+                    </div>
+                    <div class="box-actions">
+                        <button class="order-btn" data-box="The Bees">Order This Box</button>
+                        <button class="preorder-btn" data-box="The Bees">Pre-Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="individual-products">
+        <div class="container">
+            <h2>Individual Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x200/D4A574/fff?text=Fresh+Honey" alt="Fresh Raw Honey" loading="lazy">
+                    </div>
+                    <h3>Fresh Honey</h3>
+                    <p>Pure, raw honey from our backyard hives. Unfiltered and unpasteurized for maximum flavor and health benefits.</p>
+                    <div class="product-actions">
+                        <button class="order-btn" data-product="Honey">Order Honey</button>
+                        <button class="waitlist-btn" data-product="Honey">Join Waitlist</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x200/87A96B/fff?text=Farm+Eggs" alt="Farm Fresh Eggs" loading="lazy">
+                    </div>
+                    <h3>Farm Fresh Eggs</h3>
+                    <p>From our happy, free-range chickens. Rich orange yolks from chickens that roam freely in our backyard.</p>
+                    <div class="product-actions">
+                        <button class="order-btn" data-product="Eggs">Order Eggs</button>
+                        <button class="waitlist-btn" data-product="Eggs">Join Waitlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="build-box" class="build-your-box">
+        <div class="container">
+            <h2>Build Your Own Box</h2>
+            <p class="section-subtitle">Create a custom box with your favorite items</p>
+            
+            <div class="build-box-content">
+                <div class="product-selector">
+                    <div class="selector-grid">
+                        <div class="selector-item" data-product="honey">
+                            <div class="selector-image">
+                                <img src="https://via.placeholder.com/150x150/D4A574/fff?text=Honey" alt="Fresh Honey" loading="lazy">
+                            </div>
+                            <div class="selector-info">
+                                <h4>Fresh Honey</h4>
+                                <p>Pure, raw honey from our backyard hives</p>
+                                <div class="size-options">
+                                    <label>
+                                        <input type="radio" name="honey-size" value="small" data-price="8.00">
+                                        <span>Small Jar - $8.00</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="honey-size" value="large" data-price="15.00">
+                                        <span>Large Jar - $15.00</span>
+                                    </label>
+                                </div>
+                                <div class="quantity-selector">
+                                    <label>Quantity:</label>
+                                    <button class="qty-btn minus" data-product="honey">-</button>
+                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="honey">
+                                    <button class="qty-btn plus" data-product="honey">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="honey" disabled>Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="selector-item" data-product="eggs">
+                            <div class="selector-image">
+                                <img src="https://via.placeholder.com/150x150/87A96B/fff?text=Eggs" alt="Farm Fresh Eggs" loading="lazy">
+                            </div>
+                            <div class="selector-info">
+                                <h4>Farm Fresh Eggs</h4>
+                                <p>From our happy, free-range chickens</p>
+                                <div class="size-options">
+                                    <label>
+                                        <input type="radio" name="eggs-size" value="half-dozen" data-price="4.00">
+                                        <span>Half Dozen - $4.00</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="eggs-size" value="dozen" data-price="7.00">
+                                        <span>Dozen - $7.00</span>
+                                    </label>
+                                </div>
+                                <div class="quantity-selector">
+                                    <label>Quantity:</label>
+                                    <button class="qty-btn minus" data-product="eggs">-</button>
+                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="eggs">
+                                    <button class="qty-btn plus" data-product="eggs">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="eggs" disabled>Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="selector-item" data-product="bread">
+                            <div class="selector-image">
+                                <img src="https://via.placeholder.com/150x150/C65D00/fff?text=Bread" alt="Sourdough Bread" loading="lazy">
+                            </div>
+                            <div class="selector-info">
+                                <h4>Sourdough Bread</h4>
+                                <p>Fresh baked artisan sourdough</p>
+                                <div class="size-options">
+                                    <label>
+                                        <input type="radio" name="bread-size" value="regular" data-price="6.00">
+                                        <span>Regular Loaf - $6.00</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="bread-size" value="large" data-price="9.00">
+                                        <span>Large Loaf - $9.00</span>
+                                    </label>
+                                </div>
+                                <div class="quantity-selector">
+                                    <label>Quantity:</label>
+                                    <button class="qty-btn minus" data-product="bread">-</button>
+                                    <input type="number" class="qty-input" min="0" max="5" value="0" data-product="bread">
+                                    <button class="qty-btn plus" data-product="bread">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="bread" disabled>Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="selector-item" data-product="granola">
+                            <div class="selector-image">
+                                <img src="https://via.placeholder.com/150x150/D4A574/fff?text=Granola" alt="Homemade Granola" loading="lazy">
+                            </div>
+                            <div class="selector-info">
+                                <h4>Homemade Granola</h4>
+                                <p>Crunchy granola made with our honey</p>
+                                <div class="size-options">
+                                    <label>
+                                        <input type="radio" name="granola-size" value="small" data-price="5.00">
+                                        <span>Small Bag - $5.00</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="granola-size" value="large" data-price="8.00">
+                                        <span>Large Bag - $8.00</span>
+                                    </label>
+                                </div>
+                                <div class="quantity-selector">
+                                    <label>Quantity:</label>
+                                    <button class="qty-btn minus" data-product="granola">-</button>
+                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="granola">
+                                    <button class="qty-btn plus" data-product="granola">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="granola" disabled>Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="selector-item" data-product="lip-balm">
+                            <div class="selector-image">
+                                <img src="https://via.placeholder.com/150x150/87A96B/fff?text=Lip+Balm" alt="Honey Lip Balm" loading="lazy">
+                            </div>
+                            <div class="selector-info">
+                                <h4>Honey Lip Balm</h4>
+                                <p>Natural lip balm made with our beeswax and honey</p>
+                                <div class="size-options">
+                                    <label>
+                                        <input type="radio" name="lip-balm-size" value="single" data-price="3.00">
+                                        <span>Single Tube - $3.00</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="lip-balm-size" value="3-pack" data-price="8.00">
+                                        <span>3-Pack - $8.00</span>
+                                    </label>
+                                </div>
+                                <div class="quantity-selector">
+                                    <label>Quantity:</label>
+                                    <button class="qty-btn minus" data-product="lip-balm">-</button>
+                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="lip-balm">
+                                    <button class="qty-btn plus" data-product="lip-balm">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="lip-balm" disabled>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-box-sidebar">
+                    <div class="cart-summary">
+                        <h3>Your Custom Box</h3>
+                        <div class="cart-items" id="cart-items">
+                            <p class="empty-cart">No items selected</p>
+                        </div>
+                        <div class="cart-total">
+                            <div class="subtotal">
+                                <span>Subtotal: $<span id="cart-subtotal">0.00</span></span>
+                            </div>
+                            <div class="total">
+                                <strong>Total: $<span id="cart-total">0.00</span></strong>
+                            </div>
+                        </div>
+                        
+                        <div class="subscription-options">
+                            <h4>Delivery Options</h4>
+                            <label class="subscription-option">
+                                <input type="radio" name="subscription" value="one-time" checked>
+                                <span>One-time Order</span>
+                            </label>
+                            <label class="subscription-option">
+                                <input type="radio" name="subscription" value="monthly">
+                                <span>Monthly Subscription <small>(Save 10%)</small></span>
+                            </label>
+                            <label class="subscription-option">
+                                <input type="radio" name="subscription" value="quarterly">
+                                <span>Quarterly Subscription <small>(Save 15%)</small></span>
+                            </label>
+                        </div>
+
+                        <div class="pickup-date-selector">
+                            <h4>Select Pickup Date</h4>
+                            <div class="pickup-calendar">
+                                <select id="pickup-date" class="pickup-select">
+                                    <option value="">Choose a date...</option>
+                                    <option value="2025-01-05">January 5, 2025 (9-11 AM)</option>
+                                    <option value="2025-02-02">February 2, 2025 (9-11 AM)</option>
+                                    <option value="2025-03-02">March 2, 2025 (9-11 AM)</option>
+                                    <option value="2025-04-06">April 6, 2025 (9-11 AM)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="checkout-btn-main" id="checkout-btn-main" disabled>
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar" class="availability-calendar">
+        <div class="container">
+            <h2>Monthly Availability</h2>
+            <div class="calendar-grid">
+                <div class="calendar-month">
+                    <h3>January 2025</h3>
+                    <div class="calendar-items">
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Honey</span>
+                        </div>
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Fresh Eggs</span>
+                        </div>
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Sourdough Bread</span>
+                        </div>
+                        <div class="calendar-item seasonal">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Winter Citrus Tart</span>
+                        </div>
+                    </div>
+                    <div class="pickup-date">
+                        <strong>Pickup: January 5th, 9-11 AM</strong>
+                        <button class="add-calendar-btn" data-date="2025-01-05">Add to Calendar</button>
+                    </div>
+                </div>
+                <div class="calendar-month">
+                    <h3>February 2025</h3>
+                    <div class="calendar-items">
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Honey</span>
+                        </div>
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Fresh Eggs</span>
+                        </div>
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Sourdough Bread</span>
+                        </div>
+                        <div class="calendar-item seasonal">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Chocolate Babka</span>
+                        </div>
+                    </div>
+                    <div class="pickup-date">
+                        <strong>Pickup: February 2nd, 9-11 AM</strong>
+                        <button class="add-calendar-btn" data-date="2025-02-02">Add to Calendar</button>
+                    </div>
+                </div>
+                <div class="calendar-month">
+                    <h3>March 2025</h3>
+                    <div class="calendar-items">
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Honey</span>
+                        </div>
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Fresh Eggs</span>
+                        </div>
+                        <div class="calendar-item available">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Sourdough Bread</span>
+                        </div>
+                        <div class="calendar-item seasonal">
+                            <span class="item-icon">•</span>
+                            <span class="item-name">Spring Herb Focaccia</span>
+                        </div>
+                    </div>
+                    <div class="pickup-date">
+                        <strong>Pickup: March 2nd, 9-11 AM</strong>
+                        <button class="add-calendar-btn" data-date="2025-03-02">Add to Calendar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="photo-gallery">
+        <div class="container">
+            <h2>From Our Farm</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300/D4A574/fff?text=Honey+Harvest" alt="Honey harvest from our beehives" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Fresh Honey Harvest</h4>
+                        <p>Straight from our backyard hives</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300/87A96B/fff?text=Happy+Chickens" alt="Free-range chickens in the backyard" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Happy Chickens</h4>
+                        <p>Our girls roaming free in the yard</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300/C65D00/fff?text=Fresh+Eggs" alt="Fresh eggs in a basket" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Farm Fresh Eggs</h4>
+                        <p>Rich orange yolks from happy hens</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300/D4A574/fff?text=Sourdough+Bread" alt="Homemade sourdough bread" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Artisan Sourdough</h4>
+                        <p>Baked fresh for each monthly box</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300/87A96B/fff?text=Beehives" alt="Beehives in the backyard" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Our Beehives</h4>
+                        <p>Where the magic happens</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300/C65D00/fff?text=Kids+Learning" alt="Children learning about farming" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Learning Together</h4>
+                        <p>Teaching kids about sustainable living</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Neighbors Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The honey is absolutely incredible! You can taste the difference - it's so much richer than anything from the store. My kids love the fresh eggs too!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <span>Montclair Neighbor</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I love supporting this local family business. The sourdough bread is phenomenal, and I feel good knowing I'm helping fund the kids' education."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Mike R.</h4>
+                            <span>Regular Customer</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The Bees box is perfect for our family! Everything is fresh and delicious. The kids are fascinated by the stories about the chickens and bees."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Jennifer L.</h4>
+                            <span>Monthly Subscriber</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How many chickens and beehives do you have?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We currently have 8 happy chickens and 3 active beehives in our backyard. This gives us plenty of fresh eggs and honey for our monthly boxes while keeping everything manageable for our family operation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are there any allergens I should know about?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our products may contain eggs, wheat, and nuts. The sourdough bread contains gluten. All baked goods are made in a kitchen that processes nuts. Please let us know about any allergies when ordering.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How should I store the honey and eggs?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Store honey at room temperature in a cool, dry place. Fresh eggs should be refrigerated and will stay fresh for 3-4 weeks. The sourdough bread is best consumed within 3-5 days or can be frozen for longer storage.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I customize my box?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While we can't customize individual boxes, we offer two different sizes to fit different needs. You can also order individual items like just honey or just eggs if you prefer.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What happens if I miss a pickup?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We understand life happens! If you miss a pickup, please contact us via Venmo message. We can usually arrange a alternative pickup time within 24 hours, subject to product freshness.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do you ensure product quality and safety?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We follow all local health guidelines for food production. Our eggs are collected daily and properly washed. Honey is extracted using clean equipment and stored in sterile containers. All baked goods are made fresh within 24 hours of pickup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-info">
+        <div class="container">
+            <h2>How to Order</h2>
+            <div class="order-details">
+                <div class="payment-info">
+                    <h3>Payment</h3>
+                    <p>Send payment via Venmo to:</p>
+                    <p class="venmo-handle">@chickabeesoakland</p>
+                    <p>Please include your name and order details in the payment note</p>
+                </div>
+                <div class="pickup-schedule">
+                    <h3>Pickup</h3>
+                    <p><strong>When:</strong> First Sunday of each month</p>
+                    <p><strong>Time:</strong> 9:00 AM - 11:00 AM</p>
+                    <p><strong>Location:</strong> Montclair, Oakland</p>
+                    <p class="note">Exact address provided after order confirmation</p>
+                    <div class="map-container">
+                        <div id="pickup-map" class="map-placeholder">
+                            <p>Interactive map will load here</p>
+                            <button class="load-map-btn">Load Map</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-content">
+                <p>Chickabees began as a backyard project to teach our boys about ecosystems, gardening, farming, and animal care. What started as a few chickens and beehives has grown into a small business that connects our community with fresh, local food.</p>
+                <p>Through caring for our chickens and bees, our children learn valuable lessons about responsibility, entrepreneurship, and the importance of sustainable living. All proceeds from Chickabees are invested in their education and future through Roth IRAs, while also reinvesting in our backyard farm to continue growing and improving.</p>
+                <p>When you support Chickabees, you're not just getting delicious, fresh products – you're investing in the next generation's education and helping sustain a local, family-run operation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="recipes" class="recipe-corner">
+        <div class="container">
+            <h2>Recipe Corner</h2>
+            <p class="section-subtitle">Simple recipes using our fresh ingredients</p>
+            <div class="recipes-grid">
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://via.placeholder.com/300x200/D4A574/fff?text=Honey+Wheat+Bread" alt="Honey Wheat Bread Recipe" loading="lazy">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Honey Wheat Bread</h3>
+                        <p>A simple, wholesome bread made with our raw honey and fresh ingredients.</p>
+                        <div class="recipe-ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                <li>2 cups whole wheat flour</li>
+                                <li>1 cup all-purpose flour</li>
+                                <li>1/4 cup Chickabees honey</li>
+                                <li>1 packet active dry yeast</li>
+                                <li>1 tsp salt</li>
+                                <li>1 cup warm water</li>
+                            </ul>
+                        </div>
+                        <button class="recipe-btn">View Full Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://via.placeholder.com/300x200/87A96B/fff?text=Farm+Egg+Frittata" alt="Farm Egg Frittata Recipe" loading="lazy">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Farm Fresh Egg Frittata</h3>
+                        <p>A versatile frittata showcasing the rich flavor of our farm-fresh eggs.</p>
+                        <div class="recipe-ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                <li>8 Chickabees fresh eggs</li>
+                                <li>1/4 cup milk</li>
+                                <li>1 cup mixed vegetables</li>
+                                <li>1/2 cup cheese</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>2 tbsp olive oil</li>
+                            </ul>
+                        </div>
+                        <button class="recipe-btn">View Full Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://via.placeholder.com/300x200/C65D00/fff?text=Honey+Granola" alt="Honey Granola Recipe" loading="lazy">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Homemade Honey Granola</h3>
+                        <p>Crunchy granola sweetened with our pure honey - perfect for breakfast.</p>
+                        <div class="recipe-ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                <li>3 cups rolled oats</li>
+                                <li>1/2 cup Chickabees honey</li>
+                                <li>1/2 cup mixed nuts</li>
+                                <li>1/4 cup seeds</li>
+                                <li>1/2 cup dried fruit</li>
+                                <li>1/4 cup coconut oil</li>
+                            </ul>
+                        </div>
+                        <button class="recipe-btn">View Full Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="farm-updates">
+        <div class="container">
+            <h2>Farm Updates</h2>
+            <p class="section-subtitle">Latest news from our backyard farm</p>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/350x200/D4A574/fff?text=Winter+Hive+Care" alt="Winter beehive maintenance" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 15, 2025</div>
+                        <h3>Winter Hive Care</h3>
+                        <p>How we're helping our bees stay healthy through the colder months. Winter is a crucial time for beekeeping, and we're taking special care to ensure our hives stay strong...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/350x200/87A96B/fff?text=New+Chickens" alt="New chickens joining the flock" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 8, 2025</div>
+                        <h3>New Additions to the Flock</h3>
+                        <p>We've added two new hens to our backyard flock! Meet Cinnamon and Nutmeg, our newest family members. The boys are already learning so much about integrating new chickens...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/350x200/C65D00/fff?text=Sourdough+Tips" alt="Sourdough baking tips" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">December 20, 2024</div>
+                        <h3>Sourdough Baking Tips</h3>
+                        <p>Behind the scenes of our sourdough bread making process. From maintaining our starter to achieving the perfect crust, here's how we make the bread you love...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Questions? Contact us through Venmo @chickabeesoakland</p>
+                    <p>Email: hellochickabees@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Our Journey</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <span class="social-icon">@</span>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#boxes">Monthly Boxes</a></li>
+                        <li><a href="#gallery">Photo Gallery</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#recipes">Recipes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chickabees Oakland. All rights reserved.</p>
+                <p>Supporting local families and sustainable living</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
