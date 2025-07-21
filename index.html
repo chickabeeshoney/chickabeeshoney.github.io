@@ -2,804 +2,2822 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chickabees Oakland - Fresh Honey, Eggs & Baked Goods | Monthly Boxes</title>
-    <meta name="description" content="Fresh honey, eggs, and homemade baked goods delivered monthly in Oakland. Family-run farm with chickens and bees teaching kids about sustainable living.">
-    <meta name="keywords" content="fresh honey, farm eggs, baked goods, Oakland, monthly box, local farm, chickens, bees, sustainable living">
-    <meta name="author" content="Chickabees Oakland">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <!-- Structured Data for Local Business -->
+    <!-- SEO Meta Tags -->
+    <title>Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA</title>
+    <meta name="description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education. Free pickup with coffee & waffles!">
+    <meta name="keywords" content="raw honey Oakland, farm fresh eggs, sustainable farming, local honey, farm provisions, Oakland farm, beekeeping, chickens, organic">
+    <meta name="author" content="Chickabees Honey">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://chickabeeshoney.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chickabeeshoney.com">
+    <meta property="og:title" content="Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA">
+    <meta property="og:description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education.">
+    <meta property="og:image" content="https://chickabeeshoney.com/images/chickabees-og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Chickabees Honey">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chickabeeshoney.com">
+    <meta property="twitter:title" content="Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA">
+    <meta property="twitter:description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education.">
+    <meta property="twitter:image" content="https://chickabeeshoney.com/images/chickabees-og-image.jpg">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#f5e6a3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Chickabees Honey">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    <!-- Local Business Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Chickabees Oakland",
-        "description": "Fresh honey, eggs, and homemade baked goods from our backyard farm",
+        "name": "Chickabees Honey",
+        "description": "Family farm providing fresh raw honey, eggs, and seasonal provisions in Oakland, CA",
+        "url": "https://chickabeeshoney.com",
+        "email": "hello@chickabeeshoney.com",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Oakland",
             "addressRegion": "CA",
-            "streetAddress": "Montclair"
+            "addressCountry": "US"
         },
-        "telephone": "@chickabeesoakland",
-        "url": "https://chickabees.com",
-        "priceRange": "$$",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "37.8044",
+            "longitude": "-122.2712"
+        },
         "openingHours": "Su 09:00-11:00",
-        "paymentAccepted": "Venmo"
+        "priceRange": "$45-$80",
+        "paymentAccepted": "Venmo",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Farm Provisions",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "The Birds Box",
+                        "description": "6 fresh eggs, 10oz raw honey, baked good, homemade granola",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "45.00",
+                            "priceCurrency": "USD"
+                        }
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "The Bees Box",
+                        "description": "12 fresh eggs, 22oz raw honey, 2 baked goods, large granola, seasonal produce",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "75.00",
+                            "priceCurrency": "USD"
+                        }
+                    }
+                }
+            ]
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "37.8044",
+                "longitude": "-122.2712"
+            },
+            "geoRadius": "30000"
+        },
+        "sameAs": [
+            "https://instagram.com/chickabeesoakland"
+        ]
     }
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-19BV0QPP7Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-19BV0QPP7Z', {
+            custom_map: {
+                'custom_parameter_1': 'order_value',
+                'custom_parameter_2': 'box_type'
+            }
+        });
+        
+        // Enhanced event tracking
+        function trackEvent(eventName, parameters = {}) {
+            gtag('event', eventName, {
+                event_category: 'engagement',
+                event_label: parameters.label || '',
+                value: parameters.value || 0,
+                ...parameters
+            });
+        }
+
+        // Track enhanced e-commerce events
+        function trackPurchase(orderData) {
+            gtag('event', 'purchase', {
+                transaction_id: orderData.transaction_id,
+                value: orderData.value,
+                currency: 'USD',
+                items: orderData.items
+            });
+        }
+
+        function trackAddToCart(itemData) {
+            gtag('event', 'add_to_cart', {
+                currency: 'USD',
+                value: itemData.value,
+                items: [itemData]
+            });
+        }
+        
+        // Track page load performance
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const navigation = performance.getEntriesByType('navigation')[0];
+                gtag('event', 'page_load_time', {
+                    event_category: 'performance',
+                    value: Math.round(navigation.loadEventEnd - navigation.fetchStart),
+                    custom_parameter: 'load_time_ms'
+                });
+            }, 0);
+        });
+
+        // Track scroll depth
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+                maxScroll = scrollPercent;
+                gtag('event', 'scroll_depth', {
+                    event_category: 'engagement',
+                    value: scrollPercent
+                });
+            }
+        });
+    </script>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"></noscript>
+    
+    <!-- Preload key images -->
+    <link rel="preload" as="image" href="images/circle-logo.png">
+    <link rel="preload" as="image" href="QRcode_chickabees.jpg">
+    
+    <!-- Critical CSS - Inlined for performance -->
+    <style>
+        /* Critical above-the-fold styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background-color: #faf9f7;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - Critical for first paint */
+        header {
+            background: #faf9f7;
+            padding: 15px 0;
+            border-bottom: 1px solid #e8e6e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background: #f5e6a3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #1a1a1a;
+            flex-shrink: 0;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo-text p {
+            font-style: italic;
+            color: #666;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            display: none;
+        }
+
+        /* Hero - Critical for first contentful paint */
+        .hero {
+            background: linear-gradient(rgba(245, 230, 163, 0.3), rgba(245, 230, 163, 0.3));
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        /* Skip Link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #1a1a1a;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+
+    <style>
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            margin-right: -10px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #1a1a1a;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 10px;
+            display: block;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #666;
+            outline: 2px solid #1a1a1a;
+            outline-offset: 2px;
+        }
+
+        /* Newsletter Banner */
+        .newsletter-banner {
+            background: linear-gradient(135deg, #f5e6a3 0%, #e8d789 100%);
+            padding: 15px 0;
+            border-bottom: 1px solid #e8e6e1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-out;
+            position: relative;
+            z-index: 90;
+        }
+
+        .newsletter-banner.hidden {
+            transform: translateY(-100%);
+        }
+
+        .newsletter-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .newsletter-text h3 {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .newsletter-text p {
+            color: #666;
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .newsletter-form input {
+            padding: 10px 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            flex: 1;
+            font-family: inherit;
+            min-width: 0;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+
+        .newsletter-form button {
+            padding: 10px 16px;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            font-family: inherit;
+            white-space: nowrap;
+            -webkit-tap-highlight-color: transparent;
+            min-height: 44px;
+        }
+
+        .newsletter-form button:hover,
+        .newsletter-form button:focus {
+            background: #333;
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .newsletter-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+            -webkit-tap-highlight-color: transparent;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .newsletter-close:hover,
+        .newsletter-close:focus {
+            color: #1a1a1a;
+            outline: 2px solid #1a1a1a;
+            outline-offset: 2px;
+        }
+
+        /* Order Section */
+        .order-section {
+            padding: 40px 0;
+            background: #fff;
+            position: relative;
+        }
+
+        .order-form {
+            background: #faf9f7;
+            border: 1px solid #e8e6e1;
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .order-form h3 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #e8e6e1;
+            background: white;
+            font-size: 16px;
+            font-family: inherit;
+            color: #1a1a1a;
+            border-radius: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 35px;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+
+        /* Form validation styles */
+        .form-group input:invalid,
+        .form-group textarea:invalid,
+        .form-group select:invalid {
+            border-color: #e74c3c;
+        }
+
+        .form-group input:valid,
+        .form-group textarea:valid,
+        .form-group select:valid {
+            border-color: #27ae60;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .success-message {
+            color: #27ae60;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .box-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .box-option {
+            border: 2px solid #e8e6e1;
+            padding: 25px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+            position: relative;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .box-option:hover,
+        .box-option:focus,
+        .box-option.selected {
+            border-color: #1a1a1a;
+            background: #faf9f7;
+            outline: none;
+        }
+
+        .box-option:focus {
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+
+        .box-option h4 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .box-option .price {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .box-option ul {
+            list-style: none;
+        }
+
+        .box-option li {
+            padding: 6px 0;
+            color: #666;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 1.4;
+        }
+
+        /* Payment Methods Section */
+        .payment-methods-section {
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 25px 20px;
+            margin: 25px 0;
+        }
+
+        .payment-methods-section h4 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Payment Details */
+        .payment-details {
+            display: none;
+            background: #f5e6a3;
+            border: 1px solid #e8e6e1;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        /* QR Code specific styles */
+        .qr-code-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .qr-code-image {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #e8e6e1;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+            margin-bottom: 15px;
+        }
+
+        .qr-instructions {
+            background: white;
+            padding: 15px;
+            border: 1px solid #e8e6e1;
+            border-radius: 5px;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .qr-instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .qr-instructions li {
+            margin: 5px 0;
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .delivery-info,
+        .pickup-info {
+            background: #f5e6a3;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #e8e6e1;
+            border-radius: 4px;
+        }
+
+        .delivery-info h4,
+        .pickup-info h4 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .delivery-info p,
+        .pickup-info p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .add-ons-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border: 1px solid #e8e6e1;
+            border-radius: 4px;
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .add-on-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            border: 1px solid #e8e6e1;
+            background: #faf9f7;
+            cursor: pointer;
+            transition: all 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            border-radius: 4px;
+        }
+
+        .add-on-item:hover,
+        .add-on-item:focus-within {
+            border-color: #1a1a1a;
+            background: white;
+        }
+
+        .add-on-item input[type="checkbox"] {
+            margin-top: 3px;
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+
+        .add-on-item input[type="checkbox"]:focus {
+            outline: 2px solid #1a1a1a;
+            outline-offset: 2px;
+        }
+
+        .add-on-details strong {
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .add-on-details small {
+            color: #666;
+            font-style: italic;
+            line-height: 1.3;
+            font-size: 0.85rem;
+        }
+
+        .order-btn {
+            background: #1a1a1a;
+            color: white;
+            padding: 16px 30px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: inherit;
+            border-radius: 4px;
+            -webkit-tap-highlight-color: transparent;
+            min-height: 48px;
+        }
+
+        .order-btn:hover,
+        .order-btn:focus {
+            background: #333;
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .order-btn:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+
+        .order-btn:disabled:hover,
+        .order-btn:disabled:focus {
+            background: #999;
+            outline: none;
+        }
+
+        /* Loading state */
+        .order-btn.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .order-btn.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #fff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Order Summary */
+        .order-summary {
+            background: #f5e6a3;
+            border: 1px solid #e8e6e1;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .order-summary h4 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .order-details {
+            background: white;
+            padding: 15px;
+            border: 1px solid #e8e6e1;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        /* Success Message */
+        .success-message-banner {
+            display: none;
+            background: #00b894;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            role: alert;
+            aria-live: polite;
+        }
+
+        .success-message-banner.show {
+            display: block;
+        }
+
+        .success-message-banner h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #e8e6e1;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .social-proof-item {
+            display: inline-block;
+            margin: 5px 15px;
+            padding: 5px 10px;
+            background: #f5e6a3;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #1a1a1a;
+        }
+
+        .testimonial {
+            background: #f5e6a3;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid #e8e6e1;
+            border-radius: 4px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .testimonial blockquote {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .testimonial cite {
+            font-weight: 500;
+            color: #666;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e8e6e1;
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: #666;
+        }
+
+        .faq-answer {
+            padding: 0 0 20px 0;
+            color: #666;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Family Story Section */
+        .family-story {
+            padding: 40px 0;
+            background: #faf9f7;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .origin-story {
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 30px 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .origin-story h3 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .origin-story p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-box {
+            background: #f5e6a3;
+            padding: 20px;
+            margin: 25px auto;
+            border: 1px solid #e8e6e1;
+            max-width: 700px;
+            font-style: italic;
+            border-radius: 4px;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .story-text h3 {
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .story-text p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .story-image {
+            background: #e8e6e1;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #d0cec9;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Farm Features */
+        .farm-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            background: white;
+            border: 1px solid #e8e6e1;
+            padding: 25px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .feature h4 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter Signup */
+        .newsletter-signup {
+            background: #f5e6a3;
+            padding: 25px 20px;
+            margin: 30px 0;
+            border: 1px solid #e8e6e1;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .newsletter-signup h4 {
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .newsletter-signup p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .signup-form input {
+            padding: 12px 15px;
+            border: 1px solid #e8e6e1;
+            background: white;
+            font-size: 16px;
+            font-family: inherit;
+            border-radius: 4px;
+        }
+
+        .signup-form input:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+
+        .signup-form button {
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-family: inherit;
+            border-radius: 4px;
+            min-height: 44px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .signup-form button:hover,
+        .signup-form button:focus {
+            background: #333;
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 50px 0;
+            background: white;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .products h3 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .product {
+            background: #faf9f7;
+            border: 1px solid #e8e6e1;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-radius: 4px;
+        }
+
+        .product h4 {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .product p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 40px 0;
+            background: #f5e6a3;
+            text-align: center;
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        .mission h3 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .mission p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            padding: 0 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #f5e6a3;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a {
+            color: #f5e6a3;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .box-option:focus,
+            .newsletter-form button:focus,
+            .order-btn:focus {
+                outline: 3px solid;
+                outline-offset: 2px;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* PWA Installation Banner */
+        .install-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 1000;
+        }
+
+        .install-banner.show {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .install-banner button {
+            background: #f5e6a3;
+            color: #1a1a1a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            background: #00b894;
+        }
+
+        .toast.error {
+            background: #e74c3c;
+        }
+
+        /* Live Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-widget:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Specific Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #faf9f7;
+                border-bottom: 1px solid #e8e6e1;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav.active {
+                max-height: 400px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                margin: 0;
+                padding: 10px 0;
+            }
+
+            nav a {
+                padding: 12px 20px;
+                border-bottom: 1px solid #f0f0f0;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .newsletter-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-form {
+                max-width: none;
+            }
+
+            .install-banner {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .chat-widget {
+                bottom: 90px;
+            }
+        }
+
+        /* Tablet and up */
+        @media (min-width: 769px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            header {
+                padding: 30px 0;
+            }
+
+            .logo-circle {
+                width: 90px;
+                height: 90px;
+            }
+
+            .logo-text h1 {
+                font-size: 2.8rem;
+                letter-spacing: 3px;
+            }
+
+            .logo-text p {
+                display: block;
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+
+            nav ul {
+                gap: 50px;
+                margin-top: 0;
+            }
+
+            nav a {
+                font-size: 1rem;
+                letter-spacing: 1px;
+                padding: 0;
+                min-height: auto;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+                letter-spacing: 2px;
+            }
+
+            .hero p {
+                font-size: 1.4rem;
+            }
+
+            .order-form {
+                padding: 60px;
+            }
+
+            .order-form h3 {
+                font-size: 2.8rem;
+                letter-spacing: 2px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-bottom: 40px;
+            }
+
+            .box-options {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .box-option {
+                padding: 40px;
+            }
+
+            .box-option h4 {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
+
+            .box-option .price {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+
+            .add-ons-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+            }
+
+            .story-image {
+                height: 600px;
+            }
+
+            .farm-features {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 40px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 50px;
+                text-align: left;
+            }
+
+            .signup-form {
+                flex-direction: row;
+            }
+
+            .signup-form input {
+                flex: 1;
+            }
+
+            .signup-form button {
+                white-space: nowrap;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1200px) {
+            .newsletter-form {
+                width: auto;
+            }
+
+            .qr-code-image {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Touch-friendly adjustments */
+        @media (pointer: coarse) {
+            nav a,
+            .box-option,
+            .add-on-item,
+            .newsletter-form button,
+            .order-btn {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .newsletter-banner,
+            .mobile-menu-toggle,
+            nav,
+            .newsletter-signup,
+            .order-btn,
+            .install-banner,
+            .toast,
+            .chat-widget {
+                display: none !important;
+            }
+            
+            * {
+                background: white !important;
+                color: black !important;
+            }
+        }
+
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <img src="images/circle-logo.png" alt="Chickabees" class="logo-img">
-                <h1 class="logo">Chickabees</h1>
-                <ul class="nav-links">
-                    <li><a href="#boxes">Boxes</a></li>
-                    <li><a href="#build-box">Build Your Box</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#story">Our Story</a></li>
-                    <li><a href="#pickup">Pickup Info</a></li>
-                </ul>
-                <div class="header-cart">
-                    <div class="cart-icon" id="cart-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"/>
-                            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"/>
-                            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"/>
-                        </svg>
-                        <span class="cart-count" id="cart-count">0</span>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- PWA Install Banner -->
+    <div class="install-banner" id="install-banner">
+        <span>Install Chickabees Honey for easy access and offline browsing!</span>
+        <button onclick="installApp()">Install</button>
+        <button onclick="dismissInstall()" style="background: transparent; color: white; margin-left: 5px;">✕</button>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" onclick="openChat()" title="Chat with us!" aria-label="Open chat support">
+        Chat
+    </div>
+
+    <header role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-circle">
+                        <picture>
+                            <source srcset="images/circle-logo.webp" type="image/webp">
+                            <img src="images/circle-logo.png" alt="Chickabees Honey Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        </picture>
                     </div>
-                    <div class="mini-cart" id="mini-cart">
-                        <div class="mini-cart-header">
-                            <h4>Your Cart</h4>
-                            <button class="close-mini-cart">&times;</button>
-                        </div>
-                        <div class="mini-cart-items" id="mini-cart-items">
-                            <p class="empty-cart">Your cart is empty</p>
-                        </div>
-                        <div class="mini-cart-footer">
-                            <div class="mini-cart-total">
-                                <strong>Total: $<span id="mini-cart-total">0.00</span></strong>
-                            </div>
-                            <button class="checkout-btn" id="checkout-btn">Checkout</button>
-                        </div>
+                    <div class="logo-text">
+                        <h1>CHICKABEES</h1>
+                        <p>Raw Honey and Provisions from Oakland, CA</p>
                     </div>
                 </div>
-                <div class="mobile-menu-toggle">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
+                <nav id="navigation" role="navigation" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="#fresh-box">Fresh Box</a></li>
+                        <li><a href="#story">Meet the Family</a></li>
+                        <li><a href="#products">Visit the Farm</a></li>
+                        <li><a href="#products">Additional Provisions</a></li>
+                        <li><a href="#members-only" onclick="accessMembersPage()">Members Only</a></li>
+                        <li><a href="#newsletter-signup">Join</a></li>
+                    </ul>
+                </nav>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-background"></div>
+    <!-- Newsletter Banner -->
+    <div class="newsletter-banner" id="newsletter-banner" role="complementary" aria-label="Newsletter signup">
         <div class="container">
-            <h2>Fresh from our backyard to your table</h2>
-            <p>Monthly boxes of honey, eggs, and homemade baked goods delivered fresh in Oakland</p>
-            <div class="newsletter-signup">
-                <h3>Join our newsletter for updates</h3>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Sign Up</button>
-                </form>
-                <p class="newsletter-note">Get notified about seasonal items, pickup reminders, and farm updates</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="boxes" class="boxes">
-        <div class="container">
-            <h2>Choose Your Monthly Box</h2>
-            <div class="box-grid">
-                <div class="box-card">
-                    <div class="box-image">
-                        <img src="https://via.placeholder.com/300x200/D4A574/fff?text=The+Birds+Box" alt="The Birds Box Contents" loading="lazy">
-                    </div>
-                    <h3>The Birds</h3>
-                    <div class="box-contents">
-                        <ul>
-                            <li><span class="icon">•</span>Small jar of honey</li>
-                            <li><span class="icon">•</span>6 fresh eggs</li>
-                            <li><span class="icon">•</span>Sourdough bread</li>
-                            <li><span class="icon">•</span>Homemade granola</li>
-                            <li><span class="icon">•</span>Small jar of cold brew coffee</li>
-                        </ul>
-                    </div>
-                    <div class="box-actions">
-                        <button class="order-btn" data-box="The Birds">Order This Box</button>
-                        <button class="preorder-btn" data-box="The Birds">Pre-Order</button>
-                    </div>
+            <button class="newsletter-close" onclick="closeNewsletter()" aria-label="Close newsletter banner">&times;</button>
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Join Our Farm Family Newsletter</h3>
+                    <p>Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
                 </div>
-                <div class="box-card featured">
-                    <div class="box-image">
-                        <img src="https://via.placeholder.com/300x200/87A96B/fff?text=The+Bees+Box" alt="The Bees Box Contents" loading="lazy">
-                    </div>
-                    <h3>The Bees</h3>
-                    <div class="availability-badge">Most Popular</div>
-                    <div class="box-contents">
-                        <ul>
-                            <li><span class="icon">•</span>Large jar of honey</li>
-                            <li><span class="icon">•</span>12 fresh eggs</li>
-                            <li><span class="icon">•</span>Sourdough bread (large)</li>
-                            <li><span class="icon">•</span>Homemade granola (large)</li>
-                            <li><span class="icon">•</span>Large jar of cold brew coffee</li>
-                            <li><span class="icon">•</span>Specialty item (e.g., chocolate babka)</li>
-                        </ul>
-                    </div>
-                    <div class="box-actions">
-                        <button class="order-btn" data-box="The Bees">Order This Box</button>
-                        <button class="preorder-btn" data-box="The Bees">Pre-Order</button>
-                    </div>
+                <div class="newsletter-form">
+                    <label for="newsletter-email-banner" class="sr-only">Email address for newsletter</label>
+                    <input type="email" placeholder="your@email.com" required id="newsletter-email-banner" aria-describedby="newsletter-banner-desc">
+                    <button type="button" onclick="handleNewsletterSignup('banner')">JOIN</button>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="signup-success" id="newsletter-success-banner" style="display: none; text-align: center; margin-top: 10px; color: #1a1a1a; font-weight: bold;" role="status" aria-live="polite">Opening signup form with your email pre-filled!</div>
+    </div>
 
-    <section id="products" class="individual-products">
-        <div class="container">
-            <h2>Individual Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x200/D4A574/fff?text=Fresh+Honey" alt="Fresh Raw Honey" loading="lazy">
-                    </div>
-                    <h3>Fresh Honey</h3>
-                    <p>Pure, raw honey from our backyard hives. Unfiltered and unpasteurized for maximum flavor and health benefits.</p>
-                    <div class="product-actions">
-                        <button class="order-btn" data-product="Honey">Order Honey</button>
-                        <button class="waitlist-btn" data-product="Honey">Join Waitlist</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x200/87A96B/fff?text=Farm+Eggs" alt="Farm Fresh Eggs" loading="lazy">
-                    </div>
-                    <h3>Farm Fresh Eggs</h3>
-                    <p>From our happy, free-range chickens. Rich orange yolks from chickens that roam freely in our backyard.</p>
-                    <div class="product-actions">
-                        <button class="order-btn" data-product="Eggs">Order Eggs</button>
-                        <button class="waitlist-btn" data-product="Eggs">Join Waitlist</button>
-                    </div>
-                </div>
+    <main id="main-content" role="main">
+        <section class="hero" aria-label="Welcome message">
+            <div class="container">
+                <h2>Handcrafted Backyard Orchard Provisions</h2>
+                <p>From our family farm to your home. Every harvest teaches our children about sustainable farming, caring for animals, and how our community and ecosystem are connected.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="build-box" class="build-your-box">
-        <div class="container">
-            <h2>Build Your Own Box</h2>
-            <p class="section-subtitle">Create a custom box with your favorite items</p>
-            
-            <div class="build-box-content">
-                <div class="product-selector">
-                    <div class="selector-grid">
-                        <div class="selector-item" data-product="honey">
-                            <div class="selector-image">
-                                <img src="https://via.placeholder.com/150x150/D4A574/fff?text=Honey" alt="Fresh Honey" loading="lazy">
-                            </div>
-                            <div class="selector-info">
-                                <h4>Fresh Honey</h4>
-                                <p>Pure, raw honey from our backyard hives</p>
-                                <div class="size-options">
-                                    <label>
-                                        <input type="radio" name="honey-size" value="small" data-price="8.00">
-                                        <span>Small Jar - $8.00</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="honey-size" value="large" data-price="15.00">
-                                        <span>Large Jar - $15.00</span>
-                                    </label>
-                                </div>
-                                <div class="quantity-selector">
-                                    <label>Quantity:</label>
-                                    <button class="qty-btn minus" data-product="honey">-</button>
-                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="honey">
-                                    <button class="qty-btn plus" data-product="honey">+</button>
-                                </div>
-                                <button class="add-to-cart-btn" data-product="honey" disabled>Add to Cart</button>
-                            </div>
-                        </div>
+        <!-- Social Proof Section -->
+        <section class="social-proof" aria-label="Customer activity">
+            <div class="container">
+                <div class="social-proof-item">Free pickup with coffee & waffles</div>
+                <div class="social-proof-item">5 beehives producing fresh honey</div>
+            </div>
+        </section>
 
-                        <div class="selector-item" data-product="eggs">
-                            <div class="selector-image">
-                                <img src="https://via.placeholder.com/150x150/87A96B/fff?text=Eggs" alt="Farm Fresh Eggs" loading="lazy">
-                            </div>
-                            <div class="selector-info">
-                                <h4>Farm Fresh Eggs</h4>
-                                <p>From our happy, free-range chickens</p>
-                                <div class="size-options">
-                                    <label>
-                                        <input type="radio" name="eggs-size" value="half-dozen" data-price="4.00">
-                                        <span>Half Dozen - $4.00</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="eggs-size" value="dozen" data-price="7.00">
-                                        <span>Dozen - $7.00</span>
-                                    </label>
-                                </div>
-                                <div class="quantity-selector">
-                                    <label>Quantity:</label>
-                                    <button class="qty-btn minus" data-product="eggs">-</button>
-                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="eggs">
-                                    <button class="qty-btn plus" data-product="eggs">+</button>
-                                </div>
-                                <button class="add-to-cart-btn" data-product="eggs" disabled>Add to Cart</button>
-                            </div>
-                        </div>
+        <section id="fresh-box" class="order-section" aria-label="Order fresh produce boxes">
+            <div class="container">
 
-                        <div class="selector-item" data-product="bread">
-                            <div class="selector-image">
-                                <img src="https://via.placeholder.com/150x150/C65D00/fff?text=Bread" alt="Sourdough Bread" loading="lazy">
-                            </div>
-                            <div class="selector-info">
-                                <h4>Sourdough Bread</h4>
-                                <p>Fresh baked artisan sourdough</p>
-                                <div class="size-options">
-                                    <label>
-                                        <input type="radio" name="bread-size" value="regular" data-price="6.00">
-                                        <span>Regular Loaf - $6.00</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="bread-size" value="large" data-price="9.00">
-                                        <span>Large Loaf - $9.00</span>
-                                    </label>
-                                </div>
-                                <div class="quantity-selector">
-                                    <label>Quantity:</label>
-                                    <button class="qty-btn minus" data-product="bread">-</button>
-                                    <input type="number" class="qty-input" min="0" max="5" value="0" data-product="bread">
-                                    <button class="qty-btn plus" data-product="bread">+</button>
-                                </div>
-                                <button class="add-to-cart-btn" data-product="bread" disabled>Add to Cart</button>
-                            </div>
-                        </div>
-
-                        <div class="selector-item" data-product="granola">
-                            <div class="selector-image">
-                                <img src="https://via.placeholder.com/150x150/D4A574/fff?text=Granola" alt="Homemade Granola" loading="lazy">
-                            </div>
-                            <div class="selector-info">
-                                <h4>Homemade Granola</h4>
-                                <p>Crunchy granola made with our honey</p>
-                                <div class="size-options">
-                                    <label>
-                                        <input type="radio" name="granola-size" value="small" data-price="5.00">
-                                        <span>Small Bag - $5.00</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="granola-size" value="large" data-price="8.00">
-                                        <span>Large Bag - $8.00</span>
-                                    </label>
-                                </div>
-                                <div class="quantity-selector">
-                                    <label>Quantity:</label>
-                                    <button class="qty-btn minus" data-product="granola">-</button>
-                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="granola">
-                                    <button class="qty-btn plus" data-product="granola">+</button>
-                                </div>
-                                <button class="add-to-cart-btn" data-product="granola" disabled>Add to Cart</button>
-                            </div>
-                        </div>
-
-                        <div class="selector-item" data-product="lip-balm">
-                            <div class="selector-image">
-                                <img src="https://via.placeholder.com/150x150/87A96B/fff?text=Lip+Balm" alt="Honey Lip Balm" loading="lazy">
-                            </div>
-                            <div class="selector-info">
-                                <h4>Honey Lip Balm</h4>
-                                <p>Natural lip balm made with our beeswax and honey</p>
-                                <div class="size-options">
-                                    <label>
-                                        <input type="radio" name="lip-balm-size" value="single" data-price="3.00">
-                                        <span>Single Tube - $3.00</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="lip-balm-size" value="3-pack" data-price="8.00">
-                                        <span>3-Pack - $8.00</span>
-                                    </label>
-                                </div>
-                                <div class="quantity-selector">
-                                    <label>Quantity:</label>
-                                    <button class="qty-btn minus" data-product="lip-balm">-</button>
-                                    <input type="number" class="qty-input" min="0" max="10" value="0" data-product="lip-balm">
-                                    <button class="qty-btn plus" data-product="lip-balm">+</button>
-                                </div>
-                                <button class="add-to-cart-btn" data-product="lip-balm" disabled>Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Success Message -->
+                <div class="success-message-banner" id="success-message" role="alert" aria-live="assertive">
+                    <h4>Order Received Successfully!</h4>
+                    <p>Thank you for supporting the O-Boys' future. We'll contact you within 24 hours to confirm your order and arrange payment/delivery details.</p>
                 </div>
 
-                <div class="build-box-sidebar">
-                    <div class="cart-summary">
-                        <h3>Your Custom Box</h3>
-                        <div class="cart-items" id="cart-items">
-                            <p class="empty-cart">No items selected</p>
-                        </div>
-                        <div class="cart-total">
-                            <div class="subtotal">
-                                <span>Subtotal: $<span id="cart-subtotal">0.00</span></span>
-                            </div>
-                            <div class="total">
-                                <strong>Total: $<span id="cart-total">0.00</span></strong>
-                            </div>
+                <!-- Order Summary (Hidden initially) -->
+                <div class="order-summary" id="order-summary" style="display: none;" aria-label="Order summary">
+                    <h4>Your Order Summary</h4>
+                    <div class="order-details" id="order-details">
+                        <!-- Order items will be populated here -->
+                    </div>
+                </div>
+                
+                <form class="order-form" id="order-form" novalidate aria-label="Fresh box order form">
+                    <h3>Fresh Box</h3>
+                    
+                    <fieldset class="box-options" aria-label="Choose your box type">
+                        <legend class="sr-only">Select a box option</legend>
+                        <div class="box-option" onclick="selectBox('birds')" tabindex="0" role="button" aria-pressed="false" onkeydown="handleBoxKeydown(event, 'birds')">
+                            <h4>The Birds</h4>
+                            <div class="price" id="birds-price">$45</div>
+                            <p style="font-style: italic; color: #666; margin-bottom: 15px;">Perfect for getting started with farm-fresh provisions</p>
+                            <ul>
+                                <li>6 Fresh Eggs</li>
+                                <li>10oz Raw Honey</li>
+                                <li>Choose 1 baked good: muffins or sourdough bread</li>
+                                <li>Homemade Granola</li>
+                            </ul>
                         </div>
                         
-                        <div class="subscription-options">
-                            <h4>Delivery Options</h4>
-                            <label class="subscription-option">
-                                <input type="radio" name="subscription" value="one-time" checked>
-                                <span>One-time Order</span>
+                        <div class="box-option" onclick="selectBox('bees')" tabindex="0" role="button" aria-pressed="false" onkeydown="handleBoxKeydown(event, 'bees')">
+                            <h4>The Bees</h4>
+                            <div class="price" id="bees-price">$75</div>
+                            <p style="font-style: italic; color: #666; margin-bottom: 15px;">Ideal for families wanting the full orchard experience</p>
+                            <ul>
+                                <li>12 Fresh Eggs</li>
+                                <li>22oz Raw Honey</li>
+                                <li>Choose 2 baked goods: muffins, sourdough bread or chocolate babka</li>
+                                <li>Large Homemade Granola</li>
+                                <li>In Season Produce</li>
+                            </ul>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="frequency">How Frequent?</label>
+                            <select id="frequency" onchange="updatePricing()" required aria-describedby="frequency-error">
+                                <option value="onetime">One Time</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="quarterly" selected>Quarterly</option>
+                            </select>
+                            <div class="error-message" id="frequency-error" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="delivery">Delivery Method</label>
+                            <select id="delivery" onchange="toggleDeliveryInfo()" required aria-describedby="delivery-error">
+                                <option value="pickup">Farm Pickup</option>
+                                <option value="delivery">Home Delivery</option>
+                            </select>
+                            <div class="error-message" id="delivery-error" role="alert"></div>
+                        </div>
+                    </div>
+
+                    <div id="pickup-info" class="pickup-info" role="region" aria-label="Pickup information">
+                        <h4>Pickup Special</h4>
+                        <p>Pick up during our monthly window (First Sunday, 9-11am) and enjoy complimentary coffee and fresh waffles with the family! Please order at least 5 days prior to pickup.</p>
+                    </div>
+
+                    <div id="delivery-info" class="delivery-info" style="display: none;" role="region" aria-label="Delivery information">
+                        <h4>Delivery Options</h4>
+                        <p>Free delivery within 15 minutes drive</p>
+                        <p>$20 delivery within 30 minutes drive</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name <span aria-label="required">*</span></label>
+                            <input type="text" id="name" required aria-describedby="name-error name-success" autocomplete="name">
+                            <div class="error-message" id="name-error" role="alert"></div>
+                            <div class="success-message" id="name-success"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span aria-label="required">*</span></label>
+                            <input type="email" id="email" required aria-describedby="email-error email-success" autocomplete="email">
+                            <div class="error-message" id="email-error" role="alert"></div>
+                            <div class="success-message" id="email-success"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span aria-label="required">*</span></label>
+                            <input type="tel" id="phone" required aria-describedby="phone-error phone-success" autocomplete="tel">
+                            <div class="error-message" id="phone-error" role="alert"></div>
+                            <div class="success-message" id="phone-success"></div>
+                        </div>
+                        <div class="form-group" id="address-group" style="display: none;">
+                            <label for="address">Delivery Address</label>
+                            <textarea id="address" placeholder="123 Main St, Oakland, CA" aria-describedby="address-error address-success" autocomplete="street-address"></textarea>
+                            <div class="error-message" id="address-error" role="alert"></div>
+                            <div class="success-message" id="address-success"></div>
+                        </div>
+                    </div>
+
+                    <fieldset class="add-ons-section" aria-label="Optional add-ons">
+                        <legend>
+                            <h4 style="font-size: 1.2rem; color: #1a1a1a; margin-bottom: 20px; font-weight: 300; letter-spacing: 0.5px; text-transform: uppercase; text-align: center;">Add-Ons</h4>
+                        </legend>
+                        <div class="add-ons-grid">
+                            <label class="add-on-item">
+                                <input type="checkbox" id="coffee-addon" value="10" onchange="updateOrderSummary()" aria-describedby="coffee-desc">
+                                <span class="add-on-details">
+                                    <strong>Artisan Coffee</strong> - $10<br>
+                                    <small id="coffee-desc">8oz bag, pairs perfectly with our honey</small>
+                                </span>
                             </label>
-                            <label class="subscription-option">
-                                <input type="radio" name="subscription" value="monthly">
-                                <span>Monthly Subscription <small>(Save 10%)</small></span>
+                            
+                            <label class="add-on-item">
+                                <input type="checkbox" id="waffles-addon" value="10" onchange="updateOrderSummary()" aria-describedby="waffles-desc">
+                                <span class="add-on-details">
+                                    <strong>Homemade Frozen Waffles</strong> - $10<br>
+                                    <small id="waffles-desc">Bag of 12, made with sourdough & honey</small>
+                                </span>
                             </label>
-                            <label class="subscription-option">
-                                <input type="radio" name="subscription" value="quarterly">
-                                <span>Quarterly Subscription <small>(Save 15%)</small></span>
+                            
+                            <label class="add-on-item">
+                                <input type="checkbox" id="honey-addon" value="12" onchange="updateOrderSummary()" aria-describedby="honey-desc">
+                                <span class="add-on-details">
+                                    <strong>Extra Raw Honey</strong> - $12<br>
+                                    <small id="honey-desc">Additional 10oz jar</small>
+                                </span>
+                            </label>
+                            
+                            <label class="add-on-item">
+                                <input type="checkbox" id="balm-addon" value="4.50" onchange="updateOrderSummary()" aria-describedby="balm-desc">
+                                <span class="add-on-details">
+                                    <strong>Lemon Bee Balm</strong> - $4.50<br>
+                                    <small id="balm-desc">Made with love by the kids</small>
+                                </span>
                             </label>
                         </div>
+                    </fieldset>
 
-                        <div class="pickup-date-selector">
-                            <h4>Select Pickup Date</h4>
-                            <div class="pickup-calendar">
-                                <select id="pickup-date" class="pickup-select">
-                                    <option value="">Choose a date...</option>
-                                    <option value="2025-01-05">January 5, 2025 (9-11 AM)</option>
-                                    <option value="2025-02-02">February 2, 2025 (9-11 AM)</option>
-                                    <option value="2025-03-02">March 2, 2025 (9-11 AM)</option>
-                                    <option value="2025-04-06">April 6, 2025 (9-11 AM)</option>
-                                </select>
+                    <!-- Payment Methods Section -->
+                    <section class="payment-methods-section" aria-label="Payment information">
+                        <h4>Payment via Venmo</h4>
+                        <p style="text-align: center; color: #666; margin-bottom: 20px; font-size: 0.9rem;">Pay easily with Venmo - no fees means more money for the O-Boys' savings!</p>
+                        
+                        <div class="payment-details active" id="venmo-details">
+                            <h5 style="font-size: 1.1rem; margin-bottom: 15px;">Pay with Venmo QR Code</h5>
+                            <div class="qr-code-container">
+                                <picture>
+                                    <source srcset="QRcode_chickabees.webp" type="image/webp">
+                                    <img src="QRcode_chickabees.jpg" alt="Venmo QR Code for @chickabeesoakland" class="qr-code-image" loading="lazy">
+                                </picture>
+                                <div class="qr-instructions">
+                                    <p><strong>How to pay with Venmo:</strong></p>
+                                    <ol>
+                                        <li>Open your Venmo app</li>
+                                        <li>Tap the scan icon (camera)</li>
+                                        <li>Scan this QR code</li>
+                                        <li>Enter amount: <strong>$<span id="venmo-amount">0.00</span></strong></li>
+                                        <li>Add note: "Chickabees Order - [Your Name]"</li>
+                                        <li>Send payment</li>
+                                    </ol>
+                                    <p style="margin-top: 10px; font-weight: bold; color: #1a1a1a;">Or search: @chickabeesoakland</p>
+                                </div>
+                            </div>
+                            <div class="payment-info" style="background: white; padding: 15px; border: 1px solid #e8e6e1; margin-top: 15px; border-radius: 4px;">
+                                <p style="color: #00b894; font-weight: bold; font-size: 1rem;">✓ Completely free with no processing fees!</p>
+                                <p style="font-size: 0.9rem;">Every dollar goes directly to support the O-Boys' future</p>
+                                <p style="margin-top: 12px; font-style: italic; font-size: 0.85rem;">After payment, we'll contact you within 24 hours to confirm your order and arrange delivery/pickup details.</p>
                             </div>
                         </div>
+                    </section>
 
-                        <button class="checkout-btn-main" id="checkout-btn-main" disabled>
-                            Proceed to Checkout
-                        </button>
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests or Notes</label>
+                        <textarea id="special-requests" placeholder="Any allergies, delivery instructions, or questions?" aria-describedby="special-requests-desc"></textarea>
+                        <div id="special-requests-desc" class="sr-only">Optional field for any special requests, allergies, or delivery instructions</div>
+                    </div>
+
+                    <button type="button" class="order-btn" id="order-btn" onclick="processOrder()" disabled aria-describedby="order-btn-status">
+                        Select Box & Payment Method to Continue
+                    </button>
+                    <div id="order-btn-status" class="sr-only" aria-live="polite"></div>
+                </form>
+
+                <!-- Customer Testimonial -->
+                <div class="testimonial">
+                    <blockquote>"The honey is absolutely incredible, and the kids love seeing where their food comes from. This farm is a treasure!"</blockquote>
+                    <cite>- Sarah M., Oakland</cite>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <section class="newsletter-signup" id="newsletter-signup" aria-label="Newsletter signup">
+                    <h4>Want Farm Updates?</h4>
+                    <p>Get first access to farm boxes and follow our family's learning journey!</p>
+                    <div class="signup-form">
+                        <label for="newsletter-email-input" class="sr-only">Email address for newsletter</label>
+                        <input type="email" placeholder="your@email.com" required id="newsletter-email-input">
+                        <button type="button" onclick="handleNewsletterSignup('main')">Join</button>
+                        <div class="signup-success" id="newsletter-success" style="display: none;" role="status" aria-live="polite">Opening signup form with your email pre-filled!</div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 15px; text-align: center;">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform" target="_blank" style="color: #1a1a1a; text-decoration: underline;" rel="noopener">
+                            Or fill out our detailed signup form here
+                        </a>
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <section id="story" class="family-story" aria-label="Our family story">
+            <div class="container">
+                <!-- Origin Story -->
+                <article class="origin-story">
+                    <h3>How It All Started</h3>
+                    <p>When our youngest was born, he had severe allergies, and we thought a little local honey could help. It really began with a love of fresh seasonal food and a book called "How to Grow a Little Fruit Tree" by Ann Ralph.</p>
+                    
+                    <p>After planting a few trees on a steep hill, we realized they would benefit from pollinators. Learning a little bit at a time, we grew from 1 hive and a few trees to adding early, mid and late-season varieties of most types of fruit trees.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>One fun fact:</strong> We got bees and chickens the same weekend! Dad always hoped to try having chickens, but after mom learned about a store that would let you buy chicks and sell them back after helping them grow to about 12 weeks old, the stakes were low. When she said she was potentially interested, Dad wanted to move on it immediately before any chance for a change of heart!</p>
+                        
+                        <p>Coincidentally, when Dad first learned about bees, the season to start was only 2 weeks away... and the nucleus happened to be ready that same weekend! Spring 2024 was a particularly busy time :)</p>
+                    </div>
+                    
+                    <p>Now we have cherries, apricots, peaches, persimmons, avocados, blueberries, guava, pears, apples, berries, grapes, figs, citrus and some unusual fruits like jostaberries and Dad's childhood favorite Cherimoya. The goal of this project is to help the boys foster a love for working with their hands, putting roots into their community and developing appreciation for the world around them.</p>
+                </article>
+
+                <article class="story-grid">
+                    <div class="story-text">
+                        <h3>Meet the Family</h3>
+                        <p>The O-Boys, Minnie, and Dan, along with their loyal dog Oreo, have created something special on their Oakland farm. With 10 happy chickens, 5 thriving beehives, and 50+ diverse fruit trees, every day is an adventure in sustainable living.</p>
+                        <p>Now the boys love their "Fluffies" - which are our two silkie chickens, and our bees are surprisingly sweet. Our children are hands-on in every aspect - from gathering eggs and harvesting honey to helping bake fresh goods and tend to our fruit trees.</p>
+                    </div>
+                    <div class="story-image">
+                        <picture>
+                            <source srcset="images/boys-beesuits.webp" type="image/webp">
+                            <img src="images/boys-beesuits.jpg" alt="Two children wearing bee suits standing next to beehives on the family farm" loading="lazy">
+                        </picture>
+                    </div>
+                </article>
+
+                <article class="story-grid">
+                    <div class="story-image">
+                        <picture>
+                            <source srcset="images/Oreo-and-Coop.webp" type="image/webp">
+                            <img src="images/oreo-and-coop.jpeg" alt="Family dog Oreo sitting next to the chicken coop with children feeding chickens in the background" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="story-text">
+                        <h3>Our First Business Adventure</h3>
+                        <p>Our first year of beekeeping had a surprisingly good harvest. Outside of gifting to friends and family, our first entrepreneurial customer we hoped to partner with was our local gas station. When we approached them with a business proposal to display our jars and split the profits 50/50... their first question was "how much honey do you have?" - but they just wanted it for themselves!</p>
+                        <p>This is when we knew this would be a fun family adventure! Every afternoon we collect eggs and help improve something on the farm - feeding leftovers to the chickens, weeding, or taking care of the plants. The kids have learned everything from bee communication through waggle dances to understanding why biodiversity helps our orchard thrive.</p>
+                    </div>
+                </article>
+
+                <section class="farm-features" aria-label="Farm features">
+                    <div class="feature">
+                        <h4>5 Beehives</h4>
+                        <p>Producing pure, raw honey while supporting local pollination and teaching us about these amazing insects</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h4>10 Happy Chickens</h4>
+                        <p>Including our beloved "Fluffy" silkies, providing fresh, nutritious eggs daily while teaching responsibility and animal care</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h4>50+ Fruit Trees</h4>
+                        <p>A diverse orchard including unusual varieties like jostaberries and Cherimoya, providing seasonal abundance year-round</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq" aria-label="Frequently asked questions">
+            <div class="container">
+                <h3 style="font-size: 2rem; color: #1a1a1a; text-align: center; margin-bottom: 40px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase;">FAQ</h3>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        How fresh are the eggs?
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Our eggs are collected daily from our happy free-range chickens. We gather them every morning and they're never more than 1-2 days old when delivered to you.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        Is the honey really raw and unfiltered?
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes! Our honey is completely raw and unfiltered. We only strain out any wax particles but leave all the beneficial enzymes, pollen, and nutrients intact.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        Can I visit the farm?
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        We love visitors! Farm pickup days (first Sunday of each month, 9-11am) include complimentary coffee, waffles, and a chance to meet our animals. For other times, please contact us to arrange a visit.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        What if I have food allergies?
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Please let us know about any allergies in the special requests section when ordering. We can accommodate most dietary restrictions and will work with you to customize your box.
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="calendar" class="availability-calendar">
-        <div class="container">
-            <h2>Monthly Availability</h2>
-            <div class="calendar-grid">
-                <div class="calendar-month">
-                    <h3>January 2025</h3>
-                    <div class="calendar-items">
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Honey</span>
-                        </div>
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Fresh Eggs</span>
-                        </div>
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Sourdough Bread</span>
-                        </div>
-                        <div class="calendar-item seasonal">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Winter Citrus Tart</span>
-                        </div>
-                    </div>
-                    <div class="pickup-date">
-                        <strong>Pickup: January 5th, 9-11 AM</strong>
-                        <button class="add-calendar-btn" data-date="2025-01-05">Add to Calendar</button>
-                    </div>
-                </div>
-                <div class="calendar-month">
-                    <h3>February 2025</h3>
-                    <div class="calendar-items">
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Honey</span>
-                        </div>
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Fresh Eggs</span>
-                        </div>
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Sourdough Bread</span>
-                        </div>
-                        <div class="calendar-item seasonal">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Chocolate Babka</span>
-                        </div>
-                    </div>
-                    <div class="pickup-date">
-                        <strong>Pickup: February 2nd, 9-11 AM</strong>
-                        <button class="add-calendar-btn" data-date="2025-02-02">Add to Calendar</button>
-                    </div>
-                </div>
-                <div class="calendar-month">
-                    <h3>March 2025</h3>
-                    <div class="calendar-items">
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Honey</span>
-                        </div>
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Fresh Eggs</span>
-                        </div>
-                        <div class="calendar-item available">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Sourdough Bread</span>
-                        </div>
-                        <div class="calendar-item seasonal">
-                            <span class="item-icon">•</span>
-                            <span class="item-name">Spring Herb Focaccia</span>
-                        </div>
-                    </div>
-                    <div class="pickup-date">
-                        <strong>Pickup: March 2nd, 9-11 AM</strong>
-                        <button class="add-calendar-btn" data-date="2025-03-02">Add to Calendar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="photo-gallery">
-        <div class="container">
-            <h2>From Our Farm</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/honey-harvest-uncapping.jpeg" alt="Honey harvest from our beehives" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Fresh Honey Harvest</h4>
-                        <p>Straight from our backyard hives</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/chickens-with-coop.jpeg" alt="Free-range chickens in the backyard" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Happy Chickens</h4>
-                        <p>Our girls roaming free in the yard</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/eggs-in-shirt.JPG" alt="Fresh eggs in a basket" loading="lazy">
-                    <div class="gallery-overlay">
+        <section id="products" class="products" aria-label="Additional products">
+            <div class="container">
+                <h3>Additional Provisions</h3>
+                <div class="product-grid">
+                    <article class="product">
+                        <h4>Extra Raw Honey</h4>
+                        <p>Pure, unfiltered honey from our own hives<br>
+                        10oz jar - $12<br>
+                        22oz jar - $25</p>
+                    </article>
+                    
+                    <article class="product">
                         <h4>Farm Fresh Eggs</h4>
-                        <p>Rich orange yolks from happy hens</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/bread.JPG" alt="Homemade sourdough bread" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Artisan Sourdough</h4>
-                        <p>Baked fresh for each monthly box</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/backyard.JPG" alt="Beehives in the backyard" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Our Beehives</h4>
-                        <p>Where the magic happens</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/boys-beesuits.jpg" alt="Children learning about beekeeping in bee suits" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Learning Together</h4>
-                        <p>Teaching kids about sustainable living</p>
-                    </div>
+                        <p>Additional eggs from our happy hens<br>
+                        $1 per egg</p>
+                    </article>
+
+                    <article class="product">
+                        <h4>Artisan Coffee</h4>
+                        <p>Carefully sourced and roasted to pair perfectly with our honey<br>
+                        8oz bag - $10</p>
+                    </article>
+
+                    <article class="product">
+                        <h4>Homemade Frozen Waffles</h4>
+                        <p>Made with sourdough, yogurt, flax, oat milk, butter and a touch of our honey<br>
+                        Bag of 12 - $10</p>
+                    </article>
+                    
+                    <article class="product">
+                        <h4>Lemon Bee Balm</h4>
+                        <p>The kids help make this nourishing lip balm using every part of our beekeeping process to minimize waste<br>
+                        $4.50</p>
+                    </article>
+                    
+                    <article class="product">
+                        <h4>Kitchen Cleanse Candles</h4>
+                        <p>Made from pure beeswax to neutralize cooking odors, crafted by the kids as part of learning to use every part of our process<br>
+                        $25</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Our Neighbors Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The honey is absolutely incredible! You can taste the difference - it's so much richer than anything from the store. My kids love the fresh eggs too!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Sarah M.</h4>
-                            <span>Montclair Neighbor</span>
-                        </div>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"I love supporting this local family business. The sourdough bread is phenomenal, and I feel good knowing I'm helping fund the kids' education."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mike R.</h4>
-                            <span>Regular Customer</span>
-                        </div>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The Bees box is perfect for our family! Everything is fresh and delicious. The kids are fascinated by the stories about the chickens and bees."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Jennifer L.</h4>
-                            <span>Monthly Subscriber</span>
-                        </div>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
+        <section id="mission" class="mission" aria-label="Our mission">
+            <div class="container">
+                <h3>Our Mission</h3>
+                <p>Chickabees Honey is more than a family business - it's our way of teaching the O-Boys about entrepreneurship, the value of hard work, and financial responsibility. Every jar of honey sold and every egg gathered contributes to their education fund and Roth IRA.</p>
+                <p>We believe in creating an organic, sustainable, healthy food system while inspiring our community to eat well, learn about animals and plants, and build connections rooted in kindness, altruism, and joy. Through sharing our journey, we hope to inspire other families to discover their own path to sustainable living and meaningful learning.</p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How many chickens and beehives do you have?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We currently have 8 happy chickens and 3 active beehives in our backyard. This gives us plenty of fresh eggs and honey for our monthly boxes while keeping everything manageable for our family operation.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Are there any allergens I should know about?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our products may contain eggs, wheat, and nuts. The sourdough bread contains gluten. All baked goods are made in a kitchen that processes nuts. Please let us know about any allergies when ordering.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How should I store the honey and eggs?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Store honey at room temperature in a cool, dry place. Fresh eggs should be refrigerated and will stay fresh for 3-4 weeks. The sourdough bread is best consumed within 3-5 days or can be frozen for longer storage.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Can I customize my box?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>While we can't customize individual boxes, we offer two different sizes to fit different needs. You can also order individual items like just honey or just eggs if you prefer.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What happens if I miss a pickup?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We understand life happens! If you miss a pickup, please contact us via Venmo message. We can usually arrange a alternative pickup time within 24 hours, subject to product freshness.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How do you ensure product quality and safety?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We follow all local health guidelines for food production. Our eggs are collected daily and properly washed. Honey is extracted using clean equipment and stored in sterile containers. All baked goods are made fresh within 24 hours of pickup.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="order" class="order-info">
-        <div class="container">
-            <h2>How to Order</h2>
-            <div class="order-details">
-                <div class="payment-info">
-                    <h3>Payment</h3>
-                    <p>Send payment via Venmo to:</p>
-                    <p class="venmo-handle">@chickabeesoakland</p>
-                    <p>Please include your name and order details in the payment note</p>
-                </div>
-                <div class="pickup-schedule">
-                    <h3>Pickup</h3>
-                    <p><strong>When:</strong> First Sunday of each month</p>
-                    <p><strong>Time:</strong> 9:00 AM - 11:00 AM</p>
-                    <p><strong>Location:</strong> Montclair, Oakland</p>
-                    <p class="note">Exact address provided after order confirmation</p>
-                    <div class="map-container">
-                        <div id="pickup-map" class="map-placeholder">
-                            <p>Interactive map will load here</p>
-                            <button class="load-map-btn">Load Map</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="story" class="story">
-        <div class="container">
-            <h2>Our Story</h2>
-            <div class="story-content">
-                <p>Chickabees began as a backyard project to teach our boys about ecosystems, gardening, farming, and animal care. What started as a few chickens and beehives has grown into a small business that connects our community with fresh, local food.</p>
-                <p>Through caring for our chickens and bees, our children learn valuable lessons about responsibility, entrepreneurship, and the importance of sustainable living. All proceeds from Chickabees are invested in their education and future through Roth IRAs, while also reinvesting in our backyard farm to continue growing and improving.</p>
-                <p>When you support Chickabees, you're not just getting delicious, fresh products – you're investing in the next generation's education and helping sustain a local, family-run operation.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="recipes" class="recipe-corner">
-        <div class="container">
-            <h2>Recipe Corner</h2>
-            <p class="section-subtitle">Simple recipes using our fresh ingredients</p>
-            <div class="recipes-grid">
-                <div class="recipe-card">
-                    <div class="recipe-image">
-                        <img src="https://via.placeholder.com/300x200/D4A574/fff?text=Honey+Wheat+Bread" alt="Honey Wheat Bread Recipe" loading="lazy">
-                    </div>
-                    <div class="recipe-content">
-                        <h3>Honey Wheat Bread</h3>
-                        <p>A simple, wholesome bread made with our raw honey and fresh ingredients.</p>
-                        <div class="recipe-ingredients">
-                            <h4>Ingredients:</h4>
-                            <ul>
-                                <li>2 cups whole wheat flour</li>
-                                <li>1 cup all-purpose flour</li>
-                                <li>1/4 cup Chickabees honey</li>
-                                <li>1 packet active dry yeast</li>
-                                <li>1 tsp salt</li>
-                                <li>1 cup warm water</li>
-                            </ul>
-                        </div>
-                        <button class="recipe-btn">View Full Recipe</button>
-                    </div>
-                </div>
-                <div class="recipe-card">
-                    <div class="recipe-image">
-                        <img src="https://via.placeholder.com/300x200/87A96B/fff?text=Farm+Egg+Frittata" alt="Farm Egg Frittata Recipe" loading="lazy">
-                    </div>
-                    <div class="recipe-content">
-                        <h3>Farm Fresh Egg Frittata</h3>
-                        <p>A versatile frittata showcasing the rich flavor of our farm-fresh eggs.</p>
-                        <div class="recipe-ingredients">
-                            <h4>Ingredients:</h4>
-                            <ul>
-                                <li>8 Chickabees fresh eggs</li>
-                                <li>1/4 cup milk</li>
-                                <li>1 cup mixed vegetables</li>
-                                <li>1/2 cup cheese</li>
-                                <li>Salt and pepper to taste</li>
-                                <li>2 tbsp olive oil</li>
-                            </ul>
-                        </div>
-                        <button class="recipe-btn">View Full Recipe</button>
-                    </div>
-                </div>
-                <div class="recipe-card">
-                    <div class="recipe-image">
-                        <img src="https://via.placeholder.com/300x200/C65D00/fff?text=Honey+Granola" alt="Honey Granola Recipe" loading="lazy">
-                    </div>
-                    <div class="recipe-content">
-                        <h3>Homemade Honey Granola</h3>
-                        <p>Crunchy granola sweetened with our pure honey - perfect for breakfast.</p>
-                        <div class="recipe-ingredients">
-                            <h4>Ingredients:</h4>
-                            <ul>
-                                <li>3 cups rolled oats</li>
-                                <li>1/2 cup Chickabees honey</li>
-                                <li>1/2 cup mixed nuts</li>
-                                <li>1/4 cup seeds</li>
-                                <li>1/2 cup dried fruit</li>
-                                <li>1/4 cup coconut oil</li>
-                            </ul>
-                        </div>
-                        <button class="recipe-btn">View Full Recipe</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="farm-updates">
-        <div class="container">
-            <h2>Farm Updates</h2>
-            <p class="section-subtitle">Latest news from our backyard farm</p>
-            <div class="blog-grid">
-                <div class="blog-post">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/350x200/D4A574/fff?text=Winter+Hive+Care" alt="Winter beehive maintenance" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">January 15, 2025</div>
-                        <h3>Winter Hive Care</h3>
-                        <p>How we're helping our bees stay healthy through the colder months. Winter is a crucial time for beekeeping, and we're taking special care to ensure our hives stay strong...</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <div class="blog-image">
-                        <img src="images/Oreo-and-Coop.jpeg" alt="Our family dog Oreo next to the chicken coop" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">January 8, 2025</div>
-                        <h3>New Additions to the Flock</h3>
-                        <p>Meet Oreo, our family dog who loves supervising the chickens! He's become an important part of our backyard farm family and helps keep watch over our feathered friends...</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/350x200/C65D00/fff?text=Sourdough+Tips" alt="Sourdough baking tips" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">December 20, 2024</div>
-                        <h3>Sourdough Baking Tips</h3>
-                        <p>Behind the scenes of our sourdough bread making process. From maintaining our starter to achieving the perfect crust, here's how we make the bread you love...</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Questions? Contact us through Venmo @chickabeesoakland</p>
-                    <p>Email: hellochickabees@gmail.com</p>
+                    <h4>Contact Us</h4>
+                    <p>Oakland, CA</p>
+                    <p><a href="mailto:hello@chickabeeshoney.com">hello@chickabeeshoney.com</a></p>
                 </div>
+                
                 <div class="footer-section">
-                    <h3>Follow Our Journey</h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <span class="social-icon">@</span>
-                            Instagram
-                        </a>
-                    </div>
+                    <h4>Pickup Hours</h4>
+                    <p>First Sunday of Each Month</p>
+                    <p>9:00 AM - 11:00 AM</p>
+                    <p>Coffee & Waffles Included</p>
                 </div>
+                
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#boxes">Monthly Boxes</a></li>
-                        <li><a href="#gallery">Photo Gallery</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#recipes">Recipes</a></li>
-                    </ul>
+                    <h4>Follow & Delivery</h4>
+                    <p><a href="https://instagram.com/chickabeesoakland" target="_blank" rel="noopener">@chickabeesoakland</a></p>
+                    <p>Free within 15 min drive</p>
+                    <p>$20 within 30 mins</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Chickabees Oakland. All rights reserved.</p>
-                <p>Supporting local families and sustainable living</p>
+                <p>&copy; 2025 Chickabees Honey. Made with love by the family for the community.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        let selectedBox = '';
+        let selectedPaymentMethod = '';
+        let orderTotal = 0;
+        let lastScrollTop = 0;
+        let deferredPrompt;
+
+        // PWA Installation handling
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallBanner();
+        });
+
+        function showInstallBanner() {
+            const banner = document.getElementById('install-banner');
+            banner.classList.add('show');
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    trackEvent('pwa_install_prompt', { choice: choiceResult.outcome });
+                    deferredPrompt = null;
+                    dismissInstall();
+                });
+            }
+        }
+
+        function dismissInstall() {
+            const banner = document.getElementById('install-banner');
+            banner.classList.remove('show');
+            localStorage.setItem('installBannerDismissed', 'true');
+        }
+
+        // Check if banner was previously dismissed
+        if (localStorage.getItem('installBannerDismissed')) {
+            document.getElementById('install-banner').style.display = 'none';
+        }
+
+        // Toast notification system
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Live Chat functionality
+        function openChat() {
+            showToast('Chat feature coming soon! For now, please email us at hello@chickabeeshoney.com', 'info');
+            trackEvent('chat_widget_clicked');
+        }
+
+        // FAQ functionality
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            const icon = button.querySelector('span');
+            
+            button.setAttribute('aria-expanded', !isExpanded);
+            answer.classList.toggle('active');
+            icon.textContent = isExpanded ? '+' : '−';
+            
+            trackEvent('faq_toggled', { question: button.textContent.trim() });
+        }
+
+        // Enhanced form validation functions
+        function validateField(field) {
+            const value = field.value.trim();
+            const fieldName = field.id;
+            let isValid = true;
+            let errorMessage = '';
+            let successMessage = '';
+
+            // Clear previous messages
+            hideError(fieldName);
+            hideSuccess(fieldName);
+
+            switch(fieldName) {
+                case 'name':
+                    if (!value) {
+                        errorMessage = 'Name is required';
+                        isValid = false;
+                    } else if (value.length < 2) {
+                        errorMessage = 'Name must be at least 2 characters';
+                        isValid = false;
+                    } else {
+                        successMessage = '✓ Valid name';
+                    }
+                    break;
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!value) {
+                        errorMessage = 'Email is required';
+                        isValid = false;
+                    } else if (!emailRegex.test(value)) {
+                        errorMessage = 'Please enter a valid email address';
+                        isValid = false;
+                    } else {
+                        successMessage = '✓ Valid email';
+                    }
+                    break;
+                case 'phone':
+                    const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,}$/;
+                    if (!value) {
+                        errorMessage = 'Phone number is required';
+                        isValid = false;
+                    } else if (!phoneRegex.test(value)) {
+                        errorMessage = 'Please enter a valid phone number';
+                        isValid = false;
+                    } else {
+                        successMessage = '✓ Valid phone number';
+                    }
+                    break;
+                case 'address':
+                    const delivery = document.getElementById('delivery').value;
+                    if (delivery === 'delivery' && !value) {
+                        errorMessage = 'Delivery address is required';
+                        isValid = false;
+                    } else if (delivery === 'delivery' && value) {
+                        successMessage = '✓ Address provided';
+                    }
+                    break;
+            }
+
+            if (!isValid) {
+                showError(fieldName, errorMessage);
+                trackEvent('form_validation_error', { field: fieldName, error: errorMessage });
+            } else if (successMessage) {
+                showSuccess(fieldName, successMessage);
+            }
+
+            return isValid;
+        }
+
+        function showError(fieldName, message) {
+            const errorElement = document.getElementById(fieldName + '-error');
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.classList.add('show');
+            }
+        }
+
+        function hideError(fieldName) {
+            const errorElement = document.getElementById(fieldName + '-error');
+            if (errorElement) {
+                errorElement.classList.remove('show');
+            }
+        }
+
+        function showSuccess(fieldName, message) {
+            const successElement = document.getElementById(fieldName + '-success');
+            if (successElement) {
+                successElement.textContent = message;
+                successElement.classList.add('show');
+            }
+        }
+
+        function hideSuccess(fieldName) {
+            const successElement = document.getElementById(fieldName + '-success');
+            if (successElement) {
+                successElement.classList.remove('show');
+            }
+        }
+
+        // Add real-time validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const fields = ['name', 'email', 'phone', 'address'];
+            fields.forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                if (field) {
+                    field.addEventListener('blur', () => validateField(field));
+                    field.addEventListener('input', () => {
+                        // Debounce validation
+                        clearTimeout(field.validationTimeout);
+                        field.validationTimeout = setTimeout(() => {
+                            validateField(field);
+                        }, 500);
+                    });
+                }
+            });
+
+            // Track form interactions
+            trackEvent('page_view', { page: 'order_form' });
+        });
+
+        // Mobile menu toggle with accessibility
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('navigation');
+            const toggle = this;
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            
+            nav.classList.toggle('active');
+            toggle.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', !isExpanded);
+            
+            trackEvent('mobile_menu_toggle', { expanded: !isExpanded });
+        });
+
+        // Keyboard support for mobile menu
+        document.getElementById('mobile-menu-toggle').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                const nav = document.getElementById('navigation');
+                const toggle = document.getElementById('mobile-menu-toggle');
+                
+                nav.classList.remove('active');
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Keyboard support for box selection
+        function handleBoxKeydown(event, boxType) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                selectBox(boxType);
+            }
+        }
+
+        // Newsletter banner scroll functionality
+        window.addEventListener('scroll', function() {
+            const newsletter = document.getElementById('newsletter-banner');
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Hide newsletter when scrolling down, show when scrolling up
+            if (currentScroll > lastScrollTop && currentScroll > 100) {
+                // Scrolling down
+                newsletter.classList.add('hidden');
+            } else {
+                // Scrolling up
+                newsletter.classList.remove('hidden');
+            }
+            
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        function closeNewsletter() {
+            document.getElementById('newsletter-banner').style.display = 'none';
+            trackEvent('newsletter_banner_close');
+        }
+
+        function handleNewsletterSignup(location) {
+            let emailInput, successElement;
+            
+            if (location === 'banner') {
+                emailInput = document.getElementById('newsletter-email-banner');
+                successElement = document.getElementById('newsletter-success-banner');
+            } else {
+                emailInput = document.getElementById('newsletter-email-input');
+                successElement = document.getElementById('newsletter-success');
+            }
+            
+            const email = emailInput.value;
+            
+            if (!email || email.indexOf('@') === -1) {
+                showToast('Please enter a valid email address', 'error');
+                emailInput.focus();
+                return;
+            }
+            
+            const url = 'https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/viewform?usp=pp_url&entry.1270002073=' + encodeURIComponent(email);
+            window.open(url, '_blank', 'noopener');
+            
+            successElement.style.display = 'block';
+            setTimeout(function() { 
+                successElement.style.display = 'none'; 
+            }, 5000);
+
+            trackEvent('newsletter_signup', { location: location, email_domain: email.split('@')[1] });
+        }
+
+        function selectBox(boxType) {
+            // Update ARIA states
+            document.querySelectorAll('.box-option').forEach(box => {
+                box.classList.remove('selected');
+                box.setAttribute('aria-pressed', 'false');
+            });
+            
+            const selectedElement = event.target.closest('.box-option');
+            selectedElement.classList.add('selected');
+            selectedElement.setAttribute('aria-pressed', 'true');
+            
+            selectedBox = boxType;
+            selectedPaymentMethod = 'venmo'; // Auto-select Venmo since it's the only option
+            updateOrderSummary();
+            updateOrderButton();
+
+            // Announce selection to screen readers
+            const statusElement = document.getElementById('order-btn-status');
+            statusElement.textContent = `${boxType.charAt(0).toUpperCase() + boxType.slice(1)} box selected`;
+
+            trackEvent('box_selected', { box_type: boxType });
+            trackAddToCart({
+                item_id: boxType,
+                item_name: `${boxType.charAt(0).toUpperCase() + boxType.slice(1)} Box`,
+                value: boxType === 'birds' ? 45 : 75
+            });
+        }
+
+        function updatePricing() {
+            const frequency = document.getElementById('frequency').value;
+            const birdsPrice = document.getElementById('birds-price');
+            const beesPrice = document.getElementById('bees-price');
+            
+            if (frequency === 'monthly') {
+                birdsPrice.textContent = '$40';
+                beesPrice.textContent = '$70';
+            } else if (frequency === 'quarterly') {
+                birdsPrice.textContent = '$45';
+                beesPrice.textContent = '$75';
+            } else {
+                birdsPrice.textContent = '$50';
+                beesPrice.textContent = '$80';
+            }
+            
+            updateOrderSummary();
+            trackEvent('frequency_changed', { frequency: frequency });
+        }
+
+        function updateOrderSummary() {
+            if (!selectedBox) return;
+            
+            const frequency = document.getElementById('frequency').value;
+            const delivery = document.getElementById('delivery').value;
+            
+            // Calculate base box price
+            let boxPrice;
+            if (frequency === 'monthly') {
+                boxPrice = selectedBox === 'birds' ? 40 : 70;
+            } else if (frequency === 'quarterly') {
+                boxPrice = selectedBox === 'birds' ? 45 : 75;
+            } else {
+                boxPrice = selectedBox === 'birds' ? 50 : 80;
+            }
+            
+            // Calculate add-ons
+            let addOnsTotal = 0;
+            let addOnsList = [];
+            
+            if (document.getElementById('coffee-addon').checked) {
+                addOnsTotal += 10;
+                addOnsList.push({name: 'Artisan Coffee', price: 10});
+            }
+            if (document.getElementById('waffles-addon').checked) {
+                addOnsTotal += 10;
+                addOnsList.push({name: 'Homemade Waffles', price: 10});
+            }
+            if (document.getElementById('honey-addon').checked) {
+                addOnsTotal += 12;
+                addOnsList.push({name: 'Extra Honey', price: 12});
+            }
+            if (document.getElementById('balm-addon').checked) {
+                addOnsTotal += 4.50;
+                addOnsList.push({name: 'Lemon Bee Balm', price: 4.50});
+            }
+            
+            // Calculate delivery fee
+            let deliveryFee = 0;
+            if (delivery === 'delivery') {
+                deliveryFee = 20; // Simplified - normally would calculate based on distance
+            }
+            
+            orderTotal = boxPrice + addOnsTotal + deliveryFee;
+            
+            // Update order summary display
+            const orderSummary = document.getElementById('order-summary');
+            const orderDetails = document.getElementById('order-details');
+            
+            let orderHTML = `
+                <div class="order-item">
+                    <span class="item-name">${selectedBox.charAt(0).toUpperCase() + selectedBox.slice(1)} Box (${frequency.charAt(0).toUpperCase() + frequency.slice(1)})</span>
+                    <span class="item-price">${boxPrice.toFixed(2)}</span>
+                </div>
+            `;
+            
+            addOnsList.forEach(addon => {
+                orderHTML += `
+                    <div class="order-item">
+                        <span class="item-name">${addon.name}</span>
+                        <span class="item-price">${addon.price.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            if (deliveryFee > 0) {
+                orderHTML += `
+                    <div class="order-item">
+                        <span class="item-name">Delivery Fee</span>
+                        <span class="item-price">${deliveryFee.toFixed(2)}</span>
+                    </div>
+                `;
+            }
+            
+            orderHTML += `
+                <div class="order-item" style="font-weight: 500; font-size: 1rem; color: #1a1a1a;">
+                    <span class="item-name"><strong>Total</strong></span>
+                    <span class="item-price"><strong>${orderTotal.toFixed(2)}</strong></span>
+                </div>
+            `;
+            
+            orderDetails.innerHTML = orderHTML;
+            orderSummary.style.display = 'block';
+            
+            updatePaymentAmounts();
+        }
+
+        function updatePaymentAmounts() {
+            const venmoAmount = document.getElementById('venmo-amount');
+            if (venmoAmount) {
+                venmoAmount.textContent = orderTotal.toFixed(2);
+            }
+        }
+
+        function toggleDeliveryInfo() {
+            const delivery = document.getElementById('delivery').value;
+            const pickupInfo = document.getElementById('pickup-info');
+            const deliveryInfo = document.getElementById('delivery-info');
+            const addressGroup = document.getElementById('address-group');
+            const addressField = document.getElementById('address');
+            
+            if (delivery === 'delivery') {
+                pickupInfo.style.display = 'none';
+                deliveryInfo.style.display = 'block';
+                addressGroup.style.display = 'block';
+                addressField.setAttribute('required', '');
+            } else {
+                pickupInfo.style.display = 'block';
+                deliveryInfo.style.display = 'none';
+                addressGroup.style.display = 'none';
+                addressField.removeAttribute('required');
+                hideError('address');
+                hideSuccess('address');
+            }
+            
+            updateOrderSummary();
+            trackEvent('delivery_method_changed', { method: delivery });
+        }
+
+        function updateOrderButton() {
+            const orderBtn = document.getElementById('order-btn');
+            
+            if (selectedBox && selectedPaymentMethod) {
+                orderBtn.disabled = false;
+                orderBtn.textContent = `Place Order - ${orderTotal.toFixed(2)}`;
+            } else {
+                orderBtn.disabled = true;
+                orderBtn.textContent = 'Select Box & Payment Method to Continue';
+            }
+        }
+
+        function processOrder() {
+            // Show loading state
+            const orderBtn = document.getElementById('order-btn');
+            orderBtn.classList.add('loading');
+            orderBtn.disabled = true;
+
+            // Get form data
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const address = document.getElementById('address');
+            const specialRequests = document.getElementById('special-requests').value;
+            const frequency = document.getElementById('frequency').value;
+            const delivery = document.getElementById('delivery').value;
+            
+            // Validate all fields
+            let isValid = true;
+            [name, email, phone, address].forEach(field => {
+                if (field && !validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            // Check if box is selected
+            if (!selectedBox) {
+                showToast('Please select a box option', 'error');
+                orderBtn.classList.remove('loading');
+                orderBtn.disabled = false;
+                return;
+            }
+            
+            if (!isValid) {
+                showToast('Please fix the errors in the form before submitting', 'error');
+                orderBtn.classList.remove('loading');
+                orderBtn.disabled = false;
+                return;
+            }
+            
+            // Track order attempt
+            trackEvent('order_attempt', {
+                box_type: selectedBox,
+                frequency: frequency,
+                delivery_method: delivery,
+                order_total: orderTotal
+            });
+            
+            // Simulate processing delay
+            setTimeout(() => {
+                // Here you would typically send the order to your server
+                // For now, we'll just show the success message
+                
+                document.getElementById('success-message').classList.add('show');
+                document.getElementById('order-form').style.display = 'none';
+                
+                // Scroll to success message
+                document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+                
+                showToast('Order submitted successfully!', 'success');
+
+                // Track successful order with enhanced e-commerce data
+                const orderData = {
+                    transaction_id: 'CB-' + Date.now(),
+                    value: orderTotal,
+                    items: [{
+                        item_id: selectedBox,
+                        item_name: `${selectedBox.charAt(0).toUpperCase() + selectedBox.slice(1)} Box`,
+                        category: 'farm-provisions',
+                        quantity: 1,
+                        price: orderTotal
+                    }]
+                };
+                
+                trackPurchase(orderData);
+                
+                console.log('Order processed:', {
+                    name: name.value,
+                    email: email.value,
+                    phone: phone.value,
+                    address: address.value,
+                    specialRequests,
+                    selectedBox,
+                    frequency,
+                    delivery,
+                    selectedPaymentMethod,
+                    orderTotal
+                });
+
+                orderBtn.classList.remove('loading');
+            }, 2000);
+        }
+
+        function accessMembersPage() {
+            // Placeholder for members-only access
+            showToast('Members area coming soon! Sign up for our newsletter to be notified when it launches.', 'info');
+            trackEvent('members_page_attempt');
+        }
+
+        // Track add-on selections
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'checkbox' && e.target.id.includes('-addon')) {
+                const addonName = e.target.id.replace('-addon', '');
+                trackEvent('addon_toggled', {
+                    addon: addonName,
+                    selected: e.target.checked,
+                    price: parseFloat(e.target.value)
+                });
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            selectedPaymentMethod = 'venmo'; // Auto-select Venmo since it's the only option
+            updatePricing();
+
+            // Add touch event handling for better mobile experience
+            if ('ontouchstart' in window) {
+                document.querySelectorAll('.box-option, .add-on-item').forEach(element => {
+                    element.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    element.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+            }
+
+            // Service Worker registration for PWA
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered:', registration);
+                        trackEvent('service_worker_registered');
+                    })
+                    .catch(error => {
+                        console.log('SW registration failed:', error);
+                    });
+            }
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            // Track Core Web Vitals
+            if ('PerformanceObserver' in window) {
+                try {
+                    // First Contentful Paint
+                    new PerformanceObserver((entryList) => {
+                        for (const entry of entryList.getEntries()) {
+                            trackEvent('performance_metric', {
+                                metric: 'FCP',
+                                value: Math.round(entry.startTime)
+                            });
+                        }
+                    }).observe({entryTypes: ['paint']});
+
+                    // Largest Contentful Paint
+                    new PerformanceObserver((entryList) => {
+                        const entries = entryList.getEntries();
+                        const lastEntry = entries[entries.length - 1];
+                        trackEvent('performance_metric', {
+                            metric: 'LCP',
+                            value: Math.round(lastEntry.startTime)
+                        });
+                    }).observe({entryTypes: ['largest-contentful-paint']});
+                } catch (e) {
+                    // Fallback for browsers that don't support these APIs
+                    console.log('Performance monitoring not supported');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
