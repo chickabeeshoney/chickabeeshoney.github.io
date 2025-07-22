@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git rebase:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git ls-tree:*)",
+      "WebFetch(domain:chickabeeshoney.github.io)",
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "Bash(gh repo view:*)",
+      "Bash(mv:*)",
+      "Bash(git tag:*)",
+      "Bash(gh release create:*)",
+      "Bash(cp:*)",
+      "Bash(claude doctor)"
+    ],
+    "deny": []
+  }
+}
