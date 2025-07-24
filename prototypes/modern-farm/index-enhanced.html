@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA</title>
+    <meta name="description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-19BV0QPP7Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-19BV0QPP7Z');
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../shared/design-tokens.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="enhanced.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <img src="../../images/circle-logo.png" alt="Chickabees Honey" class="logo">
+                    <span class="brand-name">Chickabees</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#products" class="nav-link">Shop</a>
+                    <a href="#story" class="nav-link">Our Story</a>
+                    <a href="#pickup" class="nav-link">Pickup</a>
+                </div>
+            </nav>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">Fresh from our Oakland farm to your table</h1>
+                <p class="hero-subtitle">Raw honey, farm-fresh eggs, and seasonal provisions from our family to yours. Supporting sustainable farming and children's education.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="scrollToProducts()">Shop Farm Boxes</button>
+                    <button class="btn btn-secondary" onclick="scrollToStory()">Learn Our Story</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="../../images/boys-beesuits.jpg" alt="Children in bee suits at the farm" loading="lazy">
+            <div class="hero-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Farm Fresh Provisions</h2>
+                <p class="section-subtitle">Choose one of our boxes or customize with add-ons</p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- The Birds Box -->
+                <div class="product-card glass" data-box="birds">
+                    <div class="availability-badge" id="birds-availability">12 available</div>
+                    <div class="product-image">
+                        <img src="../../images/young_chicks_boys.jpg" alt="Fresh eggs from our chickens" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">The Birds Box</h3>
+                        <p class="product-description">12 fresh eggs, 10oz wildflower honey, jar of granola, sourdough loaf, canvas tote, monthly guide</p>
+                        <div class="product-footer">
+                            <span class="product-price">$40.00</span>
+                            <button class="btn btn-outline select-box" data-box="birds" onclick="selectBox('birds')">Select</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- The Bees Box -->
+                <div class="product-card glass" data-box="bees">
+                    <div class="availability-badge" id="bees-availability">8 available</div>
+                    <div class="product-image">
+                        <img src="../../images/honey_harvest_boys.jpg" alt="Raw wildflower honey" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">The Bees Box</h3>
+                        <p class="product-description">20oz wildflower honey, canvas tote, monthly guide with recipes and farm updates</p>
+                        <div class="product-footer">
+                            <span class="product-price">$20.00</span>
+                            <button class="btn btn-outline select-box" data-box="bees" onclick="selectBox('bees')">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add-ons Section (Hidden initially) -->
+            <div id="addons-section" class="addons-section" style="display: none;">
+                <h3 class="addons-title">Customize Your Box</h3>
+                <div class="addons-grid">
+                    <div class="addon-item">
+                        <label class="addon-label">
+                            <input type="checkbox" id="honey-10oz" value="10" onchange="updateTotal()">
+                            <div class="addon-content">
+                                <span class="addon-name">Extra Honey (10oz)</span>
+                                <span class="addon-price">+$10</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="addon-item">
+                        <label class="addon-label">
+                            <input type="checkbox" id="honey-20oz" value="20" onchange="updateTotal()">
+                            <div class="addon-content">
+                                <span class="addon-name">Extra Honey (20oz)</span>
+                                <span class="addon-price">+$20</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="addon-item">
+                        <label class="addon-label">
+                            <input type="checkbox" id="eggs-6" value="5" onchange="updateTotal()">
+                            <div class="addon-content">
+                                <span class="addon-name">Extra 6 Eggs</span>
+                                <span class="addon-price">+$5</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="addon-item">
+                        <label class="addon-label">
+                            <input type="checkbox" id="sourdough" value="8" onchange="updateTotal()">
+                            <div class="addon-content">
+                                <span class="addon-name">Extra Sourdough Loaf</span>
+                                <span class="addon-price">+$8</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order-form" class="order-form-section" style="display: none;">
+        <div class="container">
+            <div class="order-form-card glass">
+                <h2 class="form-title">Complete Your Order</h2>
+                
+                <!-- Progress Indicator -->
+                <div class="progress-dots">
+                    <span class="dot active">Box</span>
+                    <span class="dot" id="dot-addons">Add-ons</span>
+                    <span class="dot" id="dot-contact">Contact</span>
+                    <span class="dot" id="dot-payment">Payment</span>
+                </div>
+                
+                <!-- Contact Form -->
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests (Optional)</label>
+                        <textarea id="special-requests" name="special-requests" rows="3" placeholder="Any special notes or requests?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary form-submit">Continue to Payment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment-section" class="payment-section" style="display: none;">
+        <div class="container">
+            <div class="payment-card glass">
+                <h2 class="payment-title">Choose Payment Method</h2>
+                
+                <div class="payment-options">
+                    <div class="payment-option" onclick="selectPayment('venmo')">
+                        <input type="radio" name="payment" id="payment-venmo" value="venmo">
+                        <label for="payment-venmo">
+                            <span class="payment-name">Venmo</span>
+                            <span class="payment-desc">Pay now with QR code</span>
+                        </label>
+                    </div>
+                    
+                    <div class="payment-option" onclick="selectPayment('cash')">
+                        <input type="radio" name="payment" id="payment-cash" value="cash">
+                        <label for="payment-cash">
+                            <span class="payment-name">Cash at Pickup</span>
+                            <span class="payment-desc">Pay when you pick up</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Venmo Payment Details -->
+                <div id="venmo-details" class="payment-details" style="display: none;">
+                    <div class="qr-container">
+                        <img src="../../images/qr_code_chickabees.jpg" alt="Venmo QR Code" class="qr-image">
+                        <div class="qr-info">
+                            <p class="qr-label">Scan to pay <strong>$<span id="venmo-total">0.00</span></strong></p>
+                            <p class="qr-username">@chickabeesoakland</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="completeOrder()">Complete Order</button>
+                </div>
+                
+                <!-- Cash Payment Details -->
+                <div id="cash-details" class="payment-details" style="display: none;">
+                    <div class="cash-info">
+                        <p>Please bring <strong>$<span id="cash-total">0.00</span></strong> in cash to pickup.</p>
+                        <p class="pickup-reminder">See you on <span id="cash-pickup-date"></span>!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="completeOrder()">Complete Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2 class="story-title">Our Family Farm Story</h2>
+                    <p class="story-paragraph">What started as a backyard beekeeping hobby has grown into a passion for sustainable farming and community connection. Our Oakland farm is home to busy bees, happy chickens, and two curious kids who love sharing the magic of where food comes from.</p>
+                    
+                    <p class="story-paragraph">Every first Sunday of the month, families gather at our farm for pickup day - complete with complimentary coffee, fresh waffles, and the joy of community. It's more than just food; it's about building connections and supporting children's education through our farm programs.</p>
+                    
+                    <div class="story-stats">
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Years farming</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Happy families</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Local & fresh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-image">
+                    <img src="../../images/boys-beesuits.jpg" alt="Our family at the farm" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pickup Section -->
+    <section id="pickup" class="pickup">
+        <div class="container">
+            <div class="pickup-card glass">
+                <div class="pickup-content">
+                    <h2 class="pickup-title">First Sunday Farm Pickup</h2>
+                    <p class="pickup-description">Join us on the first Sunday of each month for pickup day! Enjoy complimentary coffee and fresh waffles while the kids explore the farm.</p>
+                    
+                    <div class="pickup-details">
+                        <div class="pickup-detail">
+                            <strong>When:</strong> First Sunday of each month, 9:00-11:00 AM
+                        </div>
+                        <div class="pickup-detail">
+                            <strong>Next Pickup:</strong> <span id="pickup-date-display" class="highlight-date"></span>
+                        </div>
+                        <div class="pickup-detail">
+                            <strong>Where:</strong> Oakland, CA (address provided with order)
+                        </div>
+                        <div class="pickup-detail">
+                            <strong>Payment:</strong> Venmo, cash, or tap-to-pay
+                        </div>
+                    </div>
+                    
+                    <div class="pickup-actions">
+                        <button class="btn btn-primary" onclick="scrollToProducts()">Place Your Order</button>
+                        <a href="#contact" class="btn btn-outline">Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="pickup-qr">
+                    <p class="qr-label">Pay with Venmo</p>
+                    <img src="../../images/qr_code_chickabees.jpg" alt="Venmo QR Code" class="qr-image">
+                    <p class="qr-username">@chickabeesoakland</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Summary (Sticky on Desktop) -->
+    <div id="order-summary" class="order-summary-sticky" style="display: none;">
+        <div class="summary-content">
+            <h4>Your Order</h4>
+            <div id="summary-items"></div>
+            <div class="summary-total">
+                <span>Total:</span>
+                <span>$<span id="summary-total">0.00</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../../images/circle-logo.png" alt="Chickabees Honey" class="footer-logo">
+                    <p class="footer-tagline">Fresh from our Oakland farm to your table</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Get in Touch</h3>
+                    <p>hello@chickabeesoakland.com</p>
+                    <p>@chickabeesoakland (Venmo)</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chickabees Honey. Made with love in Oakland, CA.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="enhanced.js"></script>
+</body>
+</html>
