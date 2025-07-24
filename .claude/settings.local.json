@@ -23,7 +23,8 @@
       "Bash(gh release create:*)",
       "Bash(cp:*)",
       "Bash(claude doctor)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "Bash(open:*)"
     ],
     "deny": []
   }
