@@ -1595,6 +1595,139 @@
             padding: 0 10px;
         }
 
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--color-meadow) 0%, var(--color-meadow-dark) 100%);
+            padding: var(--space-20) 0;
+        }
+
+        .newsletter-card {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-12);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-xl);
+            padding: var(--space-12);
+            align-items: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .newsletter-title {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            color: white;
+            margin-bottom: var(--space-4);
+        }
+
+        .newsletter-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            margin-bottom: var(--space-8);
+        }
+
+        .newsletter-form {
+            margin-bottom: var(--space-4);
+        }
+
+        .form-group {
+            display: flex;
+            gap: var(--space-3);
+            align-items: stretch;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: var(--space-4) var(--space-5);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius-full);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            font-size: var(--text-base);
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-btn {
+            background: white;
+            color: var(--color-meadow-dark);
+            border: 2px solid white;
+            flex-shrink: 0;
+            font-weight: 600;
+            padding: var(--space-4) var(--space-6);
+            border-radius: var(--border-radius-full);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .newsletter-privacy {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--text-sm);
+            font-style: italic;
+        }
+
+        .newsletter-actions {
+            text-align: center;
+        }
+
+        .newsletter-cta {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-8);
+        }
+
+        .newsletter-cta h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            color: white;
+            margin-bottom: var(--space-3);
+        }
+
+        .newsletter-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-6);
+            line-height: 1.6;
+        }
+
+        .newsletter-order {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: var(--space-4) var(--space-6);
+            border-radius: var(--border-radius-full);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .newsletter-order:hover {
+            background: white;
+            color: var(--color-meadow-dark);
+        }
+
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -1950,6 +2083,26 @@
 
             .chat-widget {
                 bottom: 90px;
+            }
+
+            .newsletter-card {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+                text-align: center;
+            }
+
+            .form-group {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+
+            .newsletter-input {
+                width: 100%;
+            }
+
+            .newsletter-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -2696,8 +2849,8 @@
     <main id="main-content" role="main">
         <section class="hero" aria-label="Welcome message">
             <div class="container">
-                <h2>Handcrafted Backyard Orchard Provisions</h2>
-                <p>From our family farm to your home. Every harvest teaches our children about sustainable farming, caring for animals, and how our community and ecosystem are connected.</p>
+                <h2>Fresh from our Oakland farm to your table</h2>
+                <p>Raw honey, farm-fresh eggs, and seasonal provisions from our family to yours. Supporting sustainable farming and children's education.</p>
             </div>
         </section>
 
@@ -3128,6 +3281,41 @@
                 <h3>Our Mission</h3>
                 <p>Chickabees Honey is more than a family business - it's our way of teaching the O-Boys about entrepreneurship, the value of hard work, and financial responsibility. Every jar of honey sold and every egg gathered contributes to their education fund and Roth IRA.</p>
                 <p>We believe in creating an organic, sustainable, healthy food system while inspiring our community to eat well, learn about animals and plants, and build connections rooted in kindness, altruism, and joy. Through sharing our journey, we hope to inspire other families to discover their own path to sustainable living and meaningful learning.</p>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-card">
+                    <div class="newsletter-content">
+                        <h2 class="newsletter-title">Stay Connected to Our Farm</h2>
+                        <p class="newsletter-description">
+                            Get updates on seasonal offerings, farm stories, and recipes delivered to your inbox. 
+                            Be the first to know about special events and new products from our Oakland farm.
+                        </p>
+                        
+                        <div class="newsletter-signup">
+                            <form class="newsletter-form" action="#" method="post">
+                                <div class="form-group">
+                                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                                    <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
+                                </div>
+                            </form>
+                            <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-actions">
+                        <div class="newsletter-cta">
+                            <h3>Ready to Order?</h3>
+                            <p>Don't wait - get fresh farm provisions delivered this Sunday</p>
+                            <button class="btn btn-outline newsletter-order" onclick="document.getElementById('fresh-box').scrollIntoView({behavior: 'smooth'})">
+                                Order Farm Boxes
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
