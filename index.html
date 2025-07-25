@@ -1010,20 +1010,34 @@
         
         // Remove item from order summary
         function removeItem(addonId) {
-            const currentQty = addonQuantities[addonId] || 0;
-            const newQty = Math.max(0, currentQty - 1);
+            // Completely remove the addon item from order
+            addonQuantities[addonId] = 0;
             
-            addonQuantities[addonId] = newQty;
-            
-            // Update quantity badge
+            // Update quantity badge (hidden but keep consistent)
             const badge = document.getElementById(`qty-${addonId}`);
             if (badge) {
-                badge.textContent = newQty;
-                badge.style.display = newQty > 0 ? 'inline-block' : 'none';
+                badge.textContent = '0';
+                badge.style.display = 'none';
             }
             
             // Update overall totals
             updateTotal();
+        }
+        
+        function removeBox(boxType) {
+            // Remove the selected box
+            selectedBox = null;
+            
+            // Update UI - remove selected state
+            document.querySelectorAll('.box-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Update totals
+            updateTotal();
+            
+            // Check if order is empty and hide summary if needed
+            checkAndHideEmptyOrder();
         }
         
         // Step 2: Add-ons Selection - Updated for quantity system
@@ -1072,32 +1086,61 @@
             updateOrderSummary();
         }
 
+        function checkAndHideEmptyOrder() {
+            const orderSummary = document.getElementById('orderSummary');
+            const hasBox = selectedBox !== null;
+            const hasAddons = selectedAddons.length > 0;
+            
+            if (!hasBox && !hasAddons) {
+                if (orderSummary) {
+                    orderSummary.style.display = 'none';
+                }
+                // Also hide add-ons section
+                document.getElementById('addons-section').style.display = 'none';
+                // Hide progress section  
+                document.getElementById('progress-section').style.display = 'none';
+            }
+        }
+
         function updateOrderSummary() {
             const summaryEl = document.getElementById('orderItems');
             const totalEl = document.getElementById('orderTotal');
             const completeOrderBtn = document.getElementById('completeOrderBtn');
+            const orderSummary = document.getElementById('orderSummary');
             
             if (!summaryEl || !totalEl) return;
             
             let html = '';
             let hasItems = false;
             
-            // Base box
+            // Base box - Allow removal if multiple boxes selected
             if (selectedBox) {
                 const boxName = selectedBox === 'birds' ? 'The Birds Box' : 'The Bees Box';
                 const boxPrice = selectedBox === 'birds' ? 40 : 20;
+                // Count how many boxes are in the order (for display purposes)
+                let boxCount = 1;
                 html += `<div class="summary-item">
-                    <span>${boxName}</span>
-                    <span>$${boxPrice}</span>
+                    <div class="summary-item-content">
+                        <span>${boxName}${boxCount > 1 ? ` (${boxCount})` : ''}</span>
+                        <div class="summary-item-right">
+                            <span>$${boxPrice * boxCount}</span>
+                            <button class="remove-item-btn" onclick="removeBox('${selectedBox}')" title="Remove">×</button>
+                        </div>
+                    </div>
                 </div>`;
                 hasItems = true;
             }
             
             // Add-ons
             selectedAddons.forEach(addon => {
-                html += `<div class="summary-item clickable" onclick="removeItem('${addon.id}')">
-                    <span>${addon.quantity}x ${addon.name}</span>
-                    <span>$${addon.total}</span>
+                html += `<div class="summary-item">
+                    <div class="summary-item-content">
+                        <span>${addon.quantity}x ${addon.name}</span>
+                        <div class="summary-item-right">
+                            <span>$${addon.total}</span>
+                            <button class="remove-item-btn" onclick="removeItem('${addon.id}')" title="Remove">×</button>
+                        </div>
+                    </div>
                 </div>`;
             });
             
@@ -1124,6 +1167,15 @@
             // Show/hide complete order button based on whether there are items
             if (completeOrderBtn) {
                 completeOrderBtn.style.display = hasItems ? 'flex' : 'none';
+            }
+            
+            // Show/hide entire order summary based on whether there are items
+            if (orderSummary) {
+                if (hasItems) {
+                    orderSummary.style.display = 'block';
+                } else {
+                    checkAndHideEmptyOrder();
+                }
             }
         }
 
