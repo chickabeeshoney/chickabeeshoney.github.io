@@ -285,6 +285,55 @@ body {
     position: relative;
 }
 
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Hide all slides by default */
+.slide {
+    display: none;
+    position: relative;
+}
+
+/* Show active slide */
+.slide.active {
+    display: block;
+}
+
+/* Style slideshow images */
+.slide img {
+    width: 100%;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-xl);
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Slideshow dots */
+.slideshow-dots {
+    text-align: center;
+    margin-top: var(--space-4);
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: var(--color-honey);
+}
+
+/* Legacy support for single hero image */
 .hero-image img {
     width: 100%;
     border-radius: var(--border-radius-xl);
@@ -449,8 +498,13 @@ body {
 
 /* Progress Indicator */
 .progress-section {
-    padding: var(--space-8) 0;
-    background: rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--space-4) 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .progress-dots {
@@ -738,15 +792,20 @@ body {
 }
 
 .quantity-badge {
-    background: var(--color-meadow);
-    color: white;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: none; /* Hide quantity badges in add-ons dropdown */
-    align-items: center;
-    justify-content: center;
-    font-size: var(--text-sm);
+    display: none !important; /* Completely hide green quantity badges */
+}
+
+/* Selection animation for add-on items */
+.add-on-item.selected {
+    background-color: var(--color-honey-50);
+    border-color: var(--color-honey-300);
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+.add-on-item {
+    transition: all 0.2s ease;
+}
     font-weight: 600;
     margin-left: auto;
 }
@@ -1172,6 +1231,8 @@ body {
     height: 150px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
+    object-fit: contain;
+    object-position: center;
 }
 
 .qr-instructions {
@@ -1835,6 +1896,8 @@ body {
     height: 120px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
+    object-fit: contain;
+    object-position: center;
 }
 
 .qr-instructions {

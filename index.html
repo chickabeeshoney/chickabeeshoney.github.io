@@ -6,7 +6,7 @@
     
     <!-- SEO Meta Tags -->
     <title>Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA</title>
-    <meta name="description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education. Free pickup with coffee & waffles!">
+    <meta name="description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming, community building & kids education. Free pickup with coffee & waffles!">
     <meta name="keywords" content="raw honey Oakland, farm fresh eggs, sustainable farming, local honey, farm provisions, Oakland farm, beekeeping, chickens, organic">
     <meta name="author" content="Chickabees Honey">
     <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chickabeesoakland.com">
     <meta property="og:title" content="Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA">
-    <meta property="og:description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education.">
+    <meta property="og:description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming, community building & kids education.">
     <meta property="og:image" content="https://chickabeesoakland.com/images/chickabees-og-image.jpg">
     
     <!-- PWA Meta Tags -->
@@ -133,20 +133,9 @@
                 <div class="hero-text">
                     <h2 class="hero-title">Fresh from our Oakland farm to your table</h2>
                     <p class="hero-description">
-                        Raw honey, farm-fresh eggs, and seasonal provisions from our family to yours. Supporting sustainable farming and children's education.
+                        Raw honey, farm-fresh eggs, and seasonal provisions from our family to yours. Supporting sustainable farming, community building and kids education.
                     </p>
                     
-                    <div class="hero-features">
-                        <div class="feature">
-                            <span>Raw Wildflower Honey</span>
-                        </div>
-                        <div class="feature">
-                            <span>Farm Fresh Eggs</span>
-                        </div>
-                        <div class="feature">
-                            <span>Free Coffee & Waffles</span>
-                        </div>
-                    </div>
                     
                     <div class="hero-actions">
                         <button class="btn btn-primary" onclick="document.getElementById('boxes').scrollIntoView({behavior: 'smooth'})">Shop Farm Boxes</button>
@@ -155,7 +144,35 @@
                 </div>
                 
                 <div class="hero-image">
-                    <img src="images/boys-beesuits.jpg" alt="Children in bee suits learning about beekeeping at our Oakland farm" loading="lazy">
+                    <div class="slideshow-container">
+                        <div class="slide active">
+                            <img src="images/boys-beesuits.jpg" alt="Children in bee suits learning about beekeeping at our Oakland farm" loading="lazy">
+                        </div>
+                        <div class="slide">
+                            <img src="images/chicks_both_on_perch.jpg" alt="Chickens perched at our Oakland farm" loading="lazy">
+                        </div>
+                        <div class="slide">
+                            <img src="images/ol-in-coop.jpeg" alt="Farm life at our Oakland location" loading="lazy">
+                        </div>
+                        <div class="slide">
+                            <img src="images/bee_on_alium.jpg" alt="Bee pollinating flowers at our farm" loading="lazy">
+                        </div>
+                        <div class="slide">
+                            <img src="images/ol_and_dad scraping honey.jpg" alt="Harvesting honey at our Oakland farm" loading="lazy">
+                        </div>
+                        <div class="slide">
+                            <img src="images/bread_round.jpg" alt="Fresh baked bread from our farm provisions" loading="lazy">
+                        </div>
+                        
+                        <div class="slideshow-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                            <span class="dot" onclick="currentSlide(6)"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,8 +279,8 @@
             <!-- Add-ons Section (Hidden initially) -->
             <div id="addons-section" class="addons-section" style="display: none;">
                 <div class="section-header">
-                    <h3 class="section-title">Add a bit more for you or to share? We won't judge</h3>
-                    <p class="section-description">Tap below to discover treats</p>
+                    <h3 class="section-title">anything else?</h3>
+                    <p class="section-description">Add a bit more for you or to share? We won't judge</p>
                 </div>
                 
                 <div class="addons-grid">
@@ -444,16 +461,16 @@
                     
                     <div class="story-stats">
                         <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Years Serving Oakland</span>
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">happy chickens</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Regular Families</span>
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">healthy hives</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Local & Fresh</span>
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">fruit trees</span>
                         </div>
                     </div>
                 </div>
@@ -496,7 +513,7 @@
                         
                         <div class="detail-item">
                             <div class="detail-content">
-                                <strong>Bonus:</strong> Complimentary coffee, fresh waffles, and farm exploration for kids
+                                <strong>Bonus:</strong> Complimentary coffee, fresh waffles, and meet the chickens
                             </div>
                         </div>
                     </div>
@@ -702,14 +719,6 @@
                     </div>
                 </div>
 
-                <!-- Special Requests -->
-                <div class="form-section">
-                    <div class="form-group">
-                        <label for="special-requests">Special Requests or Dietary Notes</label>
-                        <textarea id="special-requests" name="special-requests" placeholder="Any allergies, delivery instructions, or special requests?"></textarea>
-                    </div>
-                </div>
-
                 <!-- Sustainability Message -->
                 <div class="sustainability-card">
                     <h4>🌱 Sustainability Rewards</h4>
@@ -719,6 +728,14 @@
                         <li>🍯 Return honey jars - Save $1</li>
                         <li>👜 Bring your tote bag - Save $5</li>
                     </ul>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests or Dietary Notes</label>
+                        <textarea id="special-requests" name="special-requests" placeholder="Any allergies, delivery instructions, or special requests?"></textarea>
+                    </div>
                 </div>
 
                 <!-- Hidden fields for order data -->
@@ -741,7 +758,7 @@
                     <div class="footer-brand">
                         <img src="images/circle-logo.png" alt="Chickabees Honey" class="footer-logo">
                         <div class="footer-brand-text">
-                            <h3 class="footer-title">Chickabees Honey</h3>
+                            <h3 class="footer-title">Chickabees</h3>
                             <p class="footer-tagline">Fresh from our Oakland farm to your family's table</p>
                         </div>
                     </div>
@@ -811,6 +828,58 @@
             navMenu.classList.toggle('active');
             mobileToggle.classList.toggle('active');
         });
+
+        // Hero slideshow functionality
+        let currentSlideIndex = 0;
+        let slideInterval;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const slideshowContainer = document.querySelector('.slideshow-container');
+
+        function showSlide(index) {
+            // Hide all slides and remove active class from dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show selected slide and activate corresponding dot
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlideIndex = index;
+        }
+
+        function nextSlide() {
+            const nextIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+
+        function currentSlide(index) {
+            showSlide(index - 1); // Convert to 0-based index
+            resetSlideInterval(); // Reset timer when manually navigating
+        }
+
+        function startSlideInterval() {
+            slideInterval = setInterval(nextSlide, 5000); // 5 seconds
+        }
+
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            startSlideInterval();
+        }
+
+        // Click on slideshow to advance to next slide
+        if (slideshowContainer) {
+            slideshowContainer.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('dot')) {
+                    nextSlide();
+                    resetSlideInterval();
+                }
+            });
+        }
+
+        // Start the slideshow when page loads
+        if (slides.length > 0) {
+            startSlideInterval();
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -923,7 +992,11 @@
             
             // Show add-ons section
             document.getElementById('addons-section').style.display = 'block';
-            document.getElementById('addons-section').scrollIntoView({ behavior: 'smooth' });
+            // Scroll to show the section header (title + description)
+            const sectionHeader = document.querySelector('#addons-section .section-header');
+            if (sectionHeader) {
+                sectionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
             
             // Show order summary
             document.getElementById('orderSummary').style.display = 'block';
@@ -1002,6 +1075,15 @@
             if (badge) {
                 badge.textContent = newQty;
                 badge.style.display = newQty > 0 ? 'inline-block' : 'none';
+            }
+            
+            // Add selection animation
+            const clickedElement = event.target.closest('.addon-item');
+            if (clickedElement) {
+                clickedElement.classList.add('selected');
+                setTimeout(() => {
+                    clickedElement.classList.remove('selected');
+                }, 300);
             }
             
             // Update overall totals
@@ -1148,11 +1230,11 @@
             if (orderTax > 0) {
                 html += `<div class="summary-item tax-line">
                     <span>Subtotal</span>
-                    <span>$${orderSubtotal.toFixed(2)}</span>
+                    <span>$${(Math.ceil(orderSubtotal * 100) / 100).toFixed(2)}</span>
                 </div>`;
                 html += `<div class="summary-item tax-line">
                     <span>Tax (10.25%)</span>
-                    <span>$${orderTax.toFixed(2)}</span>
+                    <span>$${(Math.ceil(orderTax * 100) / 100).toFixed(2)}</span>
                 </div>`;
             }
             
@@ -1162,7 +1244,7 @@
             }
             
             summaryEl.innerHTML = html;
-            totalEl.textContent = `$${orderTotal.toFixed(2)}`;
+            totalEl.textContent = `$${(Math.ceil(orderTotal * 100) / 100).toFixed(2)}`;
             
             // Show/hide complete order button based on whether there are items
             if (completeOrderBtn) {
@@ -1489,8 +1571,8 @@
             
             // Tax breakdown
             if (orderTax > 0) {
-                orderText += `\nSubtotal: $${orderSubtotal.toFixed(2)}\n`;
-                orderText += `Tax (10.25%): $${orderTax.toFixed(2)}\n`;
+                orderText += `\nSubtotal: $${(Math.ceil(orderSubtotal * 100) / 100).toFixed(2)}\n`;
+                orderText += `Tax (10.25%): $${(Math.ceil(orderTax * 100) / 100).toFixed(2)}\n`;
             }
             
             // Delivery fee
