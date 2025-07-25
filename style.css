@@ -1376,7 +1376,7 @@ body {
         right: 0;
         width: auto;
         top: auto;
-        transform: translateY(calc(100% - 60px)); /* Show only 60px by default */
+        transform: translateY(calc(100% - 80px)); /* Show only 80px by default */
         border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
         transition: transform 0.3s ease-out;
         max-height: 50vh; /* Limit to 50% of screen */
@@ -1420,7 +1420,7 @@ body {
         cursor: pointer;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         background: rgba(255, 255, 255, 0.9);
-        min-height: 60px;
+        min-height: 80px;
     }
     
     .mobile-order-info {
@@ -1449,7 +1449,7 @@ body {
     /* Full order details (hidden initially) */
     .order-details {
         padding: var(--space-4) var(--space-6);
-        max-height: calc(50vh - 60px);
+        max-height: calc(50vh - 80px);
         overflow-y: auto;
     }
     
@@ -2092,6 +2092,11 @@ body {
         text-align: center;
     }
     
+    /* Hide product showcase section on mobile */
+    .showcase-section {
+        display: none;
+    }
+    
     .showcase-grid {
         grid-template-columns: 1fr;
     }
@@ -2222,11 +2227,11 @@ body {
     /* Optimize add-ons grid for mobile */
     .addons-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-6);
+        gap: var(--space-4); /* Reduced from space-6 */
     }
     
     .addon-category {
-        padding: var(--space-4);
+        padding: var(--space-3); /* Reduced from space-4 */
     }
     
     .addon-item {
@@ -2235,8 +2240,17 @@ body {
     }
     
     .category-header {
-        padding: var(--space-3);
-        font-size: var(--text-lg);
+        padding: var(--space-2); /* Reduced from space-3 */
+        font-size: var(--text-base); /* Reduced from text-lg */
+    }
+    
+    /* Compress category title spacing */
+    .category-title {
+        margin-bottom: var(--space-1); /* Reduce vertical spacing */
+    }
+    
+    .category-hint {
+        margin-bottom: var(--space-2); /* Reduce spacing before items */
     }
     
     /* Improve slideshow for mobile */
