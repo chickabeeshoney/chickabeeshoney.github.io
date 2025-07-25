@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA</title>
+    <meta name="description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education. Free pickup with coffee & waffles!">
+    <meta name="keywords" content="raw honey Oakland, farm fresh eggs, sustainable farming, local honey, farm provisions, Oakland farm, beekeeping, chickens, organic">
+    <meta name="author" content="Chickabees Honey">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://chickabeesoakland.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chickabeesoakland.com">
+    <meta property="og:title" content="Chickabees Honey - Fresh Raw Honey & Farm Provisions | Oakland, CA">
+    <meta property="og:description" content="Order fresh farm provisions from Oakland's Chickabees Honey. Raw honey, farm eggs, baked goods & seasonal produce. Supporting sustainable farming & children's education.">
+    <meta property="og:image" content="https://chickabeesoakland.com/images/chickabees-og-image.jpg">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#f5e6a3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Chickabees Honey">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-19BV0QPP7Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-19BV0QPP7Z');
+    </script>
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Chickabees Honey",
+        "description": "Family farm providing fresh raw honey, eggs, and seasonal provisions in Oakland, CA",
+        "url": "https://chickabeesoakland.com",
+        "email": "hello@chickabeesoakland.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Oakland",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+        },
+        "openingHours": "Su 09:00-11:00",
+        "priceRange": "$20-$40",
+        "paymentAccepted": "Venmo",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Farm Provisions",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "The Birds Box",
+                        "description": "12 fresh eggs, 10oz wildflower honey, jar of granola, sourdough loaf, canvas tote, monthly guide",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "40.00",
+                            "priceCurrency": "USD"
+                        }
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "The Bees Box",
+                        "description": "20oz wildflower honey, canvas tote, monthly guide",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "20.00",
+                            "priceCurrency": "USD"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <img src="images/circle-logo.png" alt="Chickabees Honey Logo" class="nav-logo">
+                    <div class="brand-text">
+                        <h1 class="brand-name">Chickabees</h1>
+                        <p class="brand-tagline">Oakland Farm Provisions</p>
+                    </div>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="#boxes" class="nav-link">Farm Boxes</a>
+                    <a href="#story" class="nav-link">Our Story</a>
+                    <a href="#pickup" class="nav-link">Pickup Info</a>
+                    <button class="btn-order" onclick="document.getElementById('boxes').scrollIntoView({behavior: 'smooth'})">Order Now</button>
+                </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Fresh from our Oakland farm to your table</h2>
+                    <p class="hero-description">
+                        Raw honey, farm-fresh eggs, and seasonal provisions from our family to yours. Supporting sustainable farming and children's education.
+                    </p>
+                    
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span>Raw Wildflower Honey</span>
+                        </div>
+                        <div class="feature">
+                            <span>Farm Fresh Eggs</span>
+                        </div>
+                        <div class="feature">
+                            <span>Free Coffee & Waffles</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="document.getElementById('boxes').scrollIntoView({behavior: 'smooth'})">Shop Farm Boxes</button>
+                        <button class="btn btn-outline" onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="images/boys-beesuits.jpg" alt="Children in bee suits learning about beekeeping at our Oakland farm" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="images/small_honey_side.jpeg" alt="Raw wildflower honey in glass jars" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3>Raw Wildflower Honey</h3>
+                        <p>Harvested from our Oakland hives</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="images/eggs_coop.jpeg" alt="Fresh farm eggs from free-range chickens" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3>Farm Fresh Eggs</h3>
+                        <p>From our happy free-range chickens</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="images/bread_loaves.jpeg" alt="Freshly baked sourdough bread loaves" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3>Artisan Sourdough</h3>
+                        <p>Baked fresh for Sunday pickup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Boxes Section -->
+    <section id="boxes" class="boxes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Farm Box</h2>
+                <p class="section-description">
+                    Each box is carefully curated with the freshest seasonal provisions from our Oakland farm
+                </p>
+            </div>
+            
+            <div class="boxes-grid">
+                <!-- The Birds Box -->
+                <div class="box-card featured" data-box="birds">
+                    <div class="availability-badge" id="birds-availability">10 available</div>
+                    <div class="box-image">
+                        <img src="images/eggs_coop.jpeg" alt="Fresh farm eggs from our happy chickens" loading="lazy">
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">The Birds Box</h3>
+                        <p class="box-description">Perfect for families who love fresh eggs and honey</p>
+                        
+                        <ul class="box-includes">
+                            <li>12 farm-fresh eggs</li>
+                            <li>10oz wildflower honey</li>
+                            <li>Homemade granola jar</li>
+                            <li>Fresh sourdough loaf</li>
+                            <li>Reusable canvas tote</li>
+                            <li>Monthly farm guide</li>
+                        </ul>
+                        
+                        <div class="box-footer">
+                            <div class="box-price">
+                                <span class="price">$40</span>
+                                <span class="price-note">per box</span>
+                            </div>
+                            <button class="btn btn-outline select-box" data-box="birds" onclick="selectBox('birds')">Select</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- The Bees Box -->
+                <div class="box-card" data-box="bees">
+                    <div class="availability-badge" id="bees-availability">5 available</div>
+                    <div class="box-image">
+                        <img src="images/small_honey_side.jpeg" alt="Raw wildflower honey from our Oakland beehives" loading="lazy">
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">The Bees Box</h3>
+                        <p class="box-description">For honey lovers and those new to our farm</p>
+                        
+                        <ul class="box-includes">
+                            <li>20oz wildflower honey</li>
+                            <li>Reusable canvas tote</li>
+                            <li>Monthly farm guide</li>
+                            <li>Seasonal recipes</li>
+                            <li>Farm updates & stories</li>
+                        </ul>
+                        
+                        <div class="box-footer">
+                            <div class="box-price">
+                                <span class="price">$20</span>
+                                <span class="price-note">per box</span>
+                            </div>
+                            <button class="btn btn-outline select-box" data-box="bees" onclick="selectBox('bees')">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add-ons Section (Hidden initially) -->
+            <div id="addons-section" class="addons-section" style="display: none;">
+                <div class="section-header">
+                    <h3 class="section-title">Add a bit more for you or to share? We won't judge</h3>
+                    <p class="section-description">Tap below to discover treats</p>
+                </div>
+                
+                <div class="addons-grid">
+                    <!-- Provisions Category -->
+                    <div class="addon-category" onclick="toggleCategory('provisions')">
+                        <h4 class="category-title">
+                            <span>Provisions</span>
+                            <span class="category-arrow" id="arrow-provisions">▶</span>
+                        </h4>
+                        <p class="category-hint">Click to explore breads, treats & coffee</p>
+                        <div class="category-items" id="items-provisions" style="display: none;">
+                            <!-- Chocolate Babka with sub-options -->
+                            <div class="addon-item parent-item" onclick="event.stopPropagation(); toggleSubOptions('babka')">
+                                <div class="addon-header">
+                                    <span class="addon-name">Chocolate Babka</span>
+                                    <span class="sub-arrow" id="sub-arrow-babka">▶</span>
+                                </div>
+                            </div>
+                            <div class="sub-options" id="sub-babka" style="display: none;">
+                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('babka-whole')">
+                                    <div class="addon-header">
+                                        <span class="addon-name">Whole</span>
+                                        <span class="addon-price">$20</span>
+                                        <span class="quantity-badge" id="qty-babka-whole" style="display: none;">0</span>
+                                    </div>
+                                </div>
+                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('babka-slice')">
+                                    <div class="addon-header">
+                                        <span class="addon-name">Slice</span>
+                                        <span class="addon-price">$3</span>
+                                        <span class="quantity-badge" id="qty-babka-slice" style="display: none;">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sourdough with sub-options -->
+                            <div class="addon-item parent-item" onclick="event.stopPropagation(); toggleSubOptions('sourdough')">
+                                <div class="addon-header">
+                                    <span class="addon-name">Sourdough</span>
+                                    <span class="sub-arrow" id="sub-arrow-sourdough">▶</span>
+                                </div>
+                            </div>
+                            <div class="sub-options" id="sub-sourdough" style="display: none;">
+                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('sourdough-full')">
+                                    <div class="addon-header">
+                                        <span class="addon-name">Full Loaf</span>
+                                        <span class="addon-price">$8</span>
+                                        <span class="quantity-badge" id="qty-sourdough-full" style="display: none;">0</span>
+                                    </div>
+                                </div>
+                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('sourdough-half')">
+                                    <div class="addon-header">
+                                        <span class="addon-name">Half Loaf</span>
+                                        <span class="addon-price">$5</span>
+                                        <span class="quantity-badge" id="qty-sourdough-half" style="display: none;">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Granola -->
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('granola')">
+                                <div class="addon-header">
+                                    <span class="addon-name">Granola Jar</span>
+                                    <span class="addon-price">$10</span>
+                                    <span class="quantity-badge" id="qty-granola" style="display: none;">0</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Coffee -->
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('coffee-12oz')">
+                                <div class="addon-header">
+                                    <span class="addon-name">Coffee Beans (12oz)</span>
+                                    <span class="addon-price">$15</span>
+                                    <span class="quantity-badge" id="qty-coffee-12oz" style="display: none;">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Honey Category -->
+                    <div class="addon-category" onclick="toggleCategory('honey')">
+                        <h4 class="category-title">
+                            <span>Honey</span>
+                            <span class="category-arrow" id="arrow-honey">▶</span>
+                        </h4>
+                        <p class="category-hint">Click for golden sweetness in 3 sizes</p>
+                        <div class="category-items" id="items-honey" style="display: none;">
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('honey-6oz')">
+                                <div class="addon-header">
+                                    <span class="addon-name">6oz jar</span>
+                                    <span class="addon-price">$6</span>
+                                    <span class="quantity-badge" id="qty-honey-6oz" style="display: none;">0</span>
+                                </div>
+                            </div>
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('honey-10oz')">
+                                <div class="addon-header">
+                                    <span class="addon-name">10oz jar</span>
+                                    <span class="addon-price">$10</span>
+                                    <span class="quantity-badge" id="qty-honey-10oz" style="display: none;">0</span>
+                                </div>
+                            </div>
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('honey-20oz')">
+                                <div class="addon-header">
+                                    <span class="addon-name">20oz jar</span>
+                                    <span class="addon-price">$20</span>
+                                    <span class="quantity-badge" id="qty-honey-20oz" style="display: none;">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Eggs Category -->
+                    <div class="addon-category" onclick="toggleCategory('eggs')">
+                        <h4 class="category-title">
+                            <span>Eggs</span>
+                            <span class="category-arrow" id="arrow-eggs">▶</span>
+                        </h4>
+                        <p class="category-hint">Click for fresh eggs, even pre-boiled!</p>
+                        <div class="category-items" id="items-eggs" style="display: none;">
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('eggs-6')">
+                                <div class="addon-header">
+                                    <span class="addon-name">6 Fresh Eggs</span>
+                                    <span class="addon-price">$5</span>
+                                    <span class="quantity-badge" id="qty-eggs-6" style="display: none;">0</span>
+                                </div>
+                            </div>
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('eggs-12')">
+                                <div class="addon-header">
+                                    <span class="addon-name">12 Fresh Eggs</span>
+                                    <span class="addon-price">$10</span>
+                                    <span class="quantity-badge" id="qty-eggs-12" style="display: none;">0</span>
+                                </div>
+                            </div>
+                            <div class="addon-item" onclick="event.stopPropagation(); addItem('eggs-boiled')">
+                                <div class="addon-header">
+                                    <span class="addon-name">Hard-Boiled Eggs (8-minute)</span>
+                                    <span class="addon-price">$2</span>
+                                    <span class="quantity-badge" id="qty-eggs-boiled" style="display: none;">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="addons-actions">
+                    <button class="btn btn-primary" onclick="proceedToOrder()">Continue to Order Details</button>
+                    <button class="btn btn-outline" onclick="skipAddons()">Skip Add-ons</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2 class="story-title">Our Family Farm Story</h2>
+                    <div class="story-text-content">
+                        <p>
+                            What began as a backyard hobby of keeping a few bees has blossomed into a thriving 
+                            family farm that brings the Oakland community together on the first Sunday of each month.
+                        </p>
+                        
+                        <p>
+                            Our two children are deeply involved in every aspect of the farm - from collecting 
+                            eggs each morning to helping harvest honey when the season is right. We believe in 
+                            teaching kids where their food comes from and supporting sustainable farming practices 
+                            that benefit our local community.
+                        </p>
+                        
+                        <p>
+                            On the first Sunday of each month, families gather at our farm for pickup day, complete with complimentary 
+                            coffee, fresh waffles, and the joy of watching children discover the magic of farm life. 
+                            It's not just about selling food - it's about building community and creating connections.
+                        </p>
+                    </div>
+                    
+                    <div class="story-stats">
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Years Serving Oakland</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Regular Families</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Local & Fresh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-image">
+                    <img src="images/oreo-and-coop.jpeg" alt="Our family dog Oreo with the chicken coop and children in the background" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pickup Information -->
+    <section id="pickup" class="pickup-section">
+        <div class="container">
+            <div class="pickup-content">
+                <div class="pickup-info">
+                    <h2 class="pickup-title">Sunday Farm Pickup</h2>
+                    <p class="pickup-description">
+                        Join us on the first Sunday of each month for a unique farm experience that goes beyond just picking up groceries.
+                    </p>
+                    
+                    <div class="pickup-details">
+                        <div class="detail-item">
+                            <div class="detail-content">
+                                <strong>When:</strong> First Sunday of each month, 9:00 AM - 11:00 AM | Next pickup: <span id="next-pickup-date">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-content">
+                                <strong>Where:</strong> Oakland, CA (exact address provided with order confirmation)
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-content">
+                                <strong>Payment:</strong> Venmo preferred, also accept cash or tap-to-pay cards
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-content">
+                                <strong>Bonus:</strong> Complimentary coffee, fresh waffles, and farm exploration for kids
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pickup-actions">
+                        <button class="btn btn-primary" onclick="document.getElementById('boxes').scrollIntoView({behavior: 'smooth'})">Place Your Order</button>
+                        <button class="btn btn-outline" onclick="window.open('mailto:hello@chickabeesoakland.com?subject=Farm Directions Request', '_blank')">Get Directions</button>
+                    </div>
+                </div>
+                
+                <div class="pickup-payment">
+                    <div class="payment-card">
+                        <h3 class="payment-title">Quick Pay with Venmo</h3>
+                        <div class="qr-container">
+                            <img src="images/qr_code_chickabees.jpg" alt="Venmo QR Code for @chickabeesoakland" class="qr-image">
+                            <div class="qr-info">
+                                <p class="qr-instructions">Scan with your Venmo app or search:</p>
+                                <p class="qr-handle">@chickabeesoakland</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-main">
+                    <h2 class="newsletter-title">Stay Connected to Our Farm</h2>
+                    <p class="newsletter-description">
+                        Get updates on seasonal offerings, farm stories, and recipes delivered to 
+                        your inbox. Be the first to know about special events and new products from 
+                        our Oakland farm.
+                    </p>
+                    
+                    <form class="newsletter-form" action="https://formspree.io/f/xgegojko" method="POST">
+                        <input type="email" 
+                               name="email" 
+                               class="newsletter-email" 
+                               placeholder="Enter your email address" 
+                               required>
+                        <input type="hidden" name="_subject" value="Newsletter Signup">
+                        <button type="submit" class="btn-subscribe">Subscribe</button>
+                    </form>
+                    
+                    <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+                
+                <div class="newsletter-cta">
+                    <h3>Ready to Order?</h3>
+                    <p>Don't wait - get fresh farm provisions at our next pickup on <span id="newsletter-pickup-date">Loading...</span></p>
+                    <button class="btn-order-boxes" onclick="document.getElementById('boxes').scrollIntoView({behavior: 'smooth'})">
+                        Order Farm Boxes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form (Hidden initially) -->
+    <section id="order-form-section" class="order-form-section" style="display: none;">
+        <div class="container">
+            <div class="order-form-header">
+                <h2 class="section-title">Complete Your Order</h2>
+                <p class="section-description">
+                    Just a few details and you'll be enjoying fresh farm provisions this Sunday!
+                </p>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message-banner" id="success-message" role="alert" aria-live="assertive" style="display: none;">
+                <h4>Order Received Successfully!</h4>
+                <p>Thank you for supporting the O-Boys' future. We'll contact you within 24 hours to confirm your order and arrange payment/delivery details.</p>
+            </div>
+
+            <form class="order-form" id="order-form" action="https://formspree.io/f/xgegojko" method="POST" novalidate>
+                
+                <!-- Customer Details -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Your Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                            <div class="error-message" id="phone-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="delivery">Delivery Method <span class="required">*</span></label>
+                            <select id="delivery" name="delivery" required onchange="toggleDeliveryInfo()">
+                                <option value="pickup">Farm Pickup (Free)</option>
+                                <option value="delivery">Home Delivery (+$5)</option>
+                            </select>
+                            <div class="error-message" id="delivery-error"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pickup Info -->
+                    <div id="pickup-info" class="pickup-info">
+                        <div class="info-card">
+                            <h4>Pickup Details</h4>
+                            <p><strong>When:</strong> First Sunday of each month, 9:00 AM - 11:00 AM</p>
+                            <p><strong>Where:</strong> Oakland, CA (exact address provided with confirmation)</p>
+                            <p><strong>Bonus:</strong> Free coffee, waffles, and farm exploration for the kids!</p>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Info -->
+                    <div id="delivery-info" class="delivery-info" style="display: none;">
+                        <div class="form-group">
+                            <label for="address">Delivery Address <span class="required">*</span></label>
+                            <textarea id="address" name="address" placeholder="123 Main St, Oakland, CA 94610"></textarea>
+                            <div class="error-message" id="address-error"></div>
+                        </div>
+                        <div class="info-card">
+                            <p><strong>Delivery Fee:</strong> $5 within Oakland, $20 for surrounding areas</p>
+                            <p><strong>When:</strong> First Sunday pickup or delivery available</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Order Summary in Form -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Your Order Summary</h3>
+                    <div class="order-summary-card">
+                        <div id="form-order-items">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                        <div class="order-total-row">
+                            <span class="total-label">Total:</span>
+                            <span class="total-amount" id="form-order-total">$0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Selection -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Payment Method</h3>
+                    
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="venmo" checked onchange="updatePaymentInfo()">
+                            <div class="payment-content">
+                                <h4>Pay Now with Venmo (preferred)</h4>
+                                <p>✓ No processing fees • ✓ Secure & instant • ✓ Reserve your spot immediately</p>
+                            </div>
+                        </label>
+                        
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="pickup" onchange="updatePaymentInfo()">
+                            <div class="payment-content">
+                                <h4>Pay at Pickup/Delivery</h4>
+                                <p>💳 Cash or tap-to-pay • 📅 Pay when you receive your order</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Payment Details -->
+                    <div id="venmo-payment-info" class="payment-info">
+                        <div class="payment-card">
+                            <h4>Complete Your Venmo Payment</h4>
+                            <div class="qr-payment-container">
+                                <img src="images/qr_code_chickabees.jpg" alt="Venmo QR Code" class="qr-image">
+                                <div class="qr-instructions">
+                                    <p><strong>How to pay:</strong></p>
+                                    <ol>
+                                        <li>Open your Venmo app</li>
+                                        <li>Scan this QR code or search: <strong>@chickabeesoakland</strong></li>
+                                        <li>Enter amount: <strong>$<span id="venmo-amount">0</span></strong></li>
+                                        <li>Add note: "Chickabees Order - [Your Name]"</li>
+                                        <li>Send payment</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pickup-payment-info" class="payment-info" style="display: none;">
+                        <div class="payment-card">
+                            <h4>Payment at Pickup/Delivery</h4>
+                            <p>You'll pay <strong>$<span id="pickup-amount">0</span></strong> when you receive your order.</p>
+                            <p>We accept cash or tap-to-pay (credit/debit cards).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests or Dietary Notes</label>
+                        <textarea id="special-requests" name="special-requests" placeholder="Any allergies, delivery instructions, or special requests?"></textarea>
+                    </div>
+                </div>
+
+                <!-- Sustainability Message -->
+                <div class="sustainability-card">
+                    <h4>🌱 Sustainability Rewards</h4>
+                    <p>Save on your next order by returning clean containers:</p>
+                    <ul>
+                        <li>🥚 Return egg cartons - Save $1</li>
+                        <li>🍯 Return honey jars - Save $1</li>
+                        <li>👜 Bring your tote bag - Save $5</li>
+                    </ul>
+                </div>
+
+                <!-- Hidden fields for order data -->
+                <input type="hidden" id="hidden-order-items" name="order-items">
+                <input type="hidden" id="hidden-order-total" name="order-total">
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-large order-submit-btn" id="submit-order-btn">
+                    Complete Order
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="images/circle-logo.png" alt="Chickabees Honey" class="footer-logo">
+                        <div class="footer-brand-text">
+                            <h3 class="footer-title">Chickabees Honey</h3>
+                            <p class="footer-tagline">Fresh from our Oakland farm to your family's table</p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h4>Get in Touch</h4>
+                        <p>hello@chickabeesoakland.com</p>
+                        <p>@chickabeesoakland (Venmo)</p>
+                        <p>Oakland, CA</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Chickabees Honey. Made with love (and honey) in Oakland, California.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Order Summary -->
+    <div class="order-summary-sticky" id="orderSummary" style="display: none;">
+        <div class="order-content">
+            <h4>Your Order</h4>
+            <div class="order-items" id="orderItems">
+                <p class="empty-order">No items selected</p>
+            </div>
+            <div class="order-total">
+                <span>Total:</span>
+                <span id="orderTotal">$0</span>
+            </div>
+            <button class="btn btn-primary complete-order-btn" id="completeOrderBtn" onclick="scrollToOrderForm()" style="display: none;">
+                Complete Order
+            </button>
+        </div>
+    </div>
+
+    <!-- Progress Indicator (shown after box selection) -->
+    <div id="progress-section" class="progress-section" style="display: none;">
+        <div class="container">
+            <div class="progress-dots">
+                <div class="progress-dot active" id="dot-box">
+                    <span class="dot-number">1</span>
+                    <span class="dot-label">Box</span>
+                </div>
+                <div class="progress-dot" id="dot-addons">
+                    <span class="dot-number">2</span>
+                    <span class="dot-label">Add-ons</span>
+                </div>
+                <div class="progress-dot" id="dot-contact">
+                    <span class="dot-number">3</span>
+                    <span class="dot-label">Contact</span>
+                </div>
+                <div class="progress-dot" id="dot-payment">
+                    <span class="dot-number">4</span>
+                    <span class="dot-label">Payment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Enhanced Order Management - Guided Workflow
+        let selectedBox = null;
+        let selectedAddons = [];
+        let orderTotal = 0;
+        let orderSubtotal = 0;
+        let orderTax = 0;
+        let availability = {
+            birds: 10,
+            bees: 5
+        };
+        
+        // Quantity tracking for add-ons
+        let addonQuantities = {
+            'babka-whole': 0,
+            'babka-slice': 0,
+            'sourdough-full': 0,
+            'sourdough-half': 0,
+            'granola': 0,
+            'coffee-12oz': 0,
+            'honey-6oz': 0,
+            'honey-10oz': 0,
+            'honey-20oz': 0,
+            'eggs-6': 0,
+            'eggs-12': 0,
+            'eggs-boiled': 0
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAvailability();
+        });
+
+        // Availability Management
+        function loadAvailability() {
+            const stored = localStorage.getItem('chickabees_availability');
+            if (stored) {
+                availability = JSON.parse(stored);
+            }
+            updateAvailabilityDisplay();
+        }
+
+        function updateAvailabilityDisplay() {
+            const birdsEl = document.getElementById('birds-availability');
+            const beesEl = document.getElementById('bees-availability');
+            
+            if (birdsEl) {
+                birdsEl.textContent = availability.birds > 0 ? `${availability.birds} available` : 'SOLD OUT';
+                if (availability.birds === 0) birdsEl.classList.add('sold-out');
+                else if (availability.birds < 5) birdsEl.classList.add('low');
+            }
+            
+            if (beesEl) {
+                beesEl.textContent = availability.bees > 0 ? `${availability.bees} available` : 'SOLD OUT';
+                if (availability.bees === 0) beesEl.classList.add('sold-out');
+                else if (availability.bees < 5) beesEl.classList.add('low');
+            }
+        }
+
+        // Step 1: Box Selection
+        function selectBox(boxType) {
+            if (availability[boxType] === 0) {
+                alert('Sorry, this box is sold out for this month!');
+                return;
+            }
+            
+            selectedBox = boxType;
+            
+            // Update UI - highlight selected box
+            document.querySelectorAll('.box-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            const selectedCard = document.querySelector(`[data-box="${boxType}"]`);
+            if (selectedCard) {
+                selectedCard.classList.add('selected');
+            }
+            
+            // Show progress indicator
+            document.getElementById('progress-section').style.display = 'block';
+            document.getElementById('dot-box').classList.add('completed');
+            document.getElementById('dot-addons').classList.add('active');
+            
+            // Show add-ons section
+            document.getElementById('addons-section').style.display = 'block';
+            document.getElementById('addons-section').scrollIntoView({ behavior: 'smooth' });
+            
+            // Show order summary
+            document.getElementById('orderSummary').style.display = 'block';
+            
+            // Update total
+            updateTotal();
+            
+            // Track event
+            if (typeof trackEvent !== 'undefined') {
+                trackEvent('box_selected', { box: boxType });
+            }
+        }
+
+        // Add-on definitions with pricing and tax info
+        const addonDefinitions = {
+            'babka-whole': { price: 20, name: 'Chocolate Babka (Whole)', taxable: true, max: 3 },
+            'babka-slice': { price: 3, name: 'Babka Slice', taxable: true, max: 10 },
+            'sourdough-full': { price: 8, name: 'Sourdough Loaf', taxable: true, max: 5 },
+            'sourdough-half': { price: 5, name: 'Sourdough Half-Loaf', taxable: true, max: 8 },
+            'granola': { price: 10, name: 'Granola Jar', taxable: true, max: 6 },
+            'coffee-12oz': { price: 15, name: 'Coffee Beans (12oz)', taxable: true, max: 4 },
+            'honey-6oz': { price: 6, name: 'Honey (6oz)', taxable: false, max: 12 },
+            'honey-10oz': { price: 10, name: 'Honey (10oz)', taxable: false, max: 10 },
+            'honey-20oz': { price: 20, name: 'Honey (20oz)', taxable: false, max: 8 },
+            'eggs-6': { price: 5, name: '6 Fresh Eggs', taxable: false, max: 12 },
+            'eggs-12': { price: 10, name: '12 Fresh Eggs', taxable: false, max: 8 },
+            'eggs-boiled': { price: 2, name: 'Hard-Boiled Eggs (8-minute)', taxable: false, max: 15 }
+        };
+        
+        // Toggle category collapse/expand
+        function toggleCategory(categoryId) {
+            const items = document.getElementById(`items-${categoryId}`);
+            const arrow = document.getElementById(`arrow-${categoryId}`);
+            const category = items.closest('.addon-category');
+            const hint = category.querySelector('.category-hint');
+            
+            if (items.style.display === 'none') {
+                items.style.display = 'block';
+                arrow.textContent = '▼';
+                if (hint) hint.style.display = 'none';
+            } else {
+                items.style.display = 'none';
+                arrow.textContent = '▶';
+                if (hint) hint.style.display = 'block';
+            }
+        }
+        
+        // Toggle sub-options for items with variants
+        function toggleSubOptions(itemId) {
+            const subOptions = document.getElementById(`sub-${itemId}`);
+            const arrow = document.getElementById(`sub-arrow-${itemId}`);
+            
+            if (subOptions.style.display === 'none') {
+                subOptions.style.display = 'block';
+                arrow.textContent = '▼';
+            } else {
+                subOptions.style.display = 'none';
+                arrow.textContent = '▶';
+            }
+        }
+        
+        // Click to add item
+        function addItem(addonId) {
+            const currentQty = addonQuantities[addonId] || 0;
+            const newQty = Math.min(currentQty + 1, addonDefinitions[addonId].max);
+            
+            if (newQty === currentQty) {
+                // Max reached - could show a subtle message
+                return;
+            }
+            
+            addonQuantities[addonId] = newQty;
+            
+            // Update quantity badge
+            const badge = document.getElementById(`qty-${addonId}`);
+            if (badge) {
+                badge.textContent = newQty;
+                badge.style.display = newQty > 0 ? 'inline-block' : 'none';
+            }
+            
+            // Update overall totals
+            updateTotal();
+        }
+        
+        // Remove item from order summary
+        function removeItem(addonId) {
+            const currentQty = addonQuantities[addonId] || 0;
+            const newQty = Math.max(0, currentQty - 1);
+            
+            addonQuantities[addonId] = newQty;
+            
+            // Update quantity badge
+            const badge = document.getElementById(`qty-${addonId}`);
+            if (badge) {
+                badge.textContent = newQty;
+                badge.style.display = newQty > 0 ? 'inline-block' : 'none';
+            }
+            
+            // Update overall totals
+            updateTotal();
+        }
+        
+        // Step 2: Add-ons Selection - Updated for quantity system
+        function updateTotal() {
+            let subtotal = 0;
+            let taxableAmount = 0;
+            
+            // Base box price (contains honey + eggs = tax-exempt)
+            if (selectedBox === 'birds') subtotal += 40;
+            else if (selectedBox === 'bees') subtotal += 20;
+            
+            // Process add-ons by quantity
+            selectedAddons = [];
+            Object.keys(addonQuantities).forEach(addonId => {
+                const quantity = addonQuantities[addonId];
+                if (quantity > 0) {
+                    const addon = addonDefinitions[addonId];
+                    const itemTotal = addon.price * quantity;
+                    
+                    subtotal += itemTotal;
+                    if (addon.taxable) {
+                        taxableAmount += itemTotal;
+                    }
+                    
+                    selectedAddons.push({
+                        id: addonId,
+                        name: addon.name,
+                        price: addon.price,
+                        quantity: quantity,
+                        total: itemTotal,
+                        taxable: addon.taxable
+                    });
+                }
+            });
+            
+            // Calculate tax only on taxable items
+            const taxRate = 0.1025; // 10.25% Oakland sales tax
+            const taxAmount = taxableAmount * taxRate;
+            const total = subtotal + taxAmount;
+            
+            orderTotal = total;
+            orderSubtotal = subtotal;
+            orderTax = taxAmount;
+            
+            // Update displays
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const summaryEl = document.getElementById('orderItems');
+            const totalEl = document.getElementById('orderTotal');
+            const completeOrderBtn = document.getElementById('completeOrderBtn');
+            
+            if (!summaryEl || !totalEl) return;
+            
+            let html = '';
+            let hasItems = false;
+            
+            // Base box
+            if (selectedBox) {
+                const boxName = selectedBox === 'birds' ? 'The Birds Box' : 'The Bees Box';
+                const boxPrice = selectedBox === 'birds' ? 40 : 20;
+                html += `<div class="summary-item">
+                    <span>${boxName}</span>
+                    <span>$${boxPrice}</span>
+                </div>`;
+                hasItems = true;
+            }
+            
+            // Add-ons
+            selectedAddons.forEach(addon => {
+                html += `<div class="summary-item clickable" onclick="removeItem('${addon.id}')">
+                    <span>${addon.quantity}x ${addon.name}</span>
+                    <span>$${addon.total}</span>
+                </div>`;
+            });
+            
+            // Tax breakdown
+            if (orderTax > 0) {
+                html += `<div class="summary-item tax-line">
+                    <span>Subtotal</span>
+                    <span>$${orderSubtotal.toFixed(2)}</span>
+                </div>`;
+                html += `<div class="summary-item tax-line">
+                    <span>Tax (10.25%)</span>
+                    <span>$${orderTax.toFixed(2)}</span>
+                </div>`;
+            }
+            
+            // Show empty state if no items
+            if (html === '') {
+                html = '<p class="empty-order">No items selected</p>';
+            }
+            
+            summaryEl.innerHTML = html;
+            totalEl.textContent = `$${orderTotal.toFixed(2)}`;
+            
+            // Show/hide complete order button based on whether there are items
+            if (completeOrderBtn) {
+                completeOrderBtn.style.display = hasItems ? 'flex' : 'none';
+            }
+        }
+
+        // Step 3: Proceed to Order Details
+        function proceedToOrder() {
+            // Update progress
+            document.getElementById('dot-addons').classList.add('completed');
+            document.getElementById('dot-contact').classList.add('active');
+            
+            // Show order form
+            const orderFormSection = document.getElementById('order-form-section');
+            orderFormSection.style.display = 'block';
+            orderFormSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Populate form with order data
+            populateOrderForm();
+            
+            // Track event
+            if (typeof trackEvent !== 'undefined') {
+                trackEvent('proceed_to_order', { box: selectedBox, addons: selectedAddons.length });
+            }
+        }
+
+        function skipAddons() {
+            // Clear any selected add-ons
+            Object.keys(addonQuantities).forEach(addonId => {
+                addonQuantities[addonId] = 0;
+                const badge = document.getElementById(`qty-${addonId}`);
+                if (badge) {
+                    badge.textContent = '0';
+                    badge.style.display = 'none';
+                }
+            });
+            selectedAddons = [];
+            updateTotal();
+            
+            // Proceed to order
+            proceedToOrder();
+        }
+
+        // Populate order form with current order
+        function populateOrderForm() {
+            const formOrderItems = document.getElementById('form-order-items');
+            const formOrderTotal = document.getElementById('form-order-total');
+            const venmoAmount = document.getElementById('venmo-amount');
+            const pickupAmount = document.getElementById('pickup-amount');
+            
+            let total = orderTotal;
+            let itemsHTML = '';
+
+            // Add selected box
+            if (selectedBox) {
+                const boxName = selectedBox === 'birds' ? 'The Birds Box' : 'The Bees Box';
+                const boxPrice = selectedBox === 'birds' ? 40 : 20;
+                itemsHTML += `
+                    <div class="order-item-row">
+                        <span class="item-name">${boxName}</span>
+                        <span class="item-price">$${boxPrice}</span>
+                    </div>
+                `;
+            }
+
+            // Add selected add-ons
+            selectedAddons.forEach(addon => {
+                itemsHTML += `
+                    <div class="order-item-row">
+                        <span class="item-name">${addon.name}</span>
+                        <span class="item-price">+$${addon.price}</span>
+                    </div>
+                `;
+            });
+
+            formOrderItems.innerHTML = itemsHTML;
+            formOrderTotal.textContent = `$${total}`;
+            venmoAmount.textContent = total;
+            pickupAmount.textContent = total;
+            
+            // Update hidden fields with new structure
+            const orderData = {
+                box: selectedBox,
+                addons: selectedAddons,
+                total: total
+            };
+            document.getElementById('hidden-order-items').value = JSON.stringify(orderData);
+            document.getElementById('hidden-order-total').value = total;
+        }
+
+        // Toggle delivery info based on selection
+        function toggleDeliveryInfo() {
+            const deliverySelect = document.getElementById('delivery');
+            const pickupInfo = document.getElementById('pickup-info');
+            const deliveryInfo = document.getElementById('delivery-info');
+            
+            if (deliverySelect.value === 'delivery') {
+                pickupInfo.style.display = 'none';
+                deliveryInfo.style.display = 'block';
+                document.getElementById('address').required = true;
+            } else {
+                pickupInfo.style.display = 'block';
+                deliveryInfo.style.display = 'none';
+                document.getElementById('address').required = false;
+            }
+            
+            updateOrderTotal(); // Recalculate with delivery fee
+        }
+
+        // Update payment info display
+        function updatePaymentInfo() {
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            const venmoInfo = document.getElementById('venmo-payment-info');
+            const pickupInfo = document.getElementById('pickup-payment-info');
+            
+            if (paymentMethod === 'venmo') {
+                venmoInfo.style.display = 'block';
+                pickupInfo.style.display = 'none';
+            } else {
+                venmoInfo.style.display = 'none';
+                pickupInfo.style.display = 'block';
+            }
+        }
+
+        // Update order total with add-ons and delivery fee
+        function updateOrderTotal() {
+            // Use the current order total from the new system
+            let baseTotal = orderTotal;
+            
+            // Add delivery fee if selected
+            const deliverySelect = document.getElementById('delivery');
+            let deliveryFee = 0;
+            if (deliverySelect && deliverySelect.value === 'delivery') {
+                deliveryFee = 5; // Basic delivery fee
+            }
+            
+            const finalTotal = baseTotal + deliveryFee;
+            
+            // Update all total displays
+            const formOrderTotal = document.getElementById('form-order-total');
+            const venmoAmount = document.getElementById('venmo-amount');
+            const pickupAmount = document.getElementById('pickup-amount');
+            
+            if (formOrderTotal) formOrderTotal.textContent = `$${finalTotal}`;
+            if (venmoAmount) venmoAmount.textContent = finalTotal;
+            if (pickupAmount) pickupAmount.textContent = finalTotal;
+            
+            // Update hidden field
+            const hiddenTotal = document.getElementById('hidden-order-total');
+            if (hiddenTotal) hiddenTotal.value = finalTotal;
+            
+            // Update order summary in form
+            updateFormOrderSummary(baseTotal, deliveryFee, finalTotal);
+        }
+
+        // Update the detailed order summary in the form
+        function updateFormOrderSummary(baseTotal, deliveryFee, finalTotal) {
+            const formOrderItems = document.getElementById('form-order-items');
+            let itemsHTML = '';
+
+            // Base box
+            if (selectedBox) {
+                const boxName = selectedBox === 'birds' ? 'The Birds Box' : 'The Bees Box';
+                const boxPrice = selectedBox === 'birds' ? 40 : 20;
+                itemsHTML += `
+                    <div class="order-item-row">
+                        <span class="item-name">${boxName}</span>
+                        <span class="item-price">$${boxPrice}</span>
+                    </div>
+                `;
+            }
+
+            // Add-ons
+            selectedAddons.forEach(addon => {
+                itemsHTML += `
+                    <div class="order-item-row addon-item">
+                        <span class="item-name">${addon.quantity}x ${addon.name}</span>
+                        <span class="item-price">$${addon.total}</span>
+                    </div>
+                `;
+            });
+
+            // Delivery fee
+            if (deliveryFee > 0) {
+                itemsHTML += `
+                    <div class="order-item-row delivery-item">
+                        <span class="item-name">Delivery Fee</span>
+                        <span class="item-price">+$${deliveryFee}</span>
+                    </div>
+                `;
+            }
+
+            formOrderItems.innerHTML = itemsHTML;
+        }
+
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderForm = document.getElementById('order-form');
+            
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (!validateOrderForm()) {
+                    return;
+                }
+                
+                // Update hidden fields with final data
+                updateOrderTotal();
+                
+                // Prepare form data
+                const formData = new FormData(orderForm);
+                
+                // Add order items as formatted text
+                const orderItemsText = formatOrderItemsForEmail();
+                formData.set('order-items', orderItemsText);
+                
+                // Submit to Formspree
+                fetch(orderForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showSuccessMessage();
+                        resetOrder();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error submitting your order. Please try again or contact us directly.');
+                });
+            });
+        });
+
+        // Validate order form
+        function validateOrderForm() {
+            let isValid = true;
+            
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.textContent = '';
+                el.parentElement.classList.remove('error');
+            });
+            
+            // Required fields
+            const requiredFields = ['name', 'email', 'delivery'];
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    showFieldError(fieldId, 'This field is required');
+                    isValid = false;
+                }
+            });
+            
+            // Email validation
+            const email = document.getElementById('email');
+            if (email.value && !isValidEmail(email.value)) {
+                showFieldError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+            
+            // Address required for delivery
+            const delivery = document.getElementById('delivery');
+            const address = document.getElementById('address');
+            if (delivery.value === 'delivery' && !address.value.trim()) {
+                showFieldError('address', 'Delivery address is required');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        // Show field error
+        function showFieldError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorDiv = document.getElementById(fieldId + '-error');
+            
+            field.parentElement.classList.add('error');
+            if (errorDiv) {
+                errorDiv.textContent = message;
+            }
+        }
+
+        // Email validation
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Format order items for email
+        function formatOrderItemsForEmail() {
+            let orderText = 'ORDER ITEMS:\n';
+            
+            // Base box
+            if (selectedBox) {
+                const boxName = selectedBox === 'birds' ? 'The Birds Box' : 'The Bees Box';
+                const boxPrice = selectedBox === 'birds' ? 40 : 20;
+                orderText += `- ${boxName} - $${boxPrice}\n`;
+            }
+            
+            // Add-ons
+            if (selectedAddons.length > 0) {
+                orderText += '\nADD-ONS:\n';
+                selectedAddons.forEach(addon => {
+                    orderText += `- ${addon.quantity}x ${addon.name} - $${addon.total}\n`;
+                });
+            }
+            
+            // Tax breakdown
+            if (orderTax > 0) {
+                orderText += `\nSubtotal: $${orderSubtotal.toFixed(2)}\n`;
+                orderText += `Tax (10.25%): $${orderTax.toFixed(2)}\n`;
+            }
+            
+            // Delivery fee
+            const delivery = document.getElementById('delivery');
+            if (delivery.value === 'delivery') {
+                orderText += '\nDELIVERY FEE: $5\n';
+            }
+            
+            return orderText;
+        }
+
+        // Save availability to localStorage
+        function saveAvailability() {
+            localStorage.setItem('chickabees_availability', JSON.stringify(availability));
+        }
+
+        // Show success message
+        function showSuccessMessage() {
+            // Decrement availability for selected box
+            if (selectedBox && availability[selectedBox] > 0) {
+                availability[selectedBox]--;
+                saveAvailability();
+                updateAvailabilityDisplay();
+            }
+            
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide order form
+            document.getElementById('order-form').style.display = 'none';
+        }
+
+        // Reset order state
+        function resetOrder() {
+            selectedBox = null;
+            selectedAddons = [];
+            orderTotal = 0;
+            orderSubtotal = 0;
+            orderTax = 0;
+            
+            // Clear selections
+            document.querySelectorAll('.box-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Clear quantity controls
+            Object.keys(addonQuantities).forEach(addonId => {
+                addonQuantities[addonId] = 0;
+                const badge = document.getElementById(`qty-${addonId}`);
+                if (badge) {
+                    badge.textContent = '0';
+                    badge.style.display = 'none';
+                }
+            });
+            
+            // Hide sections
+            document.getElementById('addons-section').style.display = 'none';
+            document.getElementById('progress-section').style.display = 'none';
+            document.getElementById('orderSummary').style.display = 'none';
+            
+            // Reset progress dots
+            document.querySelectorAll('.progress-dot').forEach(dot => {
+                dot.classList.remove('active', 'completed');
+            });
+            document.getElementById('dot-box').classList.add('active');
+            
+            updateOrderSummary();
+            
+            // Hide order form section
+            setTimeout(() => {
+                document.getElementById('order-form-section').style.display = 'none';
+            }, 3000);
+        }
+
+        // Calculate next first Sunday of the month
+        function calculateNextFirstSunday() {
+            const now = new Date();
+            const currentMonth = now.getMonth();
+            const currentYear = now.getFullYear();
+            
+            // Find first Sunday of current month
+            let firstSundayThisMonth = new Date(currentYear, currentMonth, 1);
+            while (firstSundayThisMonth.getDay() !== 0) {
+                firstSundayThisMonth.setDate(firstSundayThisMonth.getDate() + 1);
+            }
+            
+            // If we're past the first Sunday of current month, go to next month
+            let targetDate;
+            if (now > firstSundayThisMonth) {
+                // Get first Sunday of next month
+                const nextMonth = currentMonth + 1;
+                const nextYear = nextMonth > 11 ? currentYear + 1 : currentYear;
+                const adjustedMonth = nextMonth > 11 ? 0 : nextMonth;
+                
+                targetDate = new Date(nextYear, adjustedMonth, 1);
+                while (targetDate.getDay() !== 0) {
+                    targetDate.setDate(targetDate.getDate() + 1);
+                }
+            } else {
+                targetDate = firstSundayThisMonth;
+            }
+            
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            
+            return `${monthNames[targetDate.getMonth()]} ${targetDate.getDate()}, ${targetDate.getFullYear()}`;
+        }
+
+        // Update pickup dates on page load
+        function updatePickupDates() {
+            const nextDate = calculateNextFirstSunday();
+            const pickupElements = document.querySelectorAll('#next-pickup-date, #newsletter-pickup-date');
+            pickupElements.forEach(el => {
+                if (el) el.textContent = nextDate;
+            });
+        }
+
+        // Scroll to order form function
+        function scrollToOrderForm() {
+            const orderFormSection = document.getElementById('order-form-section');
+            if (orderFormSection) {
+                // Show the order form if it's hidden
+                if (orderFormSection.style.display === 'none') {
+                    orderFormSection.style.display = 'block';
+                }
+                // Scroll to it
+                orderFormSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Populate the form with current order data
+                populateOrderForm();
+            }
+        }
+
+        // Newsletter form handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update pickup dates
+            updatePickupDates();
+            
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const form = e.target;
+                    const submitBtn = form.querySelector('.btn-subscribe');
+                    const originalText = submitBtn.textContent;
+                    
+                    // Show loading state
+                    submitBtn.textContent = 'Subscribing...';
+                    submitBtn.disabled = true;
+                    
+                    // Submit to Formspree
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            submitBtn.textContent = 'Subscribed!';
+                            form.reset();
+                            
+                            // Reset button after 3 seconds
+                            setTimeout(() => {
+                                submitBtn.textContent = originalText;
+                                submitBtn.disabled = false;
+                            }, 3000);
+                        } else {
+                            throw new Error('Subscription failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        submitBtn.textContent = 'Try Again';
+                        submitBtn.disabled = false;
+                        
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                        }, 3000);
+                    });
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
