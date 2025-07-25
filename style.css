@@ -1366,75 +1366,101 @@ body {
     padding: var(--space-3) var(--space-4);
 }
 
-/* Hide on mobile */
-@media (max-width: 1024px) {
-    .order-summary-sticky {
-        display: none;
-    }
-}
-
 /* Mobile order summary improvements */
 @media (max-width: 768px) {
-    .order-summary {
+    /* Hide desktop behavior and apply mobile bottom sheet */
+    .order-summary-sticky {
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
         width: auto;
-        margin: 0;
+        top: auto;
+        transform: translateY(calc(100% - 60px)); /* Show only 60px by default */
         border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
-        transform: translateY(calc(100% - 60px));
-        transition: transform 0.3s ease;
-        max-height: 80vh;
+        transition: transform 0.3s ease-out;
+        max-height: 50vh; /* Limit to 50% of screen */
         overflow-y: auto;
+        z-index: 50; /* Lower z-index to not block content */
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.95);
     }
     
-    .order-summary.active {
-        bottom: 0;
-    }
-    
-    .order-summary.expanded {
+    /* Expanded state */
+    .order-summary-sticky.expanded {
         transform: translateY(0);
     }
     
-    /* Add mobile summary bar */
-    .order-summary::before {
+    /* Visual handle for bottom sheet */
+    .order-summary-sticky::before {
         content: '';
         position: absolute;
-        top: 20px;
+        top: 12px;
         left: 50%;
         transform: translateX(-50%);
         width: 40px;
         height: 4px;
         background: var(--color-gray-400);
         border-radius: 2px;
+        z-index: 10;
     }
     
-    .order-content {
-        padding-top: var(--space-8);
-        cursor: pointer;
+    /* Mobile compact header */
+    .order-summary-sticky .order-content {
+        padding: 0;
+        cursor: default;
     }
     
-    /* Mobile summary header */
-    .mobile-summary-header {
+    .mobile-order-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: var(--space-4) var(--space-6);
-        border-bottom: 1px solid var(--color-gray-200);
         cursor: pointer;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.9);
+        min-height: 60px;
     }
     
-    .mobile-summary-title {
-        font-size: var(--text-base);
+    .mobile-order-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .mobile-order-title {
+        font-size: var(--text-sm);
         font-weight: 600;
         color: var(--color-charcoal);
     }
     
-    .mobile-summary-total {
+    .mobile-order-count {
+        font-size: var(--text-xs);
+        color: var(--color-gray-600);
+    }
+    
+    .mobile-order-total {
         font-size: var(--text-lg);
         font-weight: 700;
         color: var(--color-meadow-dark);
+    }
+    
+    /* Full order details (hidden initially) */
+    .order-details {
+        padding: var(--space-4) var(--space-6);
+        max-height: calc(50vh - 60px);
+        overflow-y: auto;
+    }
+    
+    /* Adjust existing order summary content for mobile */
+    .order-summary-sticky h4 {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-3);
+    }
+    
+    .order-summary-sticky .complete-order-btn {
+        margin: var(--space-4) 0 var(--space-2) 0;
     }
 }
 

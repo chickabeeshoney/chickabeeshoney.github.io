@@ -914,14 +914,24 @@
 
             // Add mobile header if on mobile
             if (window.innerWidth <= 768) {
-                const existingHeader = orderSummary.querySelector('.mobile-summary-header');
+                const existingHeader = orderSummary.querySelector('.mobile-order-header');
                 if (!existingHeader) {
+                    // Create mobile header structure
                     const header = document.createElement('div');
-                    header.className = 'mobile-summary-header';
+                    header.className = 'mobile-order-header';
                     header.innerHTML = `
-                        <span class="mobile-summary-title">Your Order</span>
-                        <span class="mobile-summary-total" id="mobile-total">$0.00</span>
+                        <div class="mobile-order-info">
+                            <span class="mobile-order-title">Your Order</span>
+                            <span class="mobile-order-count" id="mobile-item-count">No items</span>
+                        </div>
+                        <span class="mobile-order-total" id="mobile-total">$0.00</span>
                     `;
+                    
+                    // Wrap existing content in details container
+                    const orderContent = orderSummary.querySelector('.order-content');
+                    if (orderContent) {
+                        orderContent.className = 'order-details';
+                    }
                     
                     // Insert header as first child
                     orderSummary.insertBefore(header, orderSummary.firstChild);
@@ -930,21 +940,95 @@
                     header.addEventListener('click', () => {
                         orderSummary.classList.toggle('expanded');
                     });
+                    
+                    // Add click outside to collapse
+                    document.addEventListener('click', (e) => {
+                        if (!orderSummary.contains(e.target) && orderSummary.classList.contains('expanded')) {
+                            orderSummary.classList.remove('expanded');
+                        }
+                    });
                 }
             }
         }
 
-        // Update mobile total when order changes
+        // Update mobile total and item count when order changes
         function updateMobileTotal() {
-            const mobileTotal = document.getElementById('mobile-total');
-            if (mobileTotal && window.innerWidth <= 768) {
-                mobileTotal.textContent = `$${(Math.ceil(orderTotal * 100) / 100).toFixed(2)}`;
+            if (window.innerWidth <= 768) {
+                const mobileTotal = document.getElementById('mobile-total');
+                const mobileItemCount = document.getElementById('mobile-item-count');
+                
+                if (mobileTotal) {
+                    mobileTotal.textContent = `$${(Math.ceil(orderTotal * 100) / 100).toFixed(2)}`;
+                }
+                
+                if (mobileItemCount) {
+                    let itemCount = 0;
+                    if (selectedBox) itemCount++;
+                    itemCount += selectedAddons.length;
+                    
+                    if (itemCount === 0) {
+                        mobileItemCount.textContent = 'No items';
+                    } else if (itemCount === 1) {
+                        mobileItemCount.textContent = '1 item';
+                    } else {
+                        mobileItemCount.textContent = `${itemCount} items`;
+                    }
+                }
             }
         }
 
+        // Add swipe gesture support for mobile bottom sheet
+        function initSwipeGestures() {
+            const orderSummary = document.getElementById('orderSummary');
+            if (!orderSummary || window.innerWidth > 768) return;
+
+            let startY = 0;
+            let currentY = 0;
+            let isDragging = false;
+
+            orderSummary.addEventListener('touchstart', (e) => {
+                startY = e.touches[0].clientY;
+                isDragging = true;
+            }, { passive: true });
+
+            orderSummary.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                currentY = e.touches[0].clientY;
+                const deltaY = currentY - startY;
+
+                // Only allow downward swipes when expanded
+                if (orderSummary.classList.contains('expanded') && deltaY > 0) {
+                    e.preventDefault();
+                    const progress = Math.min(deltaY / 100, 1); // Normalize to 0-1
+                    orderSummary.style.transform = `translateY(${progress * (orderSummary.offsetHeight - 60)}px)`;
+                }
+            }, { passive: false });
+
+            orderSummary.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+
+                const deltaY = currentY - startY;
+                
+                // Reset transform
+                orderSummary.style.transform = '';
+
+                // Collapse if swiped down more than 50px
+                if (deltaY > 50 && orderSummary.classList.contains('expanded')) {
+                    orderSummary.classList.remove('expanded');
+                }
+            }, { passive: true });
+        }
+
         // Initialize mobile summary on load and resize
-        window.addEventListener('load', initMobileOrderSummary);
-        window.addEventListener('resize', initMobileOrderSummary);
+        window.addEventListener('load', () => {
+            initMobileOrderSummary();
+            initSwipeGestures();
+        });
+        window.addEventListener('resize', () => {
+            initMobileOrderSummary();
+            initSwipeGestures();
+        });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
