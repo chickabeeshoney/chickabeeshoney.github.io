@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Training Vendor Evaluation - LoadSmart</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: #f8fafc;
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        .app {
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .header-subtitle {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #3182ce;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2c5aa0;
+        }
+
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background-color: #cbd5e0;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(49,130,206,0.1);
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f7fafc;
+            padding: 24px;
+        }
+
+        .login-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .login-header {
+            background: #3182ce;
+            color: white;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .login-content {
+            padding: 32px;
+        }
+
+        .user-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .user-button:hover {
+            border-color: #3182ce;
+            background: #ebf8ff;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: 500;
+            color: #1a202c;
+            font-size: 16px;
+        }
+
+        .user-role {
+            color: #718096;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        .arrow {
+            color: #3182ce;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .vendor-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .vendor-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .vendor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .vendor-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a202c;
+            margin: 0;
+        }
+
+        .vendor-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .evaluation-form {
+            background: #fafafa;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .criteria-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        .criteria-description {
+            color: #4a5568;
+            font-size: 14px;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .score-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .score-button {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .score-button.active {
+            border-color: #3182ce;
+            background: #ebf8ff;
+        }
+
+        .score-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .score-label {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 2px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #3182ce;
+            transition: width 0.3s ease;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-recommend {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .status-consider {
+            background: #feebc8;
+            color: #744210;
+        }
+
+        .status-neutral {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .tab-nav {
+            display: flex;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 24px;
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+        }
+
+        .tab-button.active {
+            border-bottom-color: #3182ce;
+            color: #3182ce;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 16px;
+            }
+            
+            .card {
+                padding: 16px;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+            
+            .score-buttons {
+                flex-direction: column;
+            }
+            
+            .score-button {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Storage service
+        const storageService = {
+            getItem(key) {
+                try {
+                    const item = localStorage.getItem(key);
+                    return item ? JSON.parse(item) : [];
+                } catch (error) {
+                    console.error(`Error getting ${key}:`, error);
+                    return [];
+                }
+            },
+            
+            setItem(key, data) {
+                try {
+                    localStorage.setItem(key, JSON.stringify(data));
+                } catch (error) {
+                    console.error(`Error setting ${key}:`, error);
+                }
+            },
+            
+            getUsers() {
+                return this.getItem('sales_training_users');
+            },
+            
+            saveUsers(users) {
+                this.setItem('sales_training_users', users);
+            },
+            
+            getCurrentUser() {
+                try {
+                    const user = localStorage.getItem('sales_training_current_user');
+                    return user ? JSON.parse(user) : null;
+                } catch (error) {
+                    return null;
+                }
+            },
+            
+            setCurrentUser(user) {
+                localStorage.setItem('sales_training_current_user', JSON.stringify(user));
+            },
+            
+            getVendors() {
+                return this.getItem('sales_training_vendors');
+            },
+            
+            saveVendors(vendors) {
+                this.setItem('sales_training_vendors', vendors);
+            },
+            
+            addVendor(vendor) {
+                const vendors = this.getVendors();
+                vendors.push(vendor);
+                this.saveVendors(vendors);
+            },
+            
+            getEvaluations() {
+                return this.getItem('sales_training_evaluations');
+            },
+            
+            saveEvaluations(evaluations) {
+                this.setItem('sales_training_evaluations', evaluations);
+            },
+            
+            addEvaluation(evaluation) {
+                const evaluations = this.getEvaluations();
+                const existingIndex = evaluations.findIndex(e => 
+                    e.vendorId === evaluation.vendorId && e.evaluatorId === evaluation.evaluatorId
+                );
+                
+                if (existingIndex !== -1) {
+                    evaluations[existingIndex] = evaluation;
+                } else {
+                    evaluations.push(evaluation);
+                }
+                
+                this.saveEvaluations(evaluations);
+            }
+        };
+
+        // Sample data initialization
+        const initializeSampleData = () => {
+            const existingUsers = storageService.getUsers();
+            if (existingUsers.length === 0) {
+                const sampleUsers = [
+                    { id: '1', name: 'Chris (Admin)', role: 'admin', email: 'chris@loadsmart.com' },
+                    { id: '2', name: 'VP of Sales', role: 'evaluator', email: 'vp@loadsmart.com' },
+                    { id: '3', name: 'Director', role: 'evaluator', email: 'director@loadsmart.com' }
+                ];
+                storageService.saveUsers(sampleUsers);
+            }
+
+            const existingVendors = storageService.getVendors();
+            if (existingVendors.length === 0) {
+                const sampleVendors = [
+                    {
+                        id: 'vendor_1',
+                        name: 'SalesForce Training Co.',
+                        contactName: 'John Smith',
+                        contactEmail: 'john@salesforce-training.com',
+                        contactPhone: '555-0101',
+                        proposalDate: '2024-07-15',
+                        keyDifferentiators: 'Specialized in SaaS sales methodologies with proven ROI tracking',
+                        documents: [],
+                        createdAt: new Date().toISOString(),
+                        updatedAt: new Date().toISOString()
+                    },
+                    {
+                        id: 'vendor_2', 
+                        name: 'Miller Heiman Group',
+                        contactName: 'Sarah Johnson',
+                        contactEmail: 'sarah@millerheiman.com',
+                        contactPhone: '555-0102',
+                        proposalDate: '2024-07-18',
+                        keyDifferentiators: 'Strategic selling approach with Chicago-based trainers available',
+                        documents: [],
+                        createdAt: new Date().toISOString(),
+                        updatedAt: new Date().toISOString()
+                    }
+                ];
+                storageService.saveVendors(sampleVendors);
+            }
+        };
+
+        // Evaluation criteria
+        const EVALUATION_CRITERIA = [
+            {
+                id: 'prospecting',
+                name: 'Prospecting Methodology & Process',
+                weight: 25,
+                description: 'Multi-channel approach for SDRs, frameworks not scripts'
+            },
+            {
+                id: 'negotiation',
+                name: 'Negotiation & Value Defense Training',
+                weight: 20,
+                description: 'Defending value during price increases, trade vs negotiate'
+            },
+            {
+                id: 'delivery',
+                name: 'Delivery Format & Logistics',
+                weight: 20,
+                description: 'Must offer in-person training in Chicago, August timeline'
+            },
+            {
+                id: 'support',
+                name: 'Ongoing Support & Stickiness',
+                weight: 15,
+                description: 'Long-term reinforcement and skill retention programs'
+            },
+            {
+                id: 'pricing',
+                name: 'Pricing & ROI',
+                weight: 10,
+                description: 'Cost effectiveness and return on investment'
+            },
+            {
+                id: 'saas_experience',
+                name: 'SaaS Experience & References',
+                weight: 5,
+                description: 'Experience with SaaS companies and relevant case studies'
+            },
+            {
+                id: 'cultural_fit',
+                name: 'Cultural Fit & Philosophy',
+                weight: 5,
+                description: 'Alignment with LoadSmart values and approach'
+            }
+        ];
+
+        const SCORE_LABELS = {
+            1: 'Poor',
+            2: 'Below Average',
+            3: 'Average', 
+            4: 'Above Average',
+            5: 'Great'
+        };
+
+        // Components
+        function Login({ onLogin }) {
+            const [users, setUsers] = useState([]);
+
+            useEffect(() => {
+                initializeSampleData();
+                setUsers(storageService.getUsers());
+            }, []);
+
+            return (
+                <div className="login-container">
+                    <div className="login-card">
+                        <div className="login-header">
+                            <h1>Sales Training Vendor Evaluation</h1>
+                            <p>LoadSmart - August 2024 Decision Process</p>
+                        </div>
+                        <div className="login-content">
+                            <h2>Select Your Profile</h2>
+                            <p style={{color: '#718096', marginBottom: '24px'}}>
+                                Choose your role to access the vendor evaluation system
+                            </p>
+                            {users.map(user => (
+                                <button
+                                    key={user.id}
+                                    className="user-button"
+                                    onClick={() => onLogin(user)}
+                                >
+                                    <div className="user-info">
+                                        <div className="user-name">{user.name}</div>
+                                        <div className="user-role">
+                                            {user.role === 'admin' ? 'Administrator' : 'Evaluator'}
+                                        </div>
+                                    </div>
+                                    <div className="arrow">→</div>
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function Header({ user, onLogout }) {
+            return (
+                <header className="header">
+                    <div className="header-container">
+                        <div>
+                            <div className="header-title">Sales Training Vendor Evaluation</div>
+                            <div className="header-subtitle">LoadSmart</div>
+                        </div>
+                        <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}>
+                            <span>{user.name} ({user.role})</span>
+                            <button onClick={onLogout} className="btn btn-secondary">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </header>
+            );
+        }
+
+        function Dashboard({ currentUser, onSelectVendor, onAddVendor }) {
+            const [vendors, setVendors] = useState([]);
+            const [evaluations, setEvaluations] = useState([]);
+
+            useEffect(() => {
+                setVendors(storageService.getVendors());
+                setEvaluations(storageService.getEvaluations());
+            }, []);
+
+            const calculateVendorScore = (vendor) => {
+                const vendorEvaluations = evaluations.filter(e => 
+                    e.vendorId === vendor.id && e.isComplete
+                );
+                
+                if (vendorEvaluations.length === 0) return 0;
+                
+                let totalScore = 0;
+                vendorEvaluations.forEach(evaluation => {
+                    let evalScore = 0;
+                    evaluation.scores.forEach(score => {
+                        const criteria = EVALUATION_CRITERIA.find(c => c.id === score.criteriaId);
+                        if (criteria) {
+                            evalScore += score.score * criteria.weight;
+                        }
+                    });
+                    totalScore += evalScore;
+                });
+                
+                return totalScore / vendorEvaluations.length;
+            };
+
+            const getRecommendation = (score) => {
+                if (score >= 400) return { label: 'Strongly Recommend', class: 'status-recommend' };
+                if (score >= 350) return { label: 'Recommend with Considerations', class: 'status-consider' };
+                if (score >= 300) return { label: 'Neutral', class: 'status-neutral' };
+                return { label: 'Not Recommended', class: 'status-neutral' };
+            };
+
+            const myEvaluations = evaluations.filter(e => e.evaluatorId === currentUser?.id);
+            const completedEvaluations = myEvaluations.filter(e => e.isComplete).length;
+
+            return (
+                <div>
+                    <div className="card">
+                        <div className="card-header">
+                            <div>
+                                <h1 className="card-title">Sales Training Vendor Evaluation Dashboard</h1>
+                                <p style={{color: '#718096', margin: '8px 0 0 0'}}>
+                                    Decision needed by early August 2024
+                                </p>
+                            </div>
+                            {currentUser?.role === 'admin' && (
+                                <button onClick={onAddVendor} className="btn btn-primary">
+                                    Add Vendor
+                                </button>
+                            )}
+                        </div>
+
+                        <div className="grid grid-2" style={{marginBottom: '24px'}}>
+                            <div style={{padding: '20px', background: '#f7fafc', borderRadius: '8px'}}>
+                                <h3>Your Progress</h3>
+                                <div style={{fontSize: '32px', fontWeight: '600', color: '#3182ce', margin: '8px 0'}}>
+                                    {completedEvaluations} / {vendors.length}
+                                </div>
+                                <div className="progress-bar">
+                                    <div 
+                                        className="progress-fill"
+                                        style={{width: `${vendors.length > 0 ? (completedEvaluations / vendors.length) * 100 : 0}%`}}
+                                    ></div>
+                                </div>
+                            </div>
+                            <div style={{padding: '20px', background: '#f7fafc', borderRadius: '8px'}}>
+                                <h3>Total Vendors</h3>
+                                <div style={{fontSize: '32px', fontWeight: '600', color: '#3182ce', margin: '8px 0'}}>
+                                    {vendors.length}
+                                </div>
+                                <div style={{fontSize: '14px', color: '#718096'}}>
+                                    Ready for evaluation
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card">
+                        <h2 className="card-title">Vendor Evaluation Status</h2>
+                        {vendors.length === 0 ? (
+                            <div style={{textAlign: 'center', padding: '48px', color: '#718096'}}>
+                                <p>No vendors have been added yet.</p>
+                                {currentUser?.role === 'admin' && (
+                                    <button onClick={onAddVendor} className="btn btn-primary" style={{marginTop: '16px'}}>
+                                        Add First Vendor
+                                    </button>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="vendor-grid">
+                                {vendors.map(vendor => {
+                                    const score = calculateVendorScore(vendor);
+                                    const recommendation = getRecommendation(score);
+                                    const myEvaluation = myEvaluations.find(e => e.vendorId === vendor.id);
+
+                                    return (
+                                        <div key={vendor.id} className="vendor-card">
+                                            <div className="vendor-header">
+                                                <div>
+                                                    <h3 className="vendor-name">{vendor.name}</h3>
+                                                    <p style={{color: '#718096', fontSize: '14px', margin: '4px 0 0 0'}}>
+                                                        {vendor.contactName} - {vendor.contactEmail}
+                                                    </p>
+                                                </div>
+                                                <div style={{textAlign: 'right'}}>
+                                                    <div style={{fontSize: '20px', fontWeight: '600', color: '#1a202c'}}>
+                                                        {score.toFixed(0)}
+                                                    </div>
+                                                    <div style={{fontSize: '12px', color: '#718096'}}>
+                                                        out of 500
+                                                    </div>
+                                                    <div className={`status-badge ${recommendation.class}`} style={{marginTop: '8px'}}>
+                                                        {recommendation.label}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="vendor-actions">
+                                                {!myEvaluation || !myEvaluation.isComplete ? (
+                                                    <button 
+                                                        onClick={() => onSelectVendor(vendor)}
+                                                        className="btn btn-primary"
+                                                    >
+                                                        {myEvaluation ? 'Continue Evaluation' : 'Start Evaluation'}
+                                                    </button>
+                                                ) : (
+                                                    <div style={{color: '#38a169', fontWeight: '500', fontSize: '14px'}}>
+                                                        ✓ Your evaluation complete
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        function VendorForm({ onClose, onSave }) {
+            const [formData, setFormData] = useState({
+                name: '',
+                contactName: '',
+                contactEmail: '',
+                contactPhone: '',
+                proposalDate: new Date().toISOString().split('T')[0],
+                keyDifferentiators: ''
+            });
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                const vendor = {
+                    id: `vendor_${Date.now()}`,
+                    ...formData,
+                    documents: [],
+                    createdAt: new Date().toISOString(),
+                    updatedAt: new Date().toISOString()
+                };
+                storageService.addVendor(vendor);
+                onSave();
+            };
+
+            return (
+                <div style={{
+                    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                    background: 'rgba(0,0,0,0.5)', display: 'flex',
+                    alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '24px'
+                }}>
+                    <form onSubmit={handleSubmit} style={{
+                        background: 'white', borderRadius: '12px', padding: '32px',
+                        maxWidth: '600px', width: '100%', maxHeight: '90vh', overflow: 'auto'
+                    }}>
+                        <h2 style={{fontSize: '24px', fontWeight: '600', marginBottom: '24px'}}>
+                            Add New Vendor
+                        </h2>
+
+                        <div className="form-group">
+                            <label className="form-label">Vendor Name *</label>
+                            <input
+                                type="text"
+                                className="form-input"
+                                value={formData.name}
+                                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                required
+                            />
+                        </div>
+
+                        <div className="grid grid-2">
+                            <div className="form-group">
+                                <label className="form-label">Contact Name *</label>
+                                <input
+                                    type="text"
+                                    className="form-input"
+                                    value={formData.contactName}
+                                    onChange={(e) => setFormData({...formData, contactName: e.target.value})}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label className="form-label">Contact Email *</label>
+                                <input
+                                    type="email"
+                                    className="form-input"
+                                    value={formData.contactEmail}
+                                    onChange={(e) => setFormData({...formData, contactEmail: e.target.value})}
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-2">
+                            <div className="form-group">
+                                <label className="form-label">Contact Phone</label>
+                                <input
+                                    type="tel"
+                                    className="form-input"
+                                    value={formData.contactPhone}
+                                    onChange={(e) => setFormData({...formData, contactPhone: e.target.value})}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label className="form-label">Proposal Date</label>
+                                <input
+                                    type="date"
+                                    className="form-input"
+                                    value={formData.proposalDate}
+                                    onChange={(e) => setFormData({...formData, proposalDate: e.target.value})}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="form-group">
+                            <label className="form-label">Key Differentiators</label>
+                            <textarea
+                                className="form-input"
+                                style={{minHeight: '100px', resize: 'vertical'}}
+                                value={formData.keyDifferentiators}
+                                onChange={(e) => setFormData({...formData, keyDifferentiators: e.target.value})}
+                                placeholder="What makes this vendor unique? Key features, methodologies, etc."
+                            />
+                        </div>
+
+                        <div style={{display: 'flex', gap: '12px', justifyContent: 'flex-end', marginTop: '24px'}}>
+                            <button type="button" onClick={onClose} className="btn btn-secondary">
+                                Cancel
+                            </button>
+                            <button type="submit" className="btn btn-primary">
+                                Add Vendor
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            );
+        }
+
+        function EvaluationPage({ vendor, currentUser, onBack }) {
+            const [scores, setScores] = useState([]);
+            const [overallComments, setOverallComments] = useState('');
+            const [saving, setSaving] = useState(false);
+
+            useEffect(() => {
+                // Load existing evaluation
+                const evaluations = storageService.getEvaluations();
+                const existingEvaluation = evaluations.find(
+                    e => e.vendorId === vendor.id && e.evaluatorId === currentUser.id
+                );
+
+                if (existingEvaluation) {
+                    setScores(existingEvaluation.scores);
+                    setOverallComments(existingEvaluation.overallComments || '');
+                } else {
+                    // Initialize with empty scores
+                    const initialScores = EVALUATION_CRITERIA.map(criteria => ({
+                        criteriaId: criteria.id,
+                        score: 0,
+                        comments: ''
+                    }));
+                    setScores(initialScores);
+                }
+            }, [vendor.id, currentUser.id]);
+
+            const updateScore = (criteriaId, score, comments = '') => {
+                setScores(prev => prev.map(s => 
+                    s.criteriaId === criteriaId 
+                        ? { ...s, score, comments: comments || s.comments }
+                        : s
+                ));
+            };
+
+            const updateComments = (criteriaId, comments) => {
+                setScores(prev => prev.map(s => 
+                    s.criteriaId === criteriaId 
+                        ? { ...s, comments }
+                        : s
+                ));
+            };
+
+            const calculateWeightedScore = () => {
+                return scores.reduce((total, score) => {
+                    const criteria = EVALUATION_CRITERIA.find(c => c.id === score.criteriaId);
+                    return total + (score.score * (criteria?.weight || 0));
+                }, 0);
+            };
+
+            const isComplete = () => {
+                return scores.every(s => s.score > 0);
+            };
+
+            const handleSave = async (submitForReview = false) => {
+                setSaving(true);
+                
+                const now = new Date().toISOString();
+                const evaluationData = {
+                    id: `eval_${vendor.id}_${currentUser.id}`,
+                    vendorId: vendor.id,
+                    evaluatorId: currentUser.id,
+                    scores,
+                    overallComments,
+                    isComplete: submitForReview && isComplete(),
+                    submittedAt: submitForReview && isComplete() ? now : undefined,
+                    createdAt: now,
+                    updatedAt: now
+                };
+
+                storageService.addEvaluation(evaluationData);
+                setSaving(false);
+                
+                if (submitForReview && isComplete()) {
+                    alert('Evaluation submitted successfully!');
+                    onBack();
+                }
+            };
+
+            const weightedScore = calculateWeightedScore();
+            const isEvaluationComplete = isComplete();
+            const completionPercentage = (scores.filter(s => s.score > 0).length / scores.length) * 100;
+
+            return (
+                <div>
+                    <div className="card">
+                        <div className="card-header">
+                            <div>
+                                <h1 className="card-title">Evaluating: {vendor.name}</h1>
+                                <p style={{color: '#718096', margin: '8px 0 0 0'}}>
+                                    Complete your evaluation using the weighted criteria below
+                                </p>
+                            </div>
+                            <div style={{display: 'flex', gap: '32px'}}>
+                                <div style={{textAlign: 'center'}}>
+                                    <div style={{fontSize: '24px', fontWeight: '600', color: '#3182ce'}}>
+                                        {weightedScore.toFixed(0)}
+                                    </div>
+                                    <div style={{fontSize: '12px', color: '#718096'}}>
+                                        Current Score (out of 500)
+                                    </div>
+                                </div>
+                                <div style={{textAlign: 'center'}}>
+                                    <div style={{fontSize: '24px', fontWeight: '600', color: '#3182ce'}}>
+                                        {completionPercentage.toFixed(0)}%
+                                    </div>
+                                    <div style={{fontSize: '12px', color: '#718096'}}>
+                                        Complete
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="progress-bar">
+                            <div 
+                                className="progress-fill"
+                                style={{width: `${completionPercentage}%`}}
+                            ></div>
+                        </div>
+                    </div>
+
+                    <div className="card">
+                        <h2>Vendor Information</h2>
+                        <div className="grid grid-2">
+                            <div>
+                                <p><strong>Contact:</strong> {vendor.contactName}</p>
+                                <p><strong>Email:</strong> {vendor.contactEmail}</p>
+                                {vendor.contactPhone && <p><strong>Phone:</strong> {vendor.contactPhone}</p>}
+                            </div>
+                            <div>
+                                <p><strong>Proposal Date:</strong> {new Date(vendor.proposalDate).toLocaleDateString()}</p>
+                            </div>
+                        </div>
+                        
+                        {vendor.keyDifferentiators && (
+                            <div style={{marginTop: '16px'}}>
+                                <h3 style={{fontSize: '16px', fontWeight: '600', marginBottom: '8px'}}>
+                                    Key Differentiators
+                                </h3>
+                                <p style={{color: '#4a5568'}}>{vendor.keyDifferentiators}</p>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="card">
+                        <h2>Evaluation Criteria</h2>
+                        {EVALUATION_CRITERIA.map(criteria => {
+                            const score = scores.find(s => s.criteriaId === criteria.id);
+                            
+                            return (
+                                <div key={criteria.id} className="evaluation-form">
+                                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px'}}>
+                                        <div style={{flex: 1}}>
+                                            <div className="criteria-title">
+                                                {criteria.name}
+                                                <span style={{
+                                                    fontSize: '14px', fontWeight: '500', color: '#3182ce',
+                                                    backgroundColor: '#ebf8ff', padding: '2px 8px',
+                                                    borderRadius: '12px', marginLeft: '8px'
+                                                }}>
+                                                    ({criteria.weight}%)
+                                                </span>
+                                            </div>
+                                            <p className="criteria-description">{criteria.description}</p>
+                                        </div>
+                                        <div style={{textAlign: 'center', minWidth: '80px'}}>
+                                            <div style={{fontSize: '24px', fontWeight: '600', color: '#1a202c'}}>
+                                                {score?.score || 0}/5
+                                            </div>
+                                            <div style={{fontSize: '12px', color: '#718096'}}>
+                                                {((score?.score || 0) * criteria.weight).toFixed(0)} pts
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="score-buttons">
+                                        {[1, 2, 3, 4, 5].map(scoreValue => (
+                                            <button
+                                                key={scoreValue}
+                                                type="button"
+                                                className={`score-button ${score?.score === scoreValue ? 'active' : ''}`}
+                                                onClick={() => updateScore(criteria.id, scoreValue)}
+                                            >
+                                                <div className="score-value">{scoreValue}</div>
+                                                <div className="score-label">
+                                                    {SCORE_LABELS[scoreValue]}
+                                                </div>
+                                            </button>
+                                        ))}
+                                    </div>
+
+                                    <div>
+                                        <label style={{display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px'}}>
+                                            Comments & Notes (optional)
+                                        </label>
+                                        <textarea
+                                            value={score?.comments || ''}
+                                            onChange={(e) => updateComments(criteria.id, e.target.value)}
+                                            placeholder="Add specific observations, strengths, concerns, or questions..."
+                                            style={{
+                                                width: '100%', minHeight: '80px', padding: '12px',
+                                                border: '1px solid #e2e8f0', borderRadius: '6px',
+                                                fontSize: '14px', resize: 'vertical'
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div className="card">
+                        <h2>Overall Comments</h2>
+                        <textarea
+                            value={overallComments}
+                            onChange={(e) => setOverallComments(e.target.value)}
+                            placeholder="Add any overall thoughts, concerns, or recommendations about this vendor..."
+                            style={{
+                                width: '100%', minHeight: '120px', padding: '16px',
+                                border: '1px solid #e2e8f0', borderRadius: '8px',
+                                fontSize: '14px', resize: 'vertical'
+                            }}
+                        />
+                    </div>
+
+                    <div className="card">
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                            <div>
+                                {isEvaluationComplete ? (
+                                    <div style={{color: '#38a169', fontWeight: '500', fontSize: '14px'}}>
+                                        ✓ Evaluation complete - ready to submit
+                                    </div>
+                                ) : (
+                                    <div style={{color: '#ed8936', fontSize: '14px'}}>
+                                        Complete all criteria to submit for review
+                                    </div>
+                                )}
+                            </div>
+                            
+                            <div style={{display: 'flex', gap: '12px'}}>
+                                <button onClick={onBack} className="btn btn-secondary">
+                                    Back to Dashboard
+                                </button>
+                                
+                                <button 
+                                    onClick={() => handleSave(false)}
+                                    disabled={saving}
+                                    className="btn btn-secondary"
+                                >
+                                    {saving ? 'Saving...' : 'Save Draft'}
+                                </button>
+                                
+                                <button 
+                                    onClick={() => handleSave(true)}
+                                    disabled={saving || !isEvaluationComplete}
+                                    className="btn btn-primary"
+                                >
+                                    {saving ? 'Submitting...' : 'Submit Evaluation'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Main App Component
+        function App() {
+            const [currentUser, setCurrentUser] = useState(null);
+            const [currentView, setCurrentView] = useState('dashboard');
+            const [selectedVendor, setSelectedVendor] = useState(null);
+            const [showVendorForm, setShowVendorForm] = useState(false);
+
+            useEffect(() => {
+                const user = storageService.getCurrentUser();
+                setCurrentUser(user);
+            }, []);
+
+            const handleLogin = (user) => {
+                storageService.setCurrentUser(user);
+                setCurrentUser(user);
+            };
+
+            const handleLogout = () => {
+                localStorage.removeItem('sales_training_current_user');
+                setCurrentUser(null);
+            };
+
+            const handleSelectVendor = (vendor) => {
+                setSelectedVendor(vendor);
+                setCurrentView('evaluation');
+            };
+
+            const handleBackToDashboard = () => {
+                setCurrentView('dashboard');
+                setSelectedVendor(null);
+            };
+
+            const handleAddVendor = () => {
+                setShowVendorForm(true);
+            };
+
+            const handleVendorFormClose = () => {
+                setShowVendorForm(false);
+            };
+
+            const handleVendorFormSave = () => {
+                setShowVendorForm(false);
+                // Refresh dashboard
+                setCurrentView('dashboard');
+            };
+
+            if (!currentUser) {
+                return <Login onLogin={handleLogin} />;
+            }
+
+            return (
+                <div className="app">
+                    <Header user={currentUser} onLogout={handleLogout} />
+                    <div className="main-content">
+                        {currentView === 'dashboard' && (
+                            <Dashboard 
+                                currentUser={currentUser}
+                                onSelectVendor={handleSelectVendor}
+                                onAddVendor={handleAddVendor}
+                            />
+                        )}
+                        
+                        {currentView === 'evaluation' && selectedVendor && (
+                            <EvaluationPage 
+                                vendor={selectedVendor}
+                                currentUser={currentUser}
+                                onBack={handleBackToDashboard}
+                            />
+                        )}
+                    </div>
+                    
+                    {showVendorForm && (
+                        <VendorForm 
+                            onClose={handleVendorFormClose}
+                            onSave={handleVendorFormSave}
+                        />
+                    )}
+                </div>
+            );
+        }
+
+        // Render the app
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

@@ -193,14 +193,18 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"></noscript>
     
+    <!-- Enhanced Prototype Styles -->
+    <link rel="stylesheet" href="prototypes/shared/design-tokens.css">
+    <link rel="stylesheet" href="prototypes/enhanced-current/style.css">
+    
     <!-- Preload key images -->
     <link rel="preload" as="image" href="images/circle-logo.png">
     <link rel="preload" as="image" href="qr_code_chickabees.jpg">
     
     <!-- Critical CSS - Inlined for performance -->
     <style>
-        /* Enhanced Design Tokens - Integrated from prototype */
-        :root {
+        /* Enhanced Design Tokens - Now loaded from prototype CSS files */
+        /* :root {
           /* Colors - Farm Theme */
           --color-honey: #f5e6a3;
           --color-honey-dark: #e6d482;
@@ -291,6 +295,7 @@
         }
 
         /* Header - Critical for first paint */
+        /* Commented out - now using navbar styles from prototype 
         header {
             background: #faf9f7;
             padding: 15px 0;
@@ -596,6 +601,25 @@
             color: #666;
             outline: 2px solid #1a1a1a;
             outline-offset: 2px;
+        }
+
+        .nav-cta {
+            background: var(--color-meadow) !important;
+            color: white !important;
+            border-radius: var(--border-radius-full) !important;
+            padding: var(--space-2) var(--space-4) !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta:hover,
+        .nav-cta:focus {
+            background: var(--color-meadow-dark) !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md) !important;
+            outline: none !important;
         }
 
         /* Newsletter Banner */
@@ -2983,55 +3007,31 @@
         Chat
     </div>
 
-    <header role="banner">
+    <nav class="navbar">
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-circle">
-                        <img src="images/circle-logo.png" alt="Chickabees Honey Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                    </div>
-                    <div class="logo-text">
-                        <h1>CHICKABEES</h1>
-                        <p>Raw Honey and Provisions from Oakland, CA</p>
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <img src="images/circle-logo.png" alt="Chickabees Honey Logo" class="nav-logo">
+                    <div class="brand-text">
+                        <h1 class="brand-name">Chickabees Honey</h1>
+                        <p class="brand-tagline">Oakland Farm Provisions</p>
                     </div>
                 </div>
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                
+                <div class="nav-menu">
+                    <a href="#fresh-box" class="nav-link">Farm Boxes</a>
+                    <a href="mailto:hello@chickabeesoakland.com" class="nav-link">Contact</a>
+                    <button class="btn-order" onclick="document.getElementById('fresh-box').scrollIntoView({behavior: 'smooth'})">Order Now</button>
+                </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <nav id="navigation" role="navigation" aria-label="Main navigation">
-                    <ul>
-                        <li><a href="#fresh-box">Fresh Box</a></li>
-                        <li><a href="gift-shop.html">Gift Shop</a></li>
-                        <li><a href="#story">Meet the Family</a></li>
-                        <li><a href="#faq">Visit the Farm</a></li>
-                        <li><a href="#members-only" onclick="accessMembersPage()">Members Only</a></li>
-                        <li><a href="#newsletter-signup">Join</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
-    </header>
-
-    <!-- Newsletter Banner -->
-    <div class="newsletter-banner" id="newsletter-banner" role="complementary" aria-label="Newsletter signup">
-        <div class="container">
-            <button class="newsletter-close" onclick="closeNewsletter()" aria-label="Close newsletter banner">&times;</button>
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h3>Join Our Farm Family Newsletter</h3>
-                    <p>Get first access to seasonal boxes, farm gatherings, and follow the O-Boys' learning journey!</p>
-                </div>
-                <div class="newsletter-form">
-                    <label for="newsletter-email-banner" class="sr-only">Email address for newsletter</label>
-                    <input type="email" placeholder="your@email.com" required id="newsletter-email-banner" aria-describedby="newsletter-banner-desc">
-                    <button type="button" onclick="handleNewsletterSignup('banner')">Join</button>
-                </div>
-            </div>
-        </div>
-        <div class="signup-success" id="newsletter-success-banner" style="display: none; text-align: center; margin-top: 10px; color: #1a1a1a; font-weight: bold;" role="status" aria-live="polite">Opening signup form with your email pre-filled!</div>
-    </div>
+    </nav>
 
     <main id="main-content" role="main">
         <section class="hero" aria-label="Welcome message">
@@ -3070,18 +3070,15 @@
             </div>
         </section>
 
-        <!-- Social Proof Section -->
-        <section class="social-proof" aria-label="Customer activity">
-            <div class="container">
-                <div class="social-proof-item">12 happy chickens</div>
-                <div class="social-proof-item">6 beehives producing local natural honey</div>
-                <div class="social-proof-item">Free coffee and waffles with pickup</div>
-            </div>
-        </section>
-
         <!-- Product Showcase -->
         <section class="showcase-section">
             <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Fresh from Our Farm</h2>
+                    <p class="section-description">
+                        Discover the taste of Oakland's finest farm provisions
+                    </p>
+                </div>
                 <div class="showcase-grid">
                     <div class="showcase-item">
                         <img src="images/small_honey_side.jpeg" alt="Raw wildflower honey in glass jars" loading="lazy">
@@ -3108,48 +3105,95 @@
             </div>
         </section>
 
-        <section id="fresh-box" class="order-section" aria-label="Order fresh produce boxes">
+        <section id="fresh-box" class="boxes-section" aria-label="Order fresh produce boxes">
             <div class="container">
-
+                <div class="section-header">
+                    <h2 class="section-title">Choose Your Farm Box</h2>
+                    <p class="section-description">
+                        Each box is carefully curated with the freshest seasonal provisions from our Oakland farm
+                    </p>
+                </div>
+                
                 <!-- Success Message -->
-                <div class="success-message-banner" id="success-message" role="alert" aria-live="assertive">
+                <div class="success-message-banner" id="success-message" role="alert" aria-live="assertive" style="display: none;">
                     <h4>Order Received Successfully!</h4>
                     <p>Thank you for supporting the O-Boys' future. We'll contact you within 24 hours to confirm your order and arrange payment/delivery details.</p>
                 </div>
 
-                
-                <form class="order-form" id="order-form" novalidate aria-label="Fresh box order form">
-                    <h3>Fresh Box</h3>
+                <div class="boxes-grid">
+                    <!-- The Birds Box -->
+                    <div class="box-card featured">
+                        <div class="box-badge">Most Popular</div>
+                        <div class="box-image">
+                            <img src="images/eggs_coop.jpeg" alt="Fresh farm eggs from our happy chickens" loading="lazy">
+                        </div>
+                        <div class="box-content">
+                            <h3 class="box-title">The Birds Box</h3>
+                            <p class="box-description">Perfect for families who love fresh eggs and honey</p>
+                            
+                            <ul class="box-includes">
+                                <li>12 farm-fresh eggs</li>
+                                <li>10oz wildflower honey</li>
+                                <li>Homemade granola jar</li>
+                                <li>Fresh sourdough loaf</li>
+                                <li>Reusable canvas tote</li>
+                                <li>Monthly farm guide</li>
+                            </ul>
+                            
+                            <div class="box-footer">
+                                <div class="box-price">
+                                    <span class="price">$40</span>
+                                    <span class="price-note">per box</span>
+                                </div>
+                                <button class="btn btn-outline add-to-order" data-product="birds" data-price="40" data-name="The Birds Box">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <fieldset class="box-options" aria-label="Choose your box type">
-                        <legend class="sr-only">Select a box option</legend>
-                        <div class="box-option" onclick="selectBox('birds')" tabindex="0" role="button" aria-pressed="false" onkeydown="handleBoxKeydown(event, 'birds')">
-                            <h4>The Birds</h4>
-                            <div class="price" id="birds-price">$40</div>
-                            <p style="font-style: italic; color: #666; margin-bottom: 15px;">Farm breakfast essentials</p>
-                            <ul>
-                                <li>12 Fresh Eggs</li>
-                                <li>10oz Wildflower Honey</li>
-                                <li>1 Jar Homemade Granola</li>
-                                <li>1 Sourdough Loaf</li>
-                                <li>Canvas Tote (first order)</li>
-                                <li>Monthly Farm Guide</li>
-                            </ul>
-                            <p style="font-size: 0.85rem; color: #999; margin-top: 10px;">10 available monthly</p>
+                    <!-- The Bees Box -->
+                    <div class="box-card">
+                        <div class="box-image">
+                            <img src="images/small_honey_side.jpeg" alt="Raw wildflower honey from our Oakland beehives" loading="lazy">
                         </div>
-                        
-                        <div class="box-option" onclick="selectBox('bees')" tabindex="0" role="button" aria-pressed="false" onkeydown="handleBoxKeydown(event, 'bees')">
-                            <h4>The Bees</h4>
-                            <div class="price" id="bees-price">$20</div>
-                            <p style="font-style: italic; color: #666; margin-bottom: 15px;">Pure honey goodness - customize with add-ons!</p>
-                            <ul>
-                                <li>20oz Wildflower Honey</li>
-                                <li>Canvas Tote (first order)</li>
-                                <li>Monthly Farm Guide</li>
+                        <div class="box-content">
+                            <h3 class="box-title">The Bees Box</h3>
+                            <p class="box-description">For honey lovers and those new to our farm</p>
+                            
+                            <ul class="box-includes">
+                                <li>20oz wildflower honey</li>
+                                <li>Reusable canvas tote</li>
+                                <li>Monthly farm guide</li>
                             </ul>
-                            <p style="font-size: 0.85rem; color: #999; margin-top: 10px;">5 available monthly</p>
+                            
+                            <div class="box-footer">
+                                <div class="box-price">
+                                    <span class="price">$20</span>
+                                    <span class="price-note">per box</span>
+                                </div>
+                                <button class="btn btn-outline add-to-order" data-product="bees" data-price="20" data-name="The Bees Box">Add to Order</button>
+                            </div>
                         </div>
-                    </fieldset>
+                    </div>
+                </div>
+
+                <!-- Order Summary Widget -->
+                <div class="order-summary" id="orderSummary">
+                    <div class="order-content">
+                        <h3>Your Order</h3>
+                        <div class="order-items" id="orderItems">
+                            <p class="empty-order">No items selected</p>
+                        </div>
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <span id="orderTotal">$0</span>
+                        </div>
+                        <button class="btn btn-primary order-checkout" id="checkoutBtn" disabled onclick="showOrderForm()">Proceed to Checkout</button>
+                    </div>
+                </div>
+
+                <!-- Keep the existing complex form but hide it initially -->
+                <form class="order-form" id="order-form" novalidate aria-label="Fresh box order form" style="display: none;">
+                    <h3>Complete Your Order</h3>
 
                     <div class="form-group">
                         <label for="delivery">Delivery Method</label>
@@ -3406,128 +3450,6 @@
             </div>
         </section>
 
-        <!-- Holiday Banner -->
-        <section class="holiday-banner" aria-label="Holiday gift announcement">
-            <div class="container">
-                <p>Pre-Order Holiday Gift Boxes Now Available!</p>
-                <a href="gift-shop.html" class="holiday-cta">Shop Holiday Gifts</a>
-            </div>
-        </section>
-
-        <section id="story" class="family-story" aria-label="Our family story">
-            <div class="container">
-                <!-- Origin Story -->
-                <article class="origin-story">
-                    <h3>How It All Started</h3>
-                    <p>When our youngest was born, he had severe allergies, and we thought a little local honey could help. It really began with a love of fresh seasonal food and a book called "How to Grow a Little Fruit Tree" by Ann Ralph.</p>
-                    
-                    <p>After planting a few trees on a steep hill, we realized they would benefit from pollinators. Learning a little bit at a time, we grew from 1 hive and a few trees to adding early, mid and late-season varieties of most types of fruit trees.</p>
-                    
-                    <div class="highlight-box">
-                        <p><strong>One fun fact:</strong> We got bees and chickens the same weekend! Dad always hoped to try having chickens, but after mom learned about a store that would let you buy chicks and sell them back after helping them grow to about 12 weeks old, the stakes were low. When she said she was potentially interested, Dad wanted to move on it immediately before any chance for a change of heart!</p>
-                        
-                        <p>Coincidentally, when Dad first learned about bees, the season to start was only 2 weeks away... and the nucleus happened to be ready that same weekend! Spring 2024 was a particularly busy time :)</p>
-                    </div>
-                    
-                    <p>Now we have cherries, apricots, peaches, persimmons, avocados, blueberries, guava, pears, apples, berries, grapes, figs, citrus and some unusual fruits like jostaberries and Dad's childhood favorite Cherimoya. The goal of this project is to help the boys foster a love for working with their hands, putting roots into their community and developing appreciation for the world around them.</p>
-                </article>
-
-                <article class="story-grid">
-                    <div class="story-text">
-                        <h3>Meet the Family</h3>
-                        <p>The O-Boys, Minnie, and Dan, along with their loyal dog Oreo, have created something special on their Oakland farm. With 10 happy chickens, 5 thriving beehives, and 50+ diverse fruit trees, every day is an adventure in sustainable living.</p>
-                        <p>Now the boys love their "Fluffies" - which are our two silkie chickens, and our bees are surprisingly sweet. Our children are hands-on in every aspect - from gathering eggs and harvesting honey to helping bake fresh goods and tend to our fruit trees.</p>
-                    </div>
-                    <div class="story-image">
-                        <img src="images/boys-beesuits.jpg" alt="Two children wearing bee suits standing next to beehives on the family farm" loading="lazy">
-                    </div>
-                </article>
-
-                <article class="story-grid">
-                    <div class="story-image">
-                        <img src="images/oreo-and-coop.jpeg" alt="Family dog Oreo sitting next to the chicken coop with children feeding chickens in the background" loading="lazy">
-                    </div>
-                    <div class="story-text">
-                        <h3>Our First Business Adventure</h3>
-                        <p>Our first year of beekeeping had a surprisingly good harvest. Outside of gifting to friends and family, our first entrepreneurial customer we hoped to partner with was our local gas station. When we approached them with a business proposal to display our jars and split the profits 50/50... their first question was "how much honey do you have?" - but they just wanted it for themselves!</p>
-                        <p>This is when we knew this would be a fun family adventure! Every afternoon we collect eggs and help improve something on the farm - feeding leftovers to the chickens, weeding, or taking care of the plants. The kids have learned everything from bee communication through waggle dances to understanding why biodiversity helps our orchard thrive.</p>
-                    </div>
-                </article>
-
-                <section class="farm-features" aria-label="Farm features">
-                    <div class="feature">
-                        <h4>6 Beehives</h4>
-                        <p>Producing pure, raw honey while supporting local pollination and teaching us about these amazing insects</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <h4>12 Happy Chickens</h4>
-                        <p>Including our beloved "Fluffy" silkies, providing fresh, nutritious eggs daily while teaching responsibility and animal care</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <h4>50+ Fruit Trees</h4>
-                        <p>A diverse orchard including unusual varieties like jostaberries and Cherimoya, providing seasonal abundance year-round</p>
-                    </div>
-                </section>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section" id="faq" aria-label="Frequently asked questions">
-            <div class="container">
-                <h3 style="font-size: 2rem; color: #1a1a1a; text-align: center; margin-bottom: 40px; font-weight: 300; letter-spacing: 1px;">Frequently Asked Questions</h3>
-                
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                        How fresh are the eggs?
-                        <span aria-hidden="true">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Our eggs are collected daily from our happy free-range chickens. We gather them every morning and they're never more than 1-2 days old when delivered to you.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                        Is the honey really raw and unfiltered?
-                        <span aria-hidden="true">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Yes! Our honey is completely raw and unfiltered. We only strain out any wax particles but leave all the beneficial enzymes, pollen, and nutrients intact.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                        Can I visit the farm?
-                        <span aria-hidden="true">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        We love visitors! Farm pickup days (first Sunday of each month, 9-11am) include complimentary coffee, waffles, and a chance to meet our animals. For other times, please contact us to arrange a visit.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                        What if I have food allergies?
-                        <span aria-hidden="true">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Please let us know about any allergies in the special requests section when ordering. We can accommodate most dietary restrictions and will work with you to customize your box.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="mission" class="mission" aria-label="Our mission">
-            <div class="container">
-                <h3>Our Mission</h3>
-                <p>Chickabees Honey is more than a family business - it's our way of teaching the O-Boys about entrepreneurship, the value of hard work, and financial responsibility. Every jar of honey sold and every egg gathered contributes to their education fund and Roth IRA.</p>
-                <p>We believe in creating an organic, sustainable, healthy food system while inspiring our community to eat well, learn about animals and plants, and build connections rooted in kindness, altruism, and joy. Through sharing our journey, we hope to inspire other families to discover their own path to sustainable living and meaningful learning.</p>
-            </div>
-        </section>
 
         <!-- Newsletter Section -->
         <section class="newsletter-section">
@@ -3788,38 +3710,145 @@
             trackEvent('page_view', { page: 'order_form' });
         });
 
-        // Mobile menu toggle with accessibility
-        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-            const nav = document.getElementById('navigation');
-            const toggle = this;
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-            
-            nav.classList.toggle('active');
-            toggle.classList.toggle('active');
-            toggle.setAttribute('aria-expanded', !isExpanded);
-            
-            trackEvent('mobile_menu_toggle', { expanded: !isExpanded });
-        });
-
-        // Keyboard support for mobile menu
-        document.getElementById('mobile-menu-toggle').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                const nav = document.getElementById('navigation');
-                const toggle = document.getElementById('mobile-menu-toggle');
+        // Order Management (Prototype-style)
+        let orderItems = [];
+
+        // Add to order functionality
+        document.querySelectorAll('.add-to-order').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const product = e.target.dataset.product;
+                const price = parseInt(e.target.dataset.price);
+                const name = e.target.dataset.name;
+
+                // Add item to order
+                orderItems.push({
+                    id: product,
+                    name: name,
+                    price: price,
+                    timestamp: Date.now()
+                });
+
+                updateOrderSummary();
+                showOrderSummary();
                 
-                nav.classList.remove('active');
-                toggle.classList.remove('active');
-                toggle.setAttribute('aria-expanded', 'false');
+                // Track event
+                trackEvent('add_to_order', { product: product, price: price });
             });
         });
+
+        function updateOrderSummary() {
+            const orderItemsContainer = document.getElementById('orderItems');
+            const orderTotalElement = document.getElementById('orderTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            if (orderItems.length === 0) {
+                orderItemsContainer.innerHTML = '<p class="empty-order">No items selected</p>';
+                orderTotalElement.textContent = '$0';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            // Group items by ID and count quantities
+            const groupedItems = {};
+            orderItems.forEach(item => {
+                if (groupedItems[item.id]) {
+                    groupedItems[item.id].quantity++;
+                } else {
+                    groupedItems[item.id] = { ...item, quantity: 1 };
+                }
+            });
+
+            // Generate HTML for order items
+            let itemsHTML = '';
+            let total = 0;
+
+            Object.values(groupedItems).forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                itemsHTML += `
+                    <div class="order-item">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>$${itemTotal}</span>
+                        <button class="remove-item" onclick="removeFromOrder('${item.id}')" title="Remove item">×</button>
+                    </div>
+                `;
+            });
+
+            orderItemsContainer.innerHTML = itemsHTML;
+            orderTotalElement.textContent = `$${total}`;
+            checkoutBtn.disabled = false;
+        }
+
+        function removeFromOrder(productId) {
+            const index = orderItems.findIndex(item => item.id === productId);
+            if (index > -1) {
+                orderItems.splice(index, 1);
+                updateOrderSummary();
+                
+                if (orderItems.length === 0) {
+                    hideOrderSummary();
+                }
+            }
+        }
+
+        function showOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            orderSummary.classList.add('active');
+        }
+
+        function hideOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            orderSummary.classList.remove('active');
+        }
+
+        function showOrderForm() {
+            const orderForm = document.getElementById('order-form');
+            orderForm.style.display = 'block';
+            orderForm.scrollIntoView({ behavior: 'smooth' });
+            
+            // Pre-populate form with selected items
+            // This connects to your existing form functionality
+        }
+
+        // Mobile menu toggle with accessibility
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+                
+                trackEvent('mobile_menu_toggle', { expanded: navMenu.classList.contains('active') });
+            });
+
+            // Keyboard support for mobile menu
+            mobileToggle.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                });
+            });
+        }
 
         // Keyboard support for box selection
         function handleBoxKeydown(event, boxType) {

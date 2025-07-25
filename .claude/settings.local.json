@@ -24,7 +24,10 @@
       "Bash(cp:*)",
       "Bash(claude doctor)",
       "Bash(sips:*)",
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(python3:*)",
+      "Bash(npx create-react-app:*)",
+      "Bash(npm install)"
     ],
     "deny": []
   }
