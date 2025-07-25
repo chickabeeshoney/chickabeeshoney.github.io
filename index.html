@@ -155,9 +155,6 @@
                             <img src="images/ol-in-coop.jpeg" alt="Farm life at our Oakland location" loading="lazy">
                         </div>
                         <div class="slide">
-                            <img src="images/bee_on_alium.jpg" alt="Bee pollinating flowers at our farm" loading="lazy">
-                        </div>
-                        <div class="slide">
                             <img src="images/ol_and_dad scraping honey.jpg" alt="Harvesting honey at our Oakland farm" loading="lazy">
                         </div>
                         <div class="slide">
@@ -170,7 +167,6 @@
                             <span class="dot" onclick="currentSlide(3)"></span>
                             <span class="dot" onclick="currentSlide(4)"></span>
                             <span class="dot" onclick="currentSlide(5)"></span>
-                            <span class="dot" onclick="currentSlide(6)"></span>
                         </div>
                     </div>
                 </div>
@@ -251,7 +247,7 @@
                 <div class="box-card" data-box="bees">
                     <div class="availability-badge" id="bees-availability">5 available</div>
                     <div class="box-image">
-                        <img src="images/small_honey_side.jpeg" alt="Raw wildflower honey from our Oakland beehives" loading="lazy">
+                        <img src="images/bee_on_alium.jpg" alt="Bee pollinating flowers at our Oakland farm" loading="lazy">
                     </div>
                     <div class="box-content">
                         <h3 class="box-title">The Bees Box</h3>
@@ -832,6 +828,7 @@
         // Hero slideshow functionality
         let currentSlideIndex = 0;
         let slideInterval;
+        let slideshowPaused = false;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
         const slideshowContainer = document.querySelector('.slideshow-container');
@@ -858,12 +855,41 @@
         }
 
         function startSlideInterval() {
-            slideInterval = setInterval(nextSlide, 5000); // 5 seconds
+            if (!slideshowPaused) {
+                slideInterval = setInterval(nextSlide, 8000); // 8 seconds
+            }
         }
 
         function resetSlideInterval() {
             clearInterval(slideInterval);
             startSlideInterval();
+        }
+
+        function pauseSlideshow() {
+            slideshowPaused = true;
+            clearInterval(slideInterval);
+        }
+
+        function resumeSlideshow() {
+            slideshowPaused = false;
+            startSlideInterval();
+        }
+
+        // Intersection Observer to pause slideshow when out of view
+        if (slideshowContainer) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        resumeSlideshow();
+                    } else {
+                        pauseSlideshow();
+                    }
+                });
+            }, {
+                threshold: 0.3 // Pause when less than 30% visible
+            });
+            
+            observer.observe(slideshowContainer);
         }
 
         // Click on slideshow to advance to next slide
@@ -880,6 +906,45 @@
         if (slides.length > 0) {
             startSlideInterval();
         }
+
+        // Mobile order summary functionality
+        function initMobileOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            if (!orderSummary) return;
+
+            // Add mobile header if on mobile
+            if (window.innerWidth <= 768) {
+                const existingHeader = orderSummary.querySelector('.mobile-summary-header');
+                if (!existingHeader) {
+                    const header = document.createElement('div');
+                    header.className = 'mobile-summary-header';
+                    header.innerHTML = `
+                        <span class="mobile-summary-title">Your Order</span>
+                        <span class="mobile-summary-total" id="mobile-total">$0.00</span>
+                    `;
+                    
+                    // Insert header as first child
+                    orderSummary.insertBefore(header, orderSummary.firstChild);
+                    
+                    // Add click handler to toggle expansion
+                    header.addEventListener('click', () => {
+                        orderSummary.classList.toggle('expanded');
+                    });
+                }
+            }
+        }
+
+        // Update mobile total when order changes
+        function updateMobileTotal() {
+            const mobileTotal = document.getElementById('mobile-total');
+            if (mobileTotal && window.innerWidth <= 768) {
+                mobileTotal.textContent = `$${(Math.ceil(orderTotal * 100) / 100).toFixed(2)}`;
+            }
+        }
+
+        // Initialize mobile summary on load and resize
+        window.addEventListener('load', initMobileOrderSummary);
+        window.addEventListener('resize', initMobileOrderSummary);
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1166,6 +1231,7 @@
             
             // Update displays
             updateOrderSummary();
+            updateMobileTotal();
         }
 
         function checkAndHideEmptyOrder() {

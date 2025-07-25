@@ -308,7 +308,7 @@ body {
     width: 100%;
     border-radius: var(--border-radius-xl);
     box-shadow: var(--shadow-xl);
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 /* Slideshow dots */
@@ -1373,6 +1373,71 @@ body {
     }
 }
 
+/* Mobile order summary improvements */
+@media (max-width: 768px) {
+    .order-summary {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        margin: 0;
+        border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+        transform: translateY(calc(100% - 60px));
+        transition: transform 0.3s ease;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .order-summary.active {
+        bottom: 0;
+    }
+    
+    .order-summary.expanded {
+        transform: translateY(0);
+    }
+    
+    /* Add mobile summary bar */
+    .order-summary::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 4px;
+        background: var(--color-gray-400);
+        border-radius: 2px;
+    }
+    
+    .order-content {
+        padding-top: var(--space-8);
+        cursor: pointer;
+    }
+    
+    /* Mobile summary header */
+    .mobile-summary-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-4) var(--space-6);
+        border-bottom: 1px solid var(--color-gray-200);
+        cursor: pointer;
+    }
+    
+    .mobile-summary-title {
+        font-size: var(--text-base);
+        font-weight: 600;
+        color: var(--color-charcoal);
+    }
+    
+    .mobile-summary-total {
+        font-size: var(--text-lg);
+        font-weight: 700;
+        color: var(--color-meadow-dark);
+    }
+}
+
 /* Newsletter Section */
 .newsletter-section {
     background: linear-gradient(135deg, var(--color-meadow) 0%, var(--color-meadow-dark) 100%);
@@ -2126,5 +2191,40 @@ body {
     .newsletter-btn {
         width: 100%;
         justify-content: center;
+    }
+    
+    /* Optimize add-ons grid for mobile */
+    .addons-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .addon-category {
+        padding: var(--space-4);
+    }
+    
+    .addon-item {
+        min-height: 44px; /* Touch-friendly target */
+        padding: var(--space-3);
+    }
+    
+    .category-header {
+        padding: var(--space-3);
+        font-size: var(--text-lg);
+    }
+    
+    /* Improve slideshow for mobile */
+    .slideshow-dots {
+        margin-top: var(--space-6);
+    }
+    
+    .dot {
+        height: 16px;
+        width: 16px;
+        margin: 0 6px;
+    }
+    
+    .slideshow-container {
+        margin-bottom: var(--space-4);
     }
 }
