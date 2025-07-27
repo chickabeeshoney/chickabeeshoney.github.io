@@ -290,12 +290,18 @@ body {
     position: relative;
     width: 100%;
     cursor: pointer;
+    aspect-ratio: 3/2; /* Fixed aspect ratio to prevent layout shifts */
+    overflow: hidden;
+    background-color: #f8f7f5; /* Subtle background while loading */
+    border-radius: var(--border-radius-xl);
 }
 
 /* Hide all slides by default */
 .slide {
     display: none;
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* Show active slide */
@@ -306,6 +312,9 @@ body {
 /* Style slideshow images */
 .slide img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents layout shifts by fitting images consistently */
+    object-position: center;
     border-radius: var(--border-radius-xl);
     box-shadow: var(--shadow-xl);
     transition: opacity 1.5s ease-in-out;
@@ -587,6 +596,13 @@ body {
 .section-description {
     color: var(--color-gray-600);
     font-size: var(--text-base);
+}
+
+.section-description .small-text {
+    font-size: var(--text-sm);
+    display: block;
+    margin-top: var(--space-1);
+    opacity: 0.8;
 }
 
 .addons-grid {
@@ -1088,6 +1104,11 @@ body {
 }
 
 /* Story Section */
+/* Mobile-only story image (hidden by default) */
+.mobile-story-image {
+    display: none;
+}
+
 .story-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -2253,6 +2274,17 @@ body {
         margin-bottom: var(--space-2); /* Reduce spacing before items */
     }
     
+    /* Ensure category arrows display correctly on mobile */
+    .category-arrow {
+        background: none !important;
+        border: none !important;
+        font-size: var(--text-xl) !important;
+        color: var(--color-meadow-dark) !important;
+        display: inline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
     /* Improve slideshow for mobile */
     .slideshow-dots {
         margin-top: var(--space-6);
@@ -2266,5 +2298,79 @@ body {
     
     .slideshow-container {
         margin-bottom: var(--space-4);
+        aspect-ratio: 4/3; /* Slightly taller ratio for mobile screens */
+    }
+    
+    /* Optimize box cards for mobile */
+    .box-card {
+        margin-bottom: var(--space-4);
+    }
+    
+    .box-image img {
+        height: 150px; /* Reduced from 250px */
+        object-fit: cover;
+    }
+    
+    .box-content {
+        padding: var(--space-4); /* Reduced from space-6 */
+    }
+    
+    .box-title {
+        font-size: var(--text-lg); /* Reduced from text-xl */
+        margin-bottom: var(--space-1); /* Reduced spacing */
+    }
+    
+    .box-description {
+        font-size: var(--text-sm); /* Reduced from default */
+        margin-bottom: var(--space-3); /* Reduced from space-6 */
+    }
+    
+    .box-includes {
+        margin-bottom: var(--space-4); /* Reduced from space-8 */
+    }
+    
+    .box-includes li {
+        padding: var(--space-1) 0; /* Reduced from space-2 */
+        font-size: var(--text-sm); /* Smaller font */
+    }
+    
+    .box-footer {
+        gap: var(--space-2); /* Add gap for better mobile layout */
+    }
+    
+    .price {
+        font-size: var(--text-xl); /* Reduced from text-2xl */
+    }
+    
+    .select-box {
+        padding: var(--space-2) var(--space-4); /* Slightly smaller button */
+        font-size: var(--text-sm);
+    }
+    
+    /* Show mobile story image only on mobile */
+    .mobile-story-image {
+        display: block;
+        margin-bottom: var(--space-6);
+        border-radius: var(--border-radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .mobile-story-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    /* Adjust story content for mobile */
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    /* Hide desktop story image on mobile */
+    .story-image {
+        display: none;
     }
 }
