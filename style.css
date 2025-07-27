@@ -2416,23 +2416,40 @@ body {
         margin-bottom: var(--space-2); /* Reduce spacing before items */
     }
     
-    /* Force green arrows on mobile - override any system styling */
-    .category-arrow, .sub-arrow {
-        background: var(--color-meadow) !important;
-        color: white !important;
-        border-radius: 50% !important;
-        width: 32px !important;
-        height: 32px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 14px !important;
-        line-height: 1 !important;
+    /* Simple green arrows on mobile - no background circles */
+    span.category-arrow, 
+    span.sub-arrow,
+    #arrow-provisions,
+    #arrow-honey, 
+    #arrow-eggs,
+    #sub-arrow-babka,
+    #sub-arrow-sourdough {
+        background: none !important;
+        color: var(--color-meadow-dark) !important;
         border: none !important;
+        border-radius: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        display: inline !important;
+        font-size: var(--text-xl) !important;
+        line-height: 1 !important;
         padding: 0 !important;
         margin: 0 !important;
         -webkit-appearance: none !important;
         appearance: none !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        font-family: inherit !important;
+    }
+    
+    /* Extra targeting for stubborn mobile browsers */
+    .addon-category span[id^="arrow-"],
+    .addon-header span[id^="sub-arrow-"] {
+        background: none !important;
+        color: var(--color-meadow-dark) !important;
+        border: none !important;
+        font-size: var(--text-xl) !important;
+        display: inline !important;
     }
     
     /* Improve slideshow for mobile */
