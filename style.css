@@ -401,6 +401,43 @@ body {
     background: var(--color-gray-50);
 }
 
+/* Story Content Layout */
+.story-content {
+    display: flex;
+    gap: var(--space-6);
+    align-items: flex-start;
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-image {
+    width: 300px;
+    flex-shrink: 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column;
+    }
+    
+    .story-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto var(--space-4) auto;
+        order: -1; /* Show image first on mobile */
+    }
+}
+
 .pickup-section {
     background: var(--color-honey);
 }
@@ -2066,6 +2103,29 @@ body {
 
 .success-message-banner h4 {
     margin-bottom: var(--space-2);
+}
+
+/* Venmo Link Styling */
+.venmo-link {
+    color: #3D95CE; /* Venmo brand blue */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    padding: var(--space-1) var(--space-2);
+    background: rgba(61, 149, 206, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.venmo-link:hover {
+    background: rgba(61, 149, 206, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(61, 149, 206, 0.3);
+}
+
+.venmo-link:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(61, 149, 206, 0.3);
 }
 
 /* Large Submit Button */
