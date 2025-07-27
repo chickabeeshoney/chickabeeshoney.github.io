@@ -469,6 +469,22 @@ body {
     gap: var(--space-8);
 }
 
+/* Desktop: Force equal heights for perfect alignment */
+@media (min-width: 768px) {
+    .boxes-grid {
+        grid-template-rows: 1fr;
+    }
+    
+    .box-card {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .box-content {
+        flex: 1;
+    }
+}
+
 .box-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -479,8 +495,6 @@ body {
     box-shadow: var(--shadow-lg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
 .box-card:hover {
@@ -913,7 +927,6 @@ body {
 
 .box-content {
     padding: var(--space-6);
-    flex: 1;
 }
 
 .box-title {
@@ -2430,9 +2443,15 @@ body {
         aspect-ratio: 4/3; /* Slightly taller ratio for mobile screens */
     }
     
-    /* Optimize box cards for mobile */
+    /* Mobile: Natural box heights for better UX */
+    .boxes-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto; /* Natural heights */
+    }
+    
     .box-card {
         margin-bottom: var(--space-4);
+        display: block; /* Remove flexbox on mobile */
     }
     
     .box-image img {
