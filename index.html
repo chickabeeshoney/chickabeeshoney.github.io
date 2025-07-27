@@ -65,7 +65,7 @@
                     "itemOffered": {
                         "@type": "Product",
                         "name": "The Birds Box",
-                        "description": "12 fresh eggs, 10oz wildflower honey, jar of granola, sourdough loaf, canvas tote, monthly guide",
+                        "description": "12 fresh eggs, 10oz Raw Oakland Honey, jar of granola, sourdough loaf, canvas tote, monthly guide",
                         "offers": {
                             "@type": "Offer",
                             "price": "40.00",
@@ -78,7 +78,7 @@
                     "itemOffered": {
                         "@type": "Product",
                         "name": "The Bees Box",
-                        "description": "20oz wildflower honey, canvas tote, monthly guide",
+                        "description": "20oz Raw Oakland Honey, canvas tote, monthly guide",
                         "offers": {
                             "@type": "Offer",
                             "price": "20.00",
@@ -179,9 +179,9 @@
         <div class="container">
             <div class="showcase-grid">
                 <div class="showcase-item">
-                    <img src="images/small_honey_side.jpeg" alt="Raw wildflower honey in glass jars" loading="lazy">
+                    <img src="images/small_honey_side.jpeg" alt="Raw Oakland Honey in glass jars" loading="lazy">
                     <div class="showcase-overlay">
-                        <h3>Raw Wildflower Honey</h3>
+                        <h3>Raw Oakland Honey</h3>
                         <p>Harvested from our Oakland hives</p>
                     </div>
                 </div>
@@ -226,7 +226,7 @@
                         
                         <ul class="box-includes">
                             <li>12 farm-fresh eggs</li>
-                            <li>10oz wildflower honey</li>
+                            <li>10oz Raw Oakland Honey</li>
                             <li>Homemade granola jar</li>
                             <li>Fresh sourdough loaf</li>
                             <li>Reusable canvas tote</li>
@@ -253,7 +253,7 @@
                         <p class="box-description">For honey lovers and those new to our farm</p>
                         
                         <ul class="box-includes">
-                            <li>20oz wildflower honey</li>
+                            <li>20oz Raw Oakland Honey</li>
                             <li>Reusable canvas tote</li>
                             <li>Monthly farm guide</li>
                         </ul>
@@ -540,18 +540,18 @@
                 <div class="newsletter-main">
                     <h2 class="newsletter-title">Stay Connected to Our Farm</h2>
                     <p class="newsletter-description">
-                        Holiday gift boxes launching soon.
+                        Get updates on farm stories, and recipes delivered to your inbox. Holiday gift boxes launching soon - be first to know!
                     </p>
                     
-                    <form class="newsletter-form" action="https://formspree.io/f/xgegojko" method="POST">
+                    <form class="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdQpI5B9_CCZMzDFuoNXjPT20BkeR31qdTxPn1ckoiRDDNSTw/formResponse" method="POST" target="newsletter_iframe">
                         <input type="email" 
-                               name="email" 
+                               name="entry.539062072" 
                                class="newsletter-email" 
                                placeholder="Enter your email address" 
                                required>
-                        <input type="hidden" name="_subject" value="Newsletter Signup">
                         <button type="submit" class="btn-subscribe">Subscribe</button>
                     </form>
+                    <iframe name="newsletter_iframe" style="display: none;"></iframe>
                     
                     <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
                 </div>
@@ -1610,12 +1610,17 @@
                 // Update hidden fields with final data
                 updateOrderTotal();
                 
+                // Generate order reference number
+                const orderRef = generateOrderReference();
+                
                 // Prepare form data
                 const formData = new FormData(orderForm);
                 
                 // Add order items as formatted text
                 const orderItemsText = formatOrderItemsForEmail();
                 formData.set('order-items', orderItemsText);
+                formData.set('order-reference', orderRef);
+                formData.set('_subject', `New Chickabees Order - ${orderRef}`);
                 
                 // Submit to Formspree
                 fetch(orderForm.action, {
@@ -1627,7 +1632,7 @@
                 })
                 .then(response => {
                     if (response.ok) {
-                        showSuccessMessage();
+                        showSuccessMessage(orderRef);
                         resetOrder();
                     } else {
                         throw new Error('Form submission failed');
@@ -1697,7 +1702,44 @@
 
         // Format order items for email
         function formatOrderItemsForEmail() {
-            let orderText = 'ORDER ITEMS:\n';
+            const customerName = document.getElementById('name').value;
+            const customerEmail = document.getElementById('email').value;
+            const customerPhone = document.getElementById('phone').value;
+            const deliveryMethod = document.getElementById('delivery').value;
+            const specialRequests = document.getElementById('special-requests').value;
+            const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || 'pickup';
+            const deliveryAddress = document.getElementById('address')?.value || '';
+            
+            // Get next pickup date
+            const nextPickup = new Date();
+            const daysUntilSunday = (7 - nextPickup.getDay()) % 7;
+            const nextSunday = new Date(nextPickup.getTime() + daysUntilSunday * 24 * 60 * 60 * 1000);
+            if (nextSunday.getDate() < 7) {
+                nextSunday.setMonth(nextSunday.getMonth() + 1, 1);
+                const daysToFirstSunday = (7 - nextSunday.getDay()) % 7;
+                nextSunday.setDate(1 + daysToFirstSunday);
+            }
+            const pickupDateStr = nextSunday.toLocaleDateString('en-US', { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+            });
+            
+            let orderText = `
+CHICKABEES ORDER CONFIRMATION
+═══════════════════════════════
+
+CUSTOMER INFORMATION:
+Name: ${customerName}
+Email: ${customerEmail}
+Phone: ${customerPhone || 'Not provided'}
+
+DELIVERY INFORMATION:
+Method: ${deliveryMethod === 'pickup' ? 'Farm Pickup' : 'Local Delivery'}
+Date: ${pickupDateStr}
+Time: 9:00 AM - 11:00 AM
+${deliveryMethod === 'delivery' ? `Address: ${deliveryAddress}` : 'Location: Oakland Farm (address will be provided)'}
+
+ORDER DETAILS:
+`;
             
             // Base box
             if (selectedBox) {
@@ -1716,17 +1758,43 @@
             
             // Tax breakdown
             if (orderTax > 0) {
-                orderText += `\nSubtotal: $${(Math.ceil(orderSubtotal * 100) / 100).toFixed(2)}\n`;
-                orderText += `Tax (10.25%): $${(Math.ceil(orderTax * 100) / 100).toFixed(2)}\n`;
+                orderText += `\nSUBTOTAL: $${(Math.ceil(orderSubtotal * 100) / 100).toFixed(2)}\n`;
+                orderText += `TAX (10.25%): $${(Math.ceil(orderTax * 100) / 100).toFixed(2)}\n`;
             }
             
             // Delivery fee
-            const delivery = document.getElementById('delivery');
-            if (delivery.value === 'delivery') {
-                orderText += '\nDELIVERY FEE: $5\n';
+            if (deliveryMethod === 'delivery') {
+                orderText += 'DELIVERY FEE: $5.00\n';
             }
             
+            orderText += `TOTAL: $${(Math.ceil(orderTotal * 100) / 100).toFixed(2)}\n`;
+            
+            orderText += `
+PAYMENT INFORMATION:
+Method: ${paymentMethod === 'venmo' ? 'Venmo (@chickabeesoakland)' : 'Pay at pickup/delivery (cash or tap-to-pay)'}
+${paymentMethod === 'venmo' ? 'Status: Payment should be completed before pickup/delivery' : 'Status: Payment due upon receipt'}
+
+${specialRequests ? `SPECIAL REQUESTS:\n${specialRequests}\n` : ''}
+NEXT STEPS:
+1. Customer will receive automated confirmation email
+2. Farm will contact customer within 24 hours to confirm details
+3. ${deliveryMethod === 'pickup' ? 'Customer pickup' : 'Delivery'} on ${pickupDateStr}
+
+═══════════════════════════════
+Generated: ${new Date().toLocaleString()}
+            `;
+            
             return orderText;
+        }
+
+        // Generate order reference number
+        function generateOrderReference() {
+            const date = new Date();
+            const year = date.getFullYear().toString().slice(-2);
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const random = Math.random().toString(36).substr(2, 4).toUpperCase();
+            return `CB${year}${month}${day}-${random}`;
         }
 
         // Save availability to localStorage
@@ -1735,7 +1803,7 @@
         }
 
         // Show success message
-        function showSuccessMessage() {
+        function showSuccessMessage(orderRef) {
             // Decrement availability for selected box
             if (selectedBox && availability[selectedBox] > 0) {
                 availability[selectedBox]--;
@@ -1743,12 +1811,94 @@
                 updateAvailabilityDisplay();
             }
             
+            // Update success message with order details
+            updateSuccessMessageContent(orderRef);
+            
             const successMessage = document.getElementById('success-message');
             successMessage.style.display = 'block';
             successMessage.scrollIntoView({ behavior: 'smooth' });
             
             // Hide order form
             document.getElementById('order-form').style.display = 'none';
+        }
+
+        // Update success message content with order details
+        function updateSuccessMessageContent(orderRef) {
+            const successMessage = document.getElementById('success-message');
+            const customerName = document.getElementById('name').value;
+            const customerEmail = document.getElementById('email').value;
+            const deliveryMethod = document.getElementById('delivery').value;
+            const orderTotal = document.getElementById('form-order-total').textContent;
+            
+            // Get next pickup date
+            const nextPickup = new Date();
+            const daysUntilSunday = (7 - nextPickup.getDay()) % 7;
+            const nextSunday = new Date(nextPickup.getTime() + daysUntilSunday * 24 * 60 * 60 * 1000);
+            if (nextSunday.getDate() < 7) {
+                nextSunday.setMonth(nextSunday.getMonth() + 1, 1);
+                const daysToFirstSunday = (7 - nextSunday.getDay()) % 7;
+                nextSunday.setDate(1 + daysToFirstSunday);
+            }
+            
+            const pickupDateStr = nextSunday.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            // Create order summary
+            let orderItemsHtml = '';
+            for (const [itemId, quantity] of Object.entries(currentOrder)) {
+                if (quantity > 0) {
+                    const item = items[itemId];
+                    orderItemsHtml += `<div class="order-item-row">
+                        <span>${quantity}x ${item.name}</span>
+                        <span>$${(item.price * quantity).toFixed(2)}</span>
+                    </div>`;
+                }
+            }
+            
+            successMessage.innerHTML = `
+                <div class="success-header">
+                    <h3>🎉 Order Confirmed!</h3>
+                    <div class="order-reference">Order #${orderRef}</div>
+                </div>
+                
+                <div class="success-content">
+                    <div class="success-section">
+                        <h4>Thank you, ${customerName}!</h4>
+                        <p>Your order has been received and we're excited to prepare your fresh farm provisions.</p>
+                    </div>
+                    
+                    <div class="success-section">
+                        <h4>Order Summary</h4>
+                        <div class="order-summary">
+                            ${orderItemsHtml}
+                            <div class="order-total-row">
+                                <strong>Total: ${orderTotal}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="success-section">
+                        <h4>What's Next?</h4>
+                        <ol class="next-steps">
+                            <li><strong>Confirmation Email:</strong> You'll receive a detailed confirmation at ${customerEmail} within 15 minutes</li>
+                            <li><strong>Farm Contact:</strong> We'll reach out within 24 hours to confirm final details</li>
+                            <li><strong>${deliveryMethod === 'pickup' ? 'Pickup' : 'Delivery'}:</strong> ${pickupDateStr}, 9:00 AM - 11:00 AM</li>
+                            <li><strong>Payment:</strong> ${deliveryMethod === 'pickup' ? 'Pay at pickup with cash or tap-to-pay' : 'Pay upon delivery with cash or tap-to-pay'}</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="success-section">
+                        <h4>Questions?</h4>
+                        <p>Contact us at <a href="mailto:hello@chickabeesoakland.com">hello@chickabeesoakland.com</a> or reference order #${orderRef}</p>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="window.print()">Print Confirmation</button>
+                </div>
+            `;
         }
 
         // Reset order state

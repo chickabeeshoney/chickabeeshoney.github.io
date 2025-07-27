@@ -479,6 +479,8 @@ body {
     box-shadow: var(--shadow-lg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .box-card:hover {
@@ -911,6 +913,7 @@ body {
 
 .box-content {
     padding: var(--space-6);
+    flex: 1;
 }
 
 .box-title {
@@ -1141,17 +1144,6 @@ body {
 }
 
 /* Story Section */
-/* Mobile-only story image (hidden by default) */
-.mobile-story-image {
-    display: none;
-}
-
-.story-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--space-16);
-    align-items: center;
-}
 
 .story-title {
     font-family: 'Playfair Display', serif;
@@ -2105,6 +2097,83 @@ body {
     margin-bottom: var(--space-2);
 }
 
+/* Enhanced Success Message Styling */
+.success-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-meadow);
+}
+
+.success-header h3 {
+    color: var(--color-meadow-dark);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+}
+
+.order-reference {
+    background: var(--color-meadow);
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.success-content {
+    text-align: left;
+}
+
+.success-section {
+    margin-bottom: var(--space-6);
+}
+
+.success-section h4 {
+    color: var(--color-charcoal);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+    border-left: 4px solid var(--color-meadow);
+    padding-left: var(--space-3);
+}
+
+.order-summary {
+    background: var(--color-gray-50);
+    padding: var(--space-4);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-gray-200);
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+}
+
+.order-total-row {
+    border-top: 2px solid var(--color-meadow);
+    padding-top: var(--space-2);
+    margin-top: var(--space-3);
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-lg);
+}
+
+.next-steps {
+    background: var(--color-honey);
+    padding: var(--space-4);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-yellow);
+}
+
+.next-steps li {
+    margin-bottom: var(--space-2);
+    line-height: 1.5;
+}
+
+.next-steps li:last-child {
+    margin-bottom: 0;
+}
+
 /* Venmo Link Styling */
 .venmo-link {
     color: #3D95CE; /* Venmo brand blue */
@@ -2407,30 +2476,5 @@ body {
         font-size: var(--text-sm);
     }
     
-    /* Show mobile story image only on mobile */
-    .mobile-story-image {
-        display: block;
-        margin-bottom: var(--space-6);
-        border-radius: var(--border-radius-xl);
-        overflow: hidden;
-        box-shadow: var(--shadow-md);
-    }
     
-    .mobile-story-image img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    /* Adjust story content for mobile */
-    .story-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-8);
-    }
-    
-    /* Hide desktop story image on mobile */
-    .story-image {
-        display: none;
-    }
 }
