@@ -285,30 +285,6 @@
                         </h4>
                         <p class="category-hint">Click to explore breads, treats & coffee</p>
                         <div class="category-items" id="items-provisions" style="display: none;">
-                            <!-- Chocolate Babka with sub-options -->
-                            <div class="addon-item parent-item" onclick="event.stopPropagation(); toggleSubOptions('babka')">
-                                <div class="addon-header">
-                                    <span class="addon-name">Chocolate Babka</span>
-                                    <span class="sub-arrow" id="sub-arrow-babka">▶</span>
-                                </div>
-                            </div>
-                            <div class="sub-options" id="sub-babka" style="display: none;">
-                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('babka-whole')">
-                                    <div class="addon-header">
-                                        <span class="addon-name">Whole</span>
-                                        <span class="addon-price">$20</span>
-                                        <span class="quantity-badge" id="qty-babka-whole" style="display: none;">0</span>
-                                    </div>
-                                </div>
-                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('babka-slice')">
-                                    <div class="addon-header">
-                                        <span class="addon-name">Slice</span>
-                                        <span class="addon-price">$3</span>
-                                        <span class="quantity-badge" id="qty-babka-slice" style="display: none;">0</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
                             <!-- Sourdough with sub-options -->
                             <div class="addon-item parent-item" onclick="event.stopPropagation(); toggleSubOptions('sourdough')">
                                 <div class="addon-header">
@@ -336,16 +312,40 @@
                             <!-- Granola -->
                             <div class="addon-item" onclick="event.stopPropagation(); addItem('granola')">
                                 <div class="addon-header">
-                                    <span class="addon-name">Granola Jar</span>
+                                    <span class="addon-name">Granola</span>
                                     <span class="addon-price">$10</span>
                                     <span class="quantity-badge" id="qty-granola" style="display: none;">0</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Chocolate Babka with sub-options -->
+                            <div class="addon-item parent-item" onclick="event.stopPropagation(); toggleSubOptions('babka')">
+                                <div class="addon-header">
+                                    <span class="addon-name">Chocolate Babka</span>
+                                    <span class="sub-arrow" id="sub-arrow-babka">▶</span>
+                                </div>
+                            </div>
+                            <div class="sub-options" id="sub-babka" style="display: none;">
+                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('babka-whole')">
+                                    <div class="addon-header">
+                                        <span class="addon-name">Whole</span>
+                                        <span class="addon-price">$20</span>
+                                        <span class="quantity-badge" id="qty-babka-whole" style="display: none;">0</span>
+                                    </div>
+                                </div>
+                                <div class="addon-item sub-item" onclick="event.stopPropagation(); addItem('babka-slice')">
+                                    <div class="addon-header">
+                                        <span class="addon-name">Slice</span>
+                                        <span class="addon-price">$3</span>
+                                        <span class="quantity-badge" id="qty-babka-slice" style="display: none;">0</span>
+                                    </div>
                                 </div>
                             </div>
                             
                             <!-- Coffee -->
                             <div class="addon-item" onclick="event.stopPropagation(); addItem('coffee-12oz')">
                                 <div class="addon-header">
-                                    <span class="addon-name">Coffee Beans (12oz)</span>
+                                    <span class="addon-name">Coffee Beans</span>
                                     <span class="addon-price">$15</span>
                                     <span class="quantity-badge" id="qty-coffee-12oz" style="display: none;">0</span>
                                 </div>
@@ -786,29 +786,6 @@
         </div>
     </div>
 
-    <!-- Progress Indicator (shown after box selection) -->
-    <div id="progress-section" class="progress-section" style="display: none;">
-        <div class="container">
-            <div class="progress-dots">
-                <div class="progress-dot active" id="dot-box">
-                    <span class="dot-number">1</span>
-                    <span class="dot-label">Box</span>
-                </div>
-                <div class="progress-dot" id="dot-addons">
-                    <span class="dot-number">2</span>
-                    <span class="dot-label">Add-ons</span>
-                </div>
-                <div class="progress-dot" id="dot-contact">
-                    <span class="dot-number">3</span>
-                    <span class="dot-label">Contact</span>
-                </div>
-                <div class="progress-dot" id="dot-payment">
-                    <span class="dot-number">4</span>
-                    <span class="dot-label">Payment</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
         // Mobile menu toggle
@@ -1129,10 +1106,6 @@
                 selectedCard.classList.add('selected');
             }
             
-            // Show progress indicator
-            document.getElementById('progress-section').style.display = 'block';
-            document.getElementById('dot-box').classList.add('completed');
-            document.getElementById('dot-addons').classList.add('active');
             
             // Show add-ons section
             document.getElementById('addons-section').style.display = 'block';
@@ -1324,8 +1297,6 @@
                 }
                 // Also hide add-ons section
                 document.getElementById('addons-section').style.display = 'none';
-                // Hide progress section  
-                document.getElementById('progress-section').style.display = 'none';
             }
         }
 
@@ -1408,9 +1379,6 @@
 
         // Step 3: Proceed to Order Details
         function proceedToOrder() {
-            // Update progress
-            document.getElementById('dot-addons').classList.add('completed');
-            document.getElementById('dot-contact').classList.add('active');
             
             // Show order form
             const orderFormSection = document.getElementById('order-form-section');
@@ -1926,14 +1894,8 @@ Generated: ${new Date().toLocaleString()}
             
             // Hide sections
             document.getElementById('addons-section').style.display = 'none';
-            document.getElementById('progress-section').style.display = 'none';
             document.getElementById('orderSummary').style.display = 'none';
             
-            // Reset progress dots
-            document.querySelectorAll('.progress-dot').forEach(dot => {
-                dot.classList.remove('active', 'completed');
-            });
-            document.getElementById('dot-box').classList.add('active');
             
             updateOrderSummary();
             
