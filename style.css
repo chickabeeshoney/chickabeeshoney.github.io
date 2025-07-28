@@ -482,6 +482,12 @@ body {
     
     .box-content {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .box-footer {
+        margin-top: auto;
     }
 }
 
