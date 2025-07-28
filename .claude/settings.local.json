@@ -23,7 +23,10 @@
       "Bash(gh release create:*)",
       "Bash(cp:*)",
       "Bash(claude doctor)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "Bash(echo:*)",
+      "WebFetch(domain:forms.gle)",
+      "WebFetch(domain:docs.google.com)"
     ],
     "deny": []
   }
