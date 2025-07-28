@@ -1,0 +1,23 @@
+{
+    "name": "Chickabees Oakland",
+    "short_name": "Chickabees",
+    "description": "Farmer's market fresh produce, honey, eggs, and artisanal goods in Oakland",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#f5e6a3",
+    "orientation": "portrait-primary",
+    "categories": ["food", "shopping", "business"],
+    "icons": [
+        {
+            "src": "images/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "images/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+}

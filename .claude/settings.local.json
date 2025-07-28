@@ -26,7 +26,8 @@
       "Bash(sips:*)",
       "Bash(echo:*)",
       "WebFetch(domain:forms.gle)",
-      "WebFetch(domain:docs.google.com)"
+      "WebFetch(domain:docs.google.com)",
+      "Bash(git config:*)"
     ],
     "deny": []
   }

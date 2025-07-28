@@ -2480,6 +2480,37 @@ body {
         padding: var(--space-2) var(--space-4); /* Slightly smaller button */
         font-size: var(--text-sm);
     }
+}
+
+/* Mobile Font Size Optimizations */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Prevent iOS zoom on form inputs */
+        line-height: 1.6;
+    }
     
+    .hero-description {
+        font-size: var(--text-lg); /* Increase from text-base for better readability */
+        line-height: 1.7;
+    }
     
+    .box-includes li {
+        font-size: 15px; /* Increase from 14px for better mobile readability */
+        line-height: 1.5;
+    }
+    
+    .addon-name {
+        font-size: 16px; /* Ensure minimum readable size */
+    }
+    
+    .category-hint {
+        font-size: 15px; /* Slightly larger for mobile */
+        line-height: 1.5;
+    }
+}
+
+/* Mobile Viewport Height Fix */
+.hero {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100); /* Custom property for mobile browsers */
 }

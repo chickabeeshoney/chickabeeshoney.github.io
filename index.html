@@ -22,7 +22,8 @@
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#f5e6a3">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Chickabees Honey">
+    <meta name="apple-mobile-web-app-title" content="Chickabees Oakland">
+    <link rel="manifest" href="manifest.json">
     
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -788,6 +789,19 @@
 
 
     <script>
+        // Mobile viewport height fix
+        function setVH() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        
+        // Set initial viewport height
+        setVH();
+        
+        // Update on orientation change and resize
+        window.addEventListener('resize', setVH);
+        window.addEventListener('orientationchange', setVH);
+        
         // Mobile menu toggle
         const mobileToggle = document.querySelector('.mobile-menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
