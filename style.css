@@ -230,7 +230,7 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: calc(80px + var(--space-16)) 0 var(--space-16) 0;
+    padding: calc(80px + var(--space-16)) 0 var(--space-8) 0;
     background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-honey) 30%, var(--color-warm-white) 100%);
 }
 
@@ -389,12 +389,13 @@ body {
 }
 
 /* Sections */
-.boxes-section, .story-section, .pickup-section, .showcase-section {
+.story-section, .pickup-section {
     padding: var(--space-20) 0;
 }
 
 .boxes-section {
     background: var(--color-warm-white);
+    padding: var(--space-12) 0 var(--space-20) 0;
 }
 
 .story-section {
@@ -1037,7 +1038,7 @@ body {
 /* Product Showcase */
 .showcase-section {
     background: var(--color-gray-50);
-    padding: var(--space-20) 0 var(--space-8) 0;
+    padding: var(--space-12) 0 var(--space-4) 0;
 }
 
 .showcase-grid {
@@ -2513,4 +2514,19 @@ body {
 .hero {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100); /* Custom property for mobile browsers */
+}
+
+/* Mobile Spacing Optimizations */
+@media (max-width: 768px) {
+    .hero {
+        padding: calc(80px + var(--space-12)) 0 var(--space-4) 0; /* Reduced bottom padding significantly */
+    }
+    
+    .boxes-section {
+        padding: var(--space-8) 0 var(--space-16) 0; /* Much tighter spacing on mobile */
+    }
+    
+    .showcase-section {
+        padding: var(--space-6) 0 var(--space-2) 0; /* Minimal spacing on mobile */
+    }
 }
