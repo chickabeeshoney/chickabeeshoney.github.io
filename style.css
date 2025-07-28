@@ -568,7 +568,7 @@ body {
 .progress-section {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 50;
     padding: var(--space-4) 0;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -1700,6 +1700,8 @@ body {
     background: var(--color-charcoal);
     color: white;
     padding: var(--space-16) 0 var(--space-8) 0;
+    position: relative;
+    z-index: 60;
 }
 
 .footer-main {
